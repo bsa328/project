@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GROUPWARE | 회원가입</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/register.css">
+</head>
+
+<body>
+    <div class="register-box">
+        <h1>JOIN US</h1>
+        <form method="POST" action="" autocomplete="off">
+            <div class="register-wrap">
+                <div class="info-wrap">
+                    <div class="id info">부서</div>
+                    <div class="passwd info">직책</div>
+                    <div class="repasswd info">사원번호</div>
+                    <div class="name info">사원명</div>
+                    <div class="email info">비밀번호</div>
+                    <div class="birth info">비밀번호 확인</div>
+                </div>
+                <div class="input-wrap">
+                    <select name="buseo">
+                        <option value="">선택하기</option>
+                        <option value="100">인사과</option>
+                        <option value="200">자재과</option>
+                        <option value="300">재경과</option>
+                    </select>
+                    <select name="grade">
+                        <option value="">선택하기</option>
+                        <option value="500">팀장</option>
+                        <option value="600">대리</option>
+                        <option value="700">주임</option>
+                        <option value="800">사원</option>
+                    </select>
+                    <input type="text" name="userid" id="userid" required tabindex="3" />
+                    <input type="text" name="username" id="username" required tabindex="4" />
+                    <input type="password" name="passwd" id="passwd" required tabindex="5" placeholder="8~12자리"/>
+                    <input type="password" name="repasswd" id="repasswd" required tabindex="6" />
+                </div>
+            </div>
+            <div class="register-btn">
+                <button type="submit" class="btn">가입하기</button>
+            </div>
+        </form>
+        <div class="login">
+            <a href="login.html">← 로그인하기</a>
+        </div>
+    </div>
+</body>
+</script>
+
+</html>

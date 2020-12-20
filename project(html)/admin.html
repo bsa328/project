@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GROUPWARE | 관리자</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/admin.css">
+
+    <script src="https://kit.fontawesome.com/3249ba5f1a.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="header">
+        <div class="header-left">
+            <div class="logo">
+                <a href="admin.html">
+                    <h1>Groupware</h1>
+                </a>
+            </div>
+        </div>
+        <div class="header-right">
+            <div class="nav">
+                <div class="nav-box">
+                    <div class="nav-icon">
+                        <a href="my_page.html">
+                            <div class="m-b5"><i class="far fa-user-circle"></i></div>
+                            <div>마이페이지</div>
+                        </a>
+                    </div>
+                </div>
+                <div class="nav-box">
+                    <div class="nav-icon">
+                        <a href="commute.html">
+                            <div class="m-b5"><i class="far fa-check-circle"></i></div>
+                            <div>근태현황</div>
+                        </a>
+                    </div>
+                </div>
+                <div class="nav-box">
+                    <div class="nav-icon">
+                        <a href="notice.html">
+                            <div class="notice">
+                                <div class="m-b5"><i class="fas fa-bullhorn"></i>
+                                    <span class="new">N</span>
+                                </div>
+                                <div>공지사항</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="nav-box">
+                    <div class="nav-icon">
+                        <a href="reservation.html">
+                            <div class="m-b5"><i class="far fa-clipboard"></i></div>
+                            <div>예약현황</div>
+                        </a>
+                    </div>
+                </div>
+                <div class="nav-box">
+                    <div class="nav-icon">
+                        <a href="calendar.html">
+                            <div class="m-b5"><i class="far fa-calendar-alt"></i></div>
+                            <div>일정관리</div>
+                        </a>
+                    </div>
+                </div>
+                <div class="nav-box">
+                    <div class="nav-icon">
+                        <a href="address.html">
+                            <div class="m-b5"><i class="far fa-address-book"></i></div>
+                            <div>주소록</div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="search-wrap">
+                <form>
+                    <input type="text" class="search-box" placeholder="직원검색">
+                    <span class="search-icon">
+                        <a href="office_room.html">
+                            <i class="fas fa-search"></i>
+                        </a>
+                    </span>
+                </form>
+            </div>
+            <div class="logout">
+                <div class="nav-box">
+                    <div class="nav-icon">
+                        <a href="login.html">
+                            <div class="m-b5"><i class="fas fa-power-off"></i></div>
+                            <div>로그아웃</div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="body">
+        <div class="menu">
+            <ul>
+                <li>
+                    <a href="admin.html">
+                        <div class="menu-area" style="background-color: #40484e;">HOME</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="mail.html">
+                        <div class="menu-area">메일</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="approval.html">
+                        <div class="menu-area">전자결재</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="share_work.html">
+                        <div class="menu-area">업무공유</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="manage_work.html">
+                        <div class="menu-area">업무관리</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="board.html">
+                        <div class="menu-area">게시판</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="pay.html">
+                        <div class="menu-area">수당/지출</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="office_room.html">
+                        <div class="menu-area">오피스룸</div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="main f-12 p-12">
+            <div class="main-left p-12">
+                <div class="box left-1 m-b24">
+                    <div class="box-head p-20">
+                        <span class="title">
+                            <div class="title-wrap">내 정보</div>
+                        </span>
+                        <span class="more">
+                            <a href="my_page.html">+</a>
+                        </span>
+                    </div>
+                    <div class="box-body">
+                        <div class="info-wrap center p-20">
+                            <div class="img m-b10">
+                                <img src="images/MCU.jpg" />
+                            </div>
+                            <div class="f-13 m-b5"><strong style="color: #244ca3;">유재석</strong> 부장님
+                                환영합니다.</div>
+                            <div class="">영업팀</div>
+                        </div>
+                        <div class="info-bar" style="display: flex; justify-content: space-between;">
+                            <a href="#one" class="info-tab active" style="width: 50%;">근태정보</a>
+                            <a href="#two" class="info-tab" style="width: 50%;">휴가정보</a>
+                        </div>
+                        <div class="left-1-tab show-info" id="one">
+                            <div><strong style="color: #555;">출·퇴근시간</strong></div>
+                            <div><strong style="color: #555;">근로시간</strong></div>
+                        </div>
+
+                        <div class="left-1-tab" id="two">
+                            <div><strong style="color: #555;">내 휴가 정보</strong></div>
+                            <div class="round-box-wrap">
+                                <div class="round-box">
+                                    <div class="left">입사일</div>
+                                    <div class="right">2017-07-01</div>
+                                </div>
+                                <div class="round-box">
+                                    <div class="left">연차휴가</div>
+                                    <div class="right">19일 0시간</div>
+                                </div>
+                                <div class="round-box">
+                                    <div class="left">사용연차</div>
+                                    <div class="right">18일 7시간</div>
+                                </div>
+                                <div class="round-box">
+                                    <div class="left">대체휴가</div>
+                                    <div class="right">0일 0시간</div>
+                                </div>
+                                <div class="round-box">
+                                    <div class="left">휴가 잔여일</div>
+                                    <div class="right">0일 1시간</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="box left-2">
+                    <div class="box-head p-20">
+                        <span class="title">
+                            <div class="title-wrap">일정</div>
+                        </span>
+                        <span class="more">
+                            <a href="calendar.html">+</a>
+                        </span>
+                    </div>
+                    <div class="box-body" style="line-height: 300px;">
+                        <div class="no-data">
+                            <i class="fas fa-exclamation-circle"></i>
+                            <span class="box-text">등록된 일정이 없습니다.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="main-mid p-12">
+                <div class="m-b24" style="display: flex; justify-content: space-between;">
+                    <div class="box mid-1 m-r12">
+                        <div class="box-head p-20">
+                            <span class="title">
+                                <div class="title-wrap">받은 메일함</div>
+                            </span>
+                            <span class="more">
+                                <a href="mail.html">+</a>
+                            </span>
+                        </div>
+                        <div class="info-bar" style="display: flex; justify-content: space-between;">
+                            <a href="#one1" class="info-tab1 active" style="width: 50%;">안읽은메일 0</a>
+                            <a href="#two2" class="info-tab1" style="width: 50%;">받은메일함 0</a>
+                        </div>
+                        <div class="mid-1-tab show-info1" style="line-height: 290px;" id="one1">
+                            <div class="no-data">
+                                <i class="fas fa-exclamation-circle"></i>
+                                <span class="box-text">안읽은 메일이 없습니다.</span>
+                            </div>
+                        </div>
+
+                        <div class="mid-1-tab" style="line-height: 290px;" id="two2">
+                            <div class="no-data">
+                                <i class="fas fa-exclamation-circle"></i>
+                                <span class="box-text">받은 메일이 없습니다.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box mid-2 m-l12">
+                        <div class="box-head p-20">
+                            <span class="title">
+                                <div class="title-wrap">내 통계</div>
+                            </span>
+                        </div>
+                        <div class="box-body" style="line-height: 330px;">
+                            <div class="no-data">
+                                <i class="fas fa-exclamation-circle"></i>
+                                <span class="box-text">통계 분석중 입니다.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="box mid-3 m-b24">
+                    <div class="box-head p-20">
+                        <span class="title">
+                            <div class="title-wrap">업무공유</div>
+                        </span>
+                        <span class="more">
+                            <a href="share_work.html">+</a>
+                        </span>
+                    </div>
+                    <div class="box-body" style="line-height: 250px;">
+                        <div class="no-data">
+                            <i class="fas fa-exclamation-circle"></i>
+                            <span class="box-text">업무 분석중 입니다.</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="" style="display: flex; justify-content: space-between;">
+                    <div class="box mid-4 m-r12">
+                        <div class="box-head p-20">
+                            <span class="title">
+                                <div class="title-wrap">대여/신청</div>
+                            </span>
+                            <span class="more">
+                                <a href="reservation.html">+</a>
+                            </span>
+                        </div>
+                        <div class="box-body" style="line-height: 225px;">
+                            <div class="no-data">
+                                <i class="fas fa-exclamation-circle"></i>
+                                <span class="box-text">회의실 대여 내역이 없습니다.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box mid-5 m-l12">
+                        <div class="box-head p-20">
+                            <span class="title">
+                                <div class="title-wrap">최근 게시물</div>
+                            </span>
+                        </div>
+                        <div class="box-body" style="line-height: 225px;">
+                            <div class="no-data">
+                                <i class="fas fa-exclamation-circle"></i>
+                                <span class="box-text">최근 게시물이 없습니다.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="main-right p-12">
+                <div class="box right-1 m-b24">
+                    <div class="box-head p-20">
+                        <span class="title">
+                            <div class="title-wrap">quick write</div>
+                        </span>
+                    </div>
+                </div>
+                <div class="box right-2 m-b24">
+                    <div class="box-head p-20">
+                        <span class="title">
+                            <div class="title-wrap">공지사항</div>
+                        </span>
+                        <span class="more">
+                            <a href="notice.html">+</a>
+                        </span>
+                    </div>
+                    <div class="box-body" style="line-height: 200px;">
+                        <div class="no-data">
+                            <i class="fas fa-exclamation-circle"></i>
+                            <span class="box-text">등록된 공지사항이 없습니다.</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="box right-3">
+                    <div class="box-head p-20">
+                        <span class="title">
+                            <div class="title-wrap">talk</div>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    $(function () {
+        $(".info-tab").on("click", function (e) {
+            $(".info-tab").removeClass("active");
+            $(".left-1-tab").removeClass("show-info");
+
+            $(this).addClass("active");
+            $($(this).attr("href")).addClass("show-info");
+            e.preventDefault()
+        });
+    });
+
+    $(function () {
+        $(".info-tab1").on("click", function (e) {
+            $(".info-tab1").removeClass("active");
+            $(".mid-1-tab").removeClass("show-info1");
+
+            $(this).addClass("active");
+            $($(this).attr("href")).addClass("show-info1");
+            e.preventDefault()
+        });
+    });
+</script>
+
+</html>
