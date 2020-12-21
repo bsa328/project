@@ -7,6 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+메인<br />
+<a href="${pageContext.request.contextPath}/login">로그인</a>|
+<a href="${pageContext.request.contextPath}/member/register">회원가입</a>
 </body>
 </html>

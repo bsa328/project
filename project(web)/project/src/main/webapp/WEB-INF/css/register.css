@@ -1,0 +1,75 @@
+@charset 'utf-8';
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
+
+a:hover {
+    text-decoration: underline;
+}
+
+.register-box {
+    width: 800px;
+    height: 600px;
+    background-color: #fff;
+    border-radius: 2px;
+    box-shadow: 2px 3px 3px #ccc;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.register-box h1 {
+    margin-top: 70px;
+    margin-bottom: 30px;
+    color: rgb(35, 87, 182);
+}
+
+.register-wrap {
+    width: 400px;
+    display: flex;
+    justify-content: space-between;
+
+    position: absolute;
+    top: 50%;
+    left: 48%;
+    transform: translate(-50%, -50%);
+}
+
+.info-wrap {
+    width: 33%;
+}
+
+.info-wrap .info {
+    width: 100%;
+    height: 40px;
+    margin-bottom: 10px;
+    line-height: 40px;
+}
+
+.register-box .login {
+    margin-top: 65px;
+    margin-left: 20px;
+    text-align: left;
+    font-size: 12px;
+}
+
+.input-wrap {
+    width: 66%;
+}
+
+.input-wrap input,
+.input-wrap select {
+    width: 100%;
+    height: 40px;
+    margin-bottom: 10px;
+    border: 1px solid rgb(185, 206, 226);
+    padding: 10px;
+}
+
+.register-btn .btn {
+    width: 20%;
+    height: 40px;
+    background-color: rgb(185, 206, 226);
+    margin-top: 320px;
+}
