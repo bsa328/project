@@ -1,13 +1,15 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="ko">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>게시판</title>
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/common.css">
-    <link rel="stylesheet" href="css/main.css">
+    <title>LOGO</title>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/reset.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/common.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/main.css">
 </head>
 
 <body>
@@ -16,8 +18,7 @@
             LOGO
         </div>
         <div class="">
-            <a href="login.html">로그인</a>
-            <a href="register.html">회원가입</a>
+            <a href="${pageContext.request.contextPath}/main">메인으로</a>
         </div>
     </div>
     <div class="body">

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOGO</title>
+    <link rel="stylesheet" href="css/register.css">
+</head>
+
+<body>
+    <div class="login-box">
+        <div class="image-wrap">
+            <div class="logo">
+                <h1>LOGO</h1>
+                <h3>logo logo logo logo logo</h3>
+            </div>
+        </div>
+        <div class="login-wrap">
+            <h1>회원가입</h1>
+            <form method="POST" action="admin.html" autocomplete="off">
+                <input type="text" name="userName" id="userName" placeholder="이름" required tabindex="1" autofocus />
+                <input type="text" name="userID" id="userID" placeholder="아이디 6~10자리" required tabindex="2" />
+                <input type="password" name="passwd" id="passwd" placeholder="비밀번호 8자리 이상" required tabindex="3" />
+                <input type="password" name="repasswd" id="repasswd" placeholder="비밀번호 확인" required tabindex="4" />
+                <button type="submit" class="btn" tabindex="5">가입하기</button>
+                <div class="register">
+                    <div class="forgot">
+                    </div>
+                    <div class="join" tabindex="6">
+                        <a href="login.html">로그인</a>
+                    </div>
+                </div>
+            </form>
+            <div class="" style="margin-top:40px;text-align: center;color: #f00;">
+            	이미 사용중인 아이디입니다.
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

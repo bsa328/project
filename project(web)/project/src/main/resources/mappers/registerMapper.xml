@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="register">
+
+	<insert id="setMemberRegister" parameterType="com.example.project.model.MemberVO">
+		INSERT INTO member SET 
+			username	= #{userName},
+			userid		= #{userID},
+			passwd		= #{passwd}
+	</insert>
+	
+	<select id="getLoginCheck" parameterType="hashmap" resultType="int">
+		SELECT COUNT(*) FROM member WHERE userid = #{userID} AND passwd = #{passwd}
+	</select>
+	
+	<select id="getRegisterCheck" parameterType="hashmap" resultType="int">
+		SELECT COUNT(*) FROM member WHERE userid = #{userID}
+	</select>
+
+</mapper>

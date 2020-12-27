@@ -7,15 +7,13 @@
 		http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
 
-	<!-- DispatcherServlet Context: defines this servlet's request-processing infrastructure -->
-	
-	<!-- Enables the Spring MVC @Controller programming model -->
 	<annotation-driven />
+	<resources location="/WEB-INF/images/, classpath=/WEB-INF/images/" mapping="/images/**" />
+	<resources location="/WEB-INF/js/, classpath=/WEB-INF/js/" mapping="/js/**" />
+	<resources location="/WEB-INF/ckeditor/, classpath=/WEB-INF/ckeditor/" mapping="/ckeditor/**" />
+	<resources location="/WEB-INF/calendar/, classpath=/WEB-INF/calendar/" mapping="/calendar/**" />
+	<resources location="/WEB-INF/css/, classpath=/WEB-INF/css/" mapping="/css/**" />
 
-	<!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources directory -->
-	<resources mapping="/resources/**" location="/resources/" />
-
-	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
 	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<beans:property name="prefix" value="/WEB-INF/views/" />
 		<beans:property name="suffix" value=".jsp" />
@@ -23,6 +21,15 @@
 	
 	<context:component-scan base-package="com.example.project" />
 	
+		<!-- 업로드 경로 설정 -->
+	<beans:bean class="java.lang.String" id="uploadPath">
+		<beans:constructor-arg value="C:\\upload" />
+	</beans:bean>
 	
-	
+	<!-- 업로드 파일 용량 제한 -->
+	<beans:bean 
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver" 
+		id="multipartResolver">
+		<beans:property name="maxUploadSize" value="10000000" />
+	</beans:bean>
 </beans:beans>
