@@ -9,27 +9,27 @@
     <title>LOGO</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/reset.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/common.css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/main.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/admin_main.css">
 </head>
 
 <body>
     <div class="header">
-        <div class="logo">
-            LOGO
+        <div class="">
+            <a href="${pageContext.request.contextPath}/admin">LOGO</a>
         </div>
         <div class="">
-            <a href="${pageContext.request.contextPath}/main">메인으로</a>
+        	${sessionScope.userName}(${sessionScope.userID})님 환영합니다!
+        </div>
+        <div class="logout">
+            <a href="${pageContext.request.contextPath}/logout">로그아웃</a>
         </div>
     </div>
+
     <div class="body">
-        <div class="menu">
-            <a href="#">공지사항</a>
-            <a href="#">게시판</a>
-            <a href="#">회원검색</a>
-            <a href="#">일정</a>
-            <a href="#">마이페이지</a>
+        <div class="menu-wrap">
+            메뉴
         </div>
-        <div class="main">
+        <div class="main-wrap">
             메인
         </div>
     </div>

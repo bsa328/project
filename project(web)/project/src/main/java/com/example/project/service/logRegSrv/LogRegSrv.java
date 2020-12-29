@@ -1,5 +1,7 @@
 package com.example.project.service.logRegSrv;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,8 +21,27 @@ public class LogRegSrv {
 	public int getLoginCheck(MemberVO membervo) {
 		return logRegDao.getLoginCheck(membervo);
 	}
-	
+
 	public int getRegisterCheck(MemberVO membervo) {
 		return logRegDao.getRegisterCheck(membervo);
 	}
+
+	public MemberVO getMemberInfo(MemberVO membervo) {
+		return logRegDao.getMemberInfo(membervo);
+	}
+
+	public void setSession(MemberVO membervo, HttpSession session) {
+		MemberVO vo = logRegDao.getMemberInfo(membervo);
+
+		if (vo != null) {
+			session.setAttribute("userName", vo.getUserName());
+			session.setAttribute("userID", vo.getUserID());
+			session.setAttribute("passwd", vo.getPasswd());
+		}
+	}
+
+	public void setLogout(HttpSession session) {
+		session.invalidate();
+	}
+
 }

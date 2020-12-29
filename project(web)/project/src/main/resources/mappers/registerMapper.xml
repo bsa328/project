@@ -16,5 +16,13 @@
 	<select id="getRegisterCheck" parameterType="hashmap" resultType="int">
 		SELECT COUNT(*) FROM member WHERE userid = #{userID}
 	</select>
+	
+	<select id="getMemberInfo" parameterType="hashmap" resultType="com.example.project.model.MemberVO">
+		SELECT 
+			username AS userName,
+			userid AS userID,
+			passwd AS passwd 
+		FROM member WHERE userid = #{userID} AND passwd = #{passwd}
+	</select>
 
 </mapper>
