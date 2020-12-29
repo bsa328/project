@@ -28,9 +28,9 @@ public class MemberCtr {
 
 	@RequestMapping(value = "/register", method = RequestMethod.POST)
 	public ModelAndView setRegister(@ModelAttribute MemberVO membervo) {
-		String userName = membervo.getUserName();
-		String userID = membervo.getUserID();
-		String passwd = membervo.getPasswd();
+//		String userName = membervo.getUserName();
+//		String userID = membervo.getUserID();
+//		String passwd = membervo.getPasswd();
 		int result = logRegSrv.getRegisterCheck(membervo);
 
 		ModelAndView mav = new ModelAndView();

@@ -23,8 +23,8 @@
             <h1>회원가입</h1>
             <form onSubmit="return checkPwd();" method="POST" action="${pageContext.request.contextPath}/member/register" autocomplete="off">
                 <input type="text" name="userName" id="userName" placeholder="이름" required tabindex="1" autofocus />
-                <input type="text" name="userID" id="userID" placeholder="아이디 6~10자리" required tabindex="2" />
-                <input type="password" name="passwd" id="passwd" placeholder="비밀번호 8자리 이상" required tabindex="3" />
+                <input type="text" name="userID" id="userID" placeholder="아이디 4~10자리" required tabindex="2" />
+                <input type="password" name="passwd" id="passwd" placeholder="비밀번호 5자리 이상" required tabindex="3" />
                 <input type="password" name="repasswd" id="repasswd" placeholder="비밀번호 확인" required tabindex="4" />
                 <button type="submit" class="btn" tabindex="5">가입하기</button>
                 <div class="register">
@@ -47,15 +47,15 @@
 		var b = $("#passwd");
 		var c = $("#repasswd");
 
-		if(a.val().length < 6 || a.val().length > 10 ) {
-			alert("아이디는 6자리 이상 10자리 이하로 입력하셔야 합니다.");
+		if(a.val().length < 4 || a.val().length > 10 ) {
+			alert("아이디는 4자리 이상 10자리 이하로 입력하셔야 합니다.");
 			a.val("");
 			a.focus();
 			return false;
 		}
 
-		if(b.val().length < 8) {
-			alert("비밀번호는 8자리 이상 입력하셔야 합니다.");
+		if(b.val().length < 5) {
+			alert("비밀번호는 5자리 이상 입력하셔야 합니다.");
 			b.val("");
 			b.focus();
 			return false;
@@ -67,7 +67,7 @@
 			c.focus();
 			return false;
 		}
-		
+
 	}
 </script>
 

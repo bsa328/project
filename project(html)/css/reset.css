@@ -10,3 +10,9 @@ a {
     text-decoration: none;
     color: #000;
 }
+
+input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    vertical-align: -2px;
+}

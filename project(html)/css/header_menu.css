@@ -22,9 +22,8 @@
 }
 
 .logo a {
-    color: #2357b6;
     text-decoration: none;
-    font-size: 40px;
+    font-size: 35px;
     font-weight: 900;
 }
 
@@ -54,6 +53,22 @@
     margin-left: 11px;
     margin-right: 11px;
     margin-bottom: 11px;
+}
+
+.menu-box {
+    margin: 30px;
+}
+
+.big-menu {
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.small-menu {
+    font-size: 14px;
+    margin-top: 5px;
+    margin-left: 5px;
 }
 
 .main {
