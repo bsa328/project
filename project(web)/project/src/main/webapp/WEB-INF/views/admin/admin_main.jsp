@@ -54,6 +54,72 @@
                         <span class=""><i class="fas fa-cube"> 메인페이지</i></span>
                     </div>
                     <div class="board-list">
+                    <table>
+                            <tr>
+                                <td class="td-5"><input type="checkbox" /></td>
+                                <td class="td-5">번호</td>
+                                <td>제목</td>
+                                <td class="td-12">작성자</td>
+                                <td class="td-12">등록일</td>
+                                <td class="td-7">조회수</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" /></td>
+                                <td>7</td>
+                                <td><a href="#">연말 행사 및 축제 공고입니다.</a></td>
+                                <td>관리자</td>
+                                <td>2020-12-29</td>
+                                <td>65</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" /></td>
+                                <td>6</td>
+                                <td><a href="#">자유게시판입니다.</a></td>
+                                <td>관리자</td>
+                                <td>2020-10-20</td>
+                                <td>43</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" /></td>
+                                <td>5</td>
+                                <td><a href="#">알림사항입니다.</a></td>
+                                <td>관리자</td>
+                                <td>2020-11-05</td>
+                                <td>18</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" /></td>
+                                <td>4</td>
+                                <td><a href="#">연말 행사 및 축제 공고입니다.</a></td>
+                                <td>관리자</td>
+                                <td>2020-12-29</td>
+                                <td>65</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" /></td>
+                                <td>3</td>
+                                <td><a href="#">연말 행사 및 축제 공고입니다.</a></td>
+                                <td>관리자</td>
+                                <td>2020-10-20</td>
+                                <td>43</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" /></td>
+                                <td>2</td>
+                                <td><a href="#">자유게시판입니다.</a></td>
+                                <td>관리자</td>
+                                <td>2020-11-05</td>
+                                <td>18</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" /></td>
+                                <td>1</td>
+                                <td><a href="#">자유게시판입니다.</a></td>
+                                <td>관리자</td>
+                                <td>2020-12-29</td>
+                                <td>65</td>
+                            </tr>
+                        </table>
                     </div>
                 </div>
             </div>

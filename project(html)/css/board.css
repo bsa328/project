@@ -7,13 +7,16 @@
 }
 
 .title {
-    color: #06633c;
     font-size: 18px;
-    margin-bottom: 13px;
 }
 
 .title i {
     font-size: 20px;
+}
+
+.btn-box {
+    display: flex;
+    justify-content: space-between;
 }
 
 table {
@@ -24,7 +27,7 @@ table {
 
 tr:nth-child(1) {
     background-color: #b9cee2;
-    font-weight: 600;
+    font-weight: 500;
     border-bottom: 0;
 }
 
@@ -48,4 +51,14 @@ table a:hover {
 
 .td-12 {
     width: 12%;
+}
+
+.search-box {
+    text-align: right;
+    height: 30px;
+}
+
+.title-left {
+    text-align: left;
+    padding-left: 70px;
 }
