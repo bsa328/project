@@ -1,51 +1,50 @@
 @charset 'utf-8';
 
-.main {
-    padding: 50px;
-    padding-left: 120px;
-    padding-right: 120px;
-}
-
-.title {
-    color: #06633c;
-    font-size: 18px;
-    margin-bottom: 13px;
-}
-
-.title i {
-    font-size: 20px;
+.btn-box {
+	display: flex;
+	justify-content: space-between;
 }
 
 table {
-    border-collapse: collapse;
-    width: 100%;
-    text-align: center;
+	border-collapse: collapse;
+	width: 100%;
+	text-align: center;
 }
 
 tr:nth-child(1) {
-    background-color: #b9cee2;
-    font-weight: 600;
-    border-bottom: 0;
+	background-color: #b9cee2;
+	font-weight: 500;
+	border-bottom: 0;
 }
 
 tr {
-    height: 45px;
-    border-bottom: 1px solid #abb3b8a2;
+	height: 45px;
+	border-bottom: 1px solid #abb3b8a2;
 }
 
 table a:hover {
-    text-decoration: underline;
-    color: gray;
+	text-decoration: underline;
+	color: gray;
 }
 
 .td-5 {
-    width: 5%;
+	width: 5%;
 }
 
 .td-7 {
-    width: 7%;
+	width: 7%;
 }
 
 .td-12 {
-    width: 12%;
+	width: 12%;
+}
+
+.search-box {
+	text-align: right;
+	height: 30px;
+}
+
+.title-left {
+	text-align: left;
+	padding-left: 70px;
 }

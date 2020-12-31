@@ -1,1 +1,64 @@
 @charset 'utf-8';
+
+.main {
+	padding: 50px;
+	padding-left: 70px;
+	padding-right: 70px;
+}
+
+.title {
+	font-size: 18px;
+}
+
+.title i {
+	font-size: 20px;
+}
+
+.m-t10 {
+	margin-top: 10px;
+}
+
+.m-b10 {
+	margin-bottom: 10px;
+}
+
+.center {
+	text-align: center;
+}
+
+.btn-red {
+	display: inline-block;
+	text-align: center;
+	height: 35px;
+	color: #fff;
+	background-color: #d92550;
+	border-radius: 2px;
+	font-size: 14px;
+}
+
+.btn-blue {
+	display: inline-block;
+	text-align: center;
+	height: 35px;
+	color: #fff;
+	background-color: #3f51b5;
+	border-radius: 2px;
+	font-size: 14px;
+}
+
+.btn-gray {
+	display: inline-block;
+	text-align: center;
+	height: 35px;
+	color: #000;
+	background-color: #d4d4d4;
+	border-radius: 2px;
+	font-size: 14px;
+}
+
+select, input {
+	padding: 5px;
+	font-size: 12px;
+	height: 35px;
+	border: 1px solid #ccc;
+}

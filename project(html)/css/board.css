@@ -1,19 +1,5 @@
 @charset 'utf-8';
 
-.main {
-    padding: 50px;
-    padding-left: 120px;
-    padding-right: 120px;
-}
-
-.title {
-    font-size: 18px;
-}
-
-.title i {
-    font-size: 20px;
-}
-
 .btn-box {
     display: flex;
     justify-content: space-between;

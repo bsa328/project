@@ -1,186 +1,184 @@
 @charset 'utf-8';
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
+
+@import
+	url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap')
+	;
+
+body {
+	font-family: 'Noto Sans KR', sans-serif;
+}
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
 a {
-    color: #000;
-    text-decoration: none;
+	color: #000;
+	text-decoration: none;
 }
 
 button {
-    border: 0;
-    outline: 0;
-    text-decoration: none;
-    cursor: pointer;
+	border: 0;
+	outline: 0;
+	text-decoration: none;
+	cursor: pointer;
 }
 
-input,
-select {
-    border: 0;
-    outline: 0;
+input, select {
+	border: 0;
+	outline: 0;
 }
 
 body {
-    background-color: #ebf0f3;
+	background-color: #ebf0f3;
 }
 
 a:hover {
-    text-decoration: underline;
+	text-decoration: underline;
 }
 
 .login-box {
-    width: 800px;
-    height: 600px;
-    background-color: #fff;
-    border-radius: 2px;
-    box-shadow: 2px 3px 3px #ccc;
-
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: flex;
-    justify-content: center;
+	width: 800px;
+	height: 600px;
+	background-color: #fff;
+	border-radius: 2px;
+	box-shadow: 2px 3px 3px #ccc;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	display: flex;
+	justify-content: center;
 }
 
 .image-wrap {
-    width: 45%;
-    text-align: center;
-    border-top-left-radius: 2px;
-    border-bottom-left-radius: 2px;
-
-    background-color: rgb(141, 200, 236, 0.7);
-    background-image: url(../images/login-img.jpg);
-    background-blend-mode: multiply;
-
+	width: 45%;
+	text-align: center;
+	border-top-left-radius: 2px;
+	border-bottom-left-radius: 2px;
+	background-color: rgb(141, 200, 236, 0.7);
+	background-image: url(../images/login-img.jpg);
+	background-blend-mode: multiply;
 }
 
 .logo a {
-    text-decoration: none;
+	text-decoration: none;
 }
 
 .image-wrap .logo {
-    margin-top: 200px;
-    letter-spacing: 1px;
+	margin-top: 200px;
+	letter-spacing: 1px;
 }
 
-.image-wrap h1,
-.image-wrap h3 {
-    color: #fff;
-    text-shadow: 2px 2px 2px #000;
-    margin-bottom: 20px;
+.image-wrap h1, .image-wrap h3 {
+	color: #fff;
+	text-shadow: 2px 2px 2px #000;
+	margin-bottom: 20px;
 }
 
 .login-wrap {
-    width: 55%;
-    padding: 70px;
+	width: 55%;
+	padding: 70px;
 }
 
 .login-wrap h1 {
-    margin-top: 70px;
-    text-align: center;
-    margin-bottom: 20px;
-    color: rgb(35, 87, 182);
+	margin-top: 70px;
+	text-align: center;
+	margin-bottom: 20px;
+	color: rgb(35, 87, 182);
 }
 
-.login-wrap input,
-.login-wrap .btn {
-    width: 100%;
-    height: 40px;
-    margin-bottom: 10px;
-    border: 1px solid rgb(185, 206, 226);
-    font-size: 14px;
-    padding: 10px;
+.login-wrap input, .login-wrap .btn {
+	width: 100%;
+	height: 40px;
+	margin-bottom: 10px;
+	border: 1px solid rgb(185, 206, 226);
+	font-size: 14px;
+	padding: 10px;
 }
 
 .login-wrap .btn {
-    background-color: rgb(185, 206, 226);
+	background-color: rgb(185, 206, 226);
 }
 
 .register {
-    display: flex;
-    justify-content: space-between;
-    font-size: 12px;
+	display: flex;
+	justify-content: space-between;
+	font-size: 12px;
 }
 
 a:hover {
-    text-decoration: underline;
+	text-decoration: underline;
 }
 
 .register-box {
-    width: 800px;
-    height: 600px;
-    background-color: #fff;
-    border-radius: 2px;
-    box-shadow: 2px 3px 3px #ccc;
-
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
+	width: 800px;
+	height: 600px;
+	background-color: #fff;
+	border-radius: 2px;
+	box-shadow: 2px 3px 3px #ccc;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	text-align: center;
 }
 
 .logo a {
-    text-decoration: none;
+	text-decoration: none;
 }
 
 .register-box h1 {
-    margin-top: 70px;
-    margin-bottom: 30px;
-    color: rgb(35, 87, 182);
+	margin-top: 70px;
+	margin-bottom: 30px;
+	color: rgb(35, 87, 182);
 }
 
 .register-wrap {
-    width: 400px;
-    display: flex;
-    justify-content: space-between;
-
-    position: absolute;
-    top: 50%;
-    left: 48%;
-    transform: translate(-50%, -50%);
+	width: 400px;
+	display: flex;
+	justify-content: space-between;
+	position: absolute;
+	top: 50%;
+	left: 48%;
+	transform: translate(-50%, -50%);
 }
 
 .info-wrap {
-    width: 33%;
+	width: 33%;
 }
 
 .info-wrap .info {
-    width: 100%;
-    height: 40px;
-    margin-bottom: 10px;
-    line-height: 40px;
+	width: 100%;
+	height: 40px;
+	margin-bottom: 10px;
+	line-height: 40px;
 }
 
 .register-box .login {
-    margin-top: 65px;
-    margin-left: 20px;
-    text-align: left;
-    font-size: 12px;
+	margin-top: 65px;
+	margin-left: 20px;
+	text-align: left;
+	font-size: 12px;
 }
 
 .input-wrap {
-    width: 66%;
+	width: 66%;
 }
 
-.input-wrap input,
-.input-wrap select {
-    width: 100%;
-    height: 40px;
-    margin-bottom: 10px;
-    border: 1px solid rgb(185, 206, 226);
-    padding: 10px;
+.input-wrap input, .input-wrap select {
+	width: 100%;
+	height: 40px;
+	margin-bottom: 10px;
+	border: 1px solid rgb(185, 206, 226);
+	padding: 10px;
 }
 
 .register-btn .btn {
-    width: 20%;
-    height: 40px;
-    background-color: rgb(185, 206, 226);
-    margin-top: 320px;
+	width: 20%;
+	height: 40px;
+	background-color: rgb(185, 206, 226);
+	margin-top: 320px;
 }

@@ -1,11 +1,29 @@
 @charset 'utf-8';
 
+.main {
+    padding: 50px;
+    padding-left: 70px;
+    padding-right: 70px;
+}
+
+.title {
+    font-size: 18px;
+}
+
+.title i {
+    font-size: 20px;
+}
+
 .m-t10 {
     margin-top: 10px;
 }
 
 .m-b10 {
     margin-bottom: 10px;
+}
+
+.center {
+    text-align: center;
 }
 
 .btn-red {

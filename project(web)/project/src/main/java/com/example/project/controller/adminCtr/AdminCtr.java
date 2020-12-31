@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class AdminCtr {
 
 	@RequestMapping("")
-	public String getAdmin() {
+	public String getAdminMain() {
 		return "admin/admin_main";
 	}
 
