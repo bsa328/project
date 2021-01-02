@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="css/board.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://kit.fontawesome.com/3249ba5f1a.js" crossorigin="anonymous"></script>
+    <script src="lib/jquery.js" type="text/javascript"></script>
+    <script src="ckeditor/ckeditor.js"></script>
 </head>
 
 <body>
@@ -70,37 +72,52 @@
                     </div>
                     <div class="btn-box m-t10 m-b10">
                         <button class="" id=""></button>
-                        <button type="button" class="td-7 btn-gray"
-                            onclick="location.href='board_main.html'">게시글목록</button>
+                        <button type="button" class="td-7 btn-gray" onclick="location.href='board_main.html'">게시글 목록</button>
                     </div>
                     <form method="POST" action="board_save.html">
                         <div class="board-list">
-                            <table>
-                                <tr>
-                                    <td class="td-12 center">게시물 분류</td>
-                                    <td class="td-5">
-                                        <select name="" class="">
+                            <table border="1" class="insert-box">
+                                <tr class="" style="border-bottom: 1px solid #abb3b8a2;">
+                                    <td class="center td-15">게시글 분류</td>
+                                    <td class="p-5 bg-white">
+                                        <select name="" class="td-15">
                                             <option value="notice">공지사항</option>
-                                            <option value="normal">일반게시글</option>
+                                            <option value="normal">일반 게시글</option>
                                         </select>
                                     </td>
-                                    <td class="">제목</td>
-                                    <td class="td-12">작성자</td>
-                                    <td class="td-12">작성일</td>
-                                    <td class="td-7">조회수</td>
                                 </tr>
                                 <tr>
-                                    <td></td>
-                                    <td>7</td>
-                                    <td class="title-left"><a href="#">게시글 작성란입니다. 게시글 작성란입니다. 게시글 작성란입니다.</a></td>
-                                    <td>관리자</td>
-                                    <td>2020-12-29</td>
-                                    <td>65</td>
+                                    <td class="center bg-blue">게시글 제목</td>
+                                    <td class="p-5">
+                                        <input type="text" class="td-100" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="center bg-blue">작성자</td>
+                                    <td class="p-5">
+                                        
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="center bg-blue">게시글 내용</td>
+                                    <td class="p-5">
+                                        <textarea name="" id="editor"></textarea>
+                                        <script>
+                                            CKEDITOR.replace('editor');
+                                            CKEDITOR.config.height = 350;
+                                        </script>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="center bg-blue">첨부파일</td>
+                                    <td class="p-5">
+                                        <input type="file" class="td-100" />
+                                    </td>
                                 </tr>
                             </table>
                         </div>
                         <div class="center m-t10">
-                            <button type="submit" class="td-7 btn-blue">등록하기</button>
+                            <button type="submit" class="td-7 btn-blue">게시글 등록</button>
                         </div>
                     </form>
                     <div class="search-box m-t10">

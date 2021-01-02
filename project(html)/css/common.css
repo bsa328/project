@@ -22,6 +22,18 @@
     margin-bottom: 10px;
 }
 
+.p-l100 {
+    padding-left: 100px;
+}
+
+.p-l30 {
+    padding-left: 100px;
+}
+
+.p-5 {
+    padding: 5px;
+}
+
 .center {
     text-align: center;
 }
@@ -62,4 +74,12 @@ input {
     font-size: 12px;
     height: 35px;
     border: 1px solid #ccc;
+}
+
+.bg-white {
+    background-color: #fff;
+}
+
+.bg-blue {
+    background-color: #b9cee2;
 }
