@@ -12,7 +12,7 @@
 			<div class="main">
 				<div class="page-wrap">
 					<div class="title">
-						<span class=""><i class="fas fa-cube"> 공지사항 > 게시판 > 게시글 작성</i></span>
+						<span class=""><i class="fas fa-cube"> 공지사항 > 게시판 > 게시글 수정</i></span>
 					</div>
 					<div class="btn-box m-t10 m-b10">
 						<button class="" id=""></button>
@@ -59,7 +59,7 @@
 							</table>
 						</div>
 						<div class="center m-t10">
-							<button type="submit" class="td-7 btn-blue">게시글 등록</button>
+							<button type="submit" class="td-7 btn-blue">게시물 수정</button>
 						</div>
 					</form>
 					<div class="search-box m-t10"></div>

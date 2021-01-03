@@ -4,25 +4,26 @@
 
 	<insert id="setMemberRegister" parameterType="com.example.project.model.MemberVO">
 		INSERT INTO member SET 
-			username	= #{userName},
-			userid		= #{userID},
-			passwd		= #{passwd}
+			member_name		= #{memberName},
+			member_id		= #{memberID},
+			member_passwd	= #{memberPasswd},
+			member_regdate	= now()
 	</insert>
 	
 	<select id="getLoginCheck" parameterType="hashmap" resultType="int">
-		SELECT COUNT(*) FROM member WHERE userid = #{userID} AND passwd = #{passwd}
+		SELECT COUNT(*) FROM member WHERE member_id = #{memberID} AND member_passwd = #{memberPasswd}
 	</select>
 	
 	<select id="getRegisterCheck" parameterType="hashmap" resultType="int">
-		SELECT COUNT(*) FROM member WHERE userid = #{userID}
+		SELECT COUNT(*) FROM member WHERE member_id = #{memberID}
 	</select>
 	
 	<select id="getMemberInfo" parameterType="hashmap" resultType="com.example.project.model.MemberVO">
 		SELECT 
-			username AS userName,
-			userid AS userID,
-			passwd AS passwd 
-		FROM member WHERE userid = #{userID} AND passwd = #{passwd}
+			member_name AS memberName,
+			member_id AS memberID,
+			member_passwd AS memberPasswd 
+		FROM member WHERE member_id = #{memberID} AND member_passwd = #{memberPasswd}
 	</select>
 
 </mapper>

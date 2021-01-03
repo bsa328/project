@@ -34,9 +34,9 @@ public class LogRegSrv {
 		MemberVO vo = logRegDao.getMemberInfo(membervo);
 
 		if (vo != null) {
-			session.setAttribute("userName", vo.getUserName());
-			session.setAttribute("userID", vo.getUserID());
-			session.setAttribute("passwd", vo.getPasswd());
+			session.setAttribute("memberName", vo.getMemberName());
+			session.setAttribute("memberID", vo.getMemberID());
+			session.setAttribute("memberPasswd", vo.getMemberPasswd());
 		}
 	}
 

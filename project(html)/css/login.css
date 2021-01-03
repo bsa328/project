@@ -111,3 +111,7 @@ a:hover {
     justify-content: space-between;
     font-size: 12px;
 }
+
+.bold {
+    font-weight: 700;
+}

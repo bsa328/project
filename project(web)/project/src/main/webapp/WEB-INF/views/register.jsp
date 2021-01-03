@@ -21,8 +21,11 @@
 		<div class="login-wrap">
 			<h1>회원가입</h1>
 			<form onSubmit="return checkPwd();" method="POST" action="${pageContext.request.contextPath}/member/register" autocomplete="off">
-				<input type="text" name="userName" id="userName" placeholder="이름" required tabindex="1" autofocus /> <input type="text" name="userID" id="userID" placeholder="아이디 4~10자리" required tabindex="2" /> <input type="password" name="passwd" id="passwd" placeholder="비밀번호 5자리 이상" required tabindex="3" /> <input type="password" name="repasswd" id="repasswd" placeholder="비밀번호 확인" required tabindex="4" />
-				<button type="submit" class="btn" tabindex="5">가입하기</button>
+				<input type="text" name="memberName" id="memberName" placeholder="이름" required tabindex="1" autofocus />
+				<input type="text" name="memberID" id="memberID" placeholder="아이디 4~10자리" required tabindex="2" />
+				<input type="password" name="memberPasswd" id="memberPasswd" placeholder="비밀번호 5자리 이상" required tabindex="3" />
+				<input type="password" name="repasswd" id="repasswd" placeholder="비밀번호 확인" required tabindex="4" />
+				<button type="submit" class="btn bold" tabindex="5">가입하기</button>
 				<div class="register">
 					<div class="forgot"></div>
 					<div class="join" tabindex="6">
@@ -30,14 +33,14 @@
 					</div>
 				</div>
 			</form>
-			<div class="" style="margin-top: 40px; text-align: center; color: #f00;">${registerMsg}</div>
+			<div class="" style="font-size: 15px; font-weight: 700; margin-top: 40px; text-align: center; color: #f00;">${registerMsg}</div>
 		</div>
 	</div>
 </body>
 <script>
 	function checkPwd() {
-		var a = $("#userID");
-		var b = $("#passwd");
+		var a = $("#memberID");
+		var b = $("#memberPasswd");
 		var c = $("#repasswd");
 
 		if (a.val().length < 4 || a.val().length > 10) {

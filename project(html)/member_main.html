@@ -66,54 +66,42 @@
             <div class="main">
                 <div class="page-wrap">
                     <div class="title">
-                        <span class=""><i class="fas fa-cube"> 공지사항 > 게시판</i></span>
+                        <span class=""><i class="fas fa-cube"> 회원관리 > 회원목록</i></span>
                     </div>
                     <div class="btn-box m-t10 m-b10">
                         <button class="td-5 btn-red" id="">선택삭제</button>
-                        <button type="button" class="td-7 btn-blue"
-                            onclick="location.href='board_insert.html'">게시글 작성</button>
+
                     </div>
                     <div class="board-list">
                         <table>
                             <tr class="center">
                                 <td class="td-5"><input type="checkbox" /></td>
-                                <td class="td-5">글번호</td>
-                                <td class="">제목</td>
-                                <td class="td-12">작성자</td>
-                                <td class="td-12">작성일</td>
-                                <td class="td-7">조회수</td>
+                                <td class="">회원이름</td>
+                                <td class="">회원아이디</td>
+                                <td class="td-15">회원가입일</td>
+                                <td class="td-15">등급</td>
                             </tr>
                             <tr class="center">
-                                <td><input type="checkbox" /></td>
-                                <td>3</td>
-                                <td class="text-left p-l100"><a href="board_view.html">연말 행사 및 축제 공고입니다.</a></td>
-                                <td>관리자</td>
-                                <td>2020-10-20</td>
-                                <td>43</td>
+                                <td class="td-5"><input type="checkbox" /></td>
+                                <td class="">관리자</td>
+                                <td class="">admin</td>
+                                <td class="td-15">2020-12-14</td>
+                                <td class="td-15">관리자</td>
                             </tr>
                             <tr class="center">
-                                <td><input type="checkbox" /></td>
-                                <td>2</td>
-                                <td class="text-left p-l100"><a href="board_view.html">자유게시판입니다.</a></td>
-                                <td>관리자</td>
-                                <td>2020-11-05</td>
-                                <td>18</td>
-                            </tr>
-                            <tr class="center">
-                                <td><input type="checkbox" /></td>
-                                <td>1</td>
-                                <td class="text-left p-l100"><a href="board_view.html">자유게시판입니다.</a></td>
-                                <td>관리자</td>
-                                <td>2020-12-29</td>
-                                <td>65</td>
+                                <td class="td-5"><input type="checkbox" /></td>
+                                <td class="">배수아</td>
+                                <td class="">qotndk</td>
+                                <td class="td-15">2021-01-02</td>
+                                <td class="td-15">일반</td>
                             </tr>
                         </table>
                     </div>
                     <div class="search-box m-t10">
                         <form method="post" action="board.html">
                             <select class="td-7" name="search">
-                                <option value="subject">게시물 제목</option>
-                                <option value="writer">작성자</option>
+                                <option value="member-name">회원이름</option>
+                                <option value="member-id">회원아이디</option>
                             </select>
                             <input type="text" class="td-12" name="search-word" required autocomplete="off" />
                             <button type="submit" class="td-5 btn-gray">검색</button>

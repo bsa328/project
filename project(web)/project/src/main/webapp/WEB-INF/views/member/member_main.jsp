@@ -10,43 +10,30 @@
 			<div class="main">
 				<div class="page-wrap">
 					<div class="title">
-						<span class=""><i class="fas fa-cube"> 공지사항 > 게시판</i></span>
+						<span class=""><i class="fas fa-cube"> 회원관리 > 회원목록</i></span>
 					</div>
 					<div class="btn-box m-t10 m-b10">
 						<button class="td-5 btn-red" id="">선택삭제</button>
-						<button type="button" class="td-7 btn-blue" onclick="location.href='${pageContext.request.contextPath}/board'">게시글작성</button>
+
 					</div>
 					<div class="board-list">
 						<table>
-							<tr class="">
+							<tr class="center">
 								<td class="td-5">
 									<input type="checkbox" />
 								</td>
-								<td class="td-5">글번호</td>
-								<td class="">제목</td>
-								<td class="td-12">작성자</td>
-								<td class="td-12">작성일</td>
-								<td class="td-7">조회수</td>
-							</tr>
-							<tr>
-								<td>
-									<input type="checkbox" />
-								</td>
-								<td>${boardNum}</td>
-								<td class="title-left">
-									<a href="${pageContext.request.contextPath}/board">${boardTitle}</a>
-								</td>
-								<td>${boardWriter}</td>
-								<td>${boardRegdate}</td>
-								<td>${boardViews}</td>
+								<td class="">회원이름</td>
+								<td class="">회원아이디</td>
+								<td class="td-15">회원가입일</td>
+								<td class="td-15">등급</td>
 							</tr>
 						</table>
 					</div>
 					<div class="search-box m-t10">
-						<form method="post" action="${pageContext.request.contextPath}/board">
+						<form method="post" action="${pageContext.request.contextPath}/member">
 							<select class="td-7" name="search">
-								<option value="subject">게시물 제목</option>
-								<option value="writer">작성자</option>
+								<option value="member-name">회원이름</option>
+								<option value="member-id">회원아이디</option>
 							</select>
 							<input type="text" class="td-12" name="search-word" required autocomplete="off" />
 							<button type="submit" class="td-5 btn-gray">검색</button>

@@ -1,32 +1,43 @@
 package com.example.project.model;
 
+import java.util.Date;
+
 public class MemberVO {
-	private String userName;
-	private String userID;
-	private String passwd;
+	private String memberName;
+	private String memberID;
+	private String memberPasswd;
+	private Date memberRegdate;
 
-	public String getUserName() {
-		return userName;
+	public String getMemberName() {
+		return memberName;
 	}
 
-	public void setUserName(String userName) {
-		this.userName = userName;
+	public void setMemberName(String memberName) {
+		this.memberName = memberName;
 	}
 
-	public String getUserID() {
-		return userID;
+	public String getMemberID() {
+		return memberID;
 	}
 
-	public void setUserID(String userID) {
-		this.userID = userID;
+	public void setMemberID(String memberID) {
+		this.memberID = memberID;
 	}
 
-	public String getPasswd() {
-		return passwd;
+	public String getMemberPasswd() {
+		return memberPasswd;
 	}
 
-	public void setPasswd(String passwd) {
-		this.passwd = passwd;
+	public void setMemberPasswd(String memberPasswd) {
+		this.memberPasswd = memberPasswd;
+	}
+
+	public Date getMemberRegdate() {
+		return memberRegdate;
+	}
+
+	public void setMemberRegdate(Date memberRegdate) {
+		this.memberRegdate = memberRegdate;
 	}
 
 }

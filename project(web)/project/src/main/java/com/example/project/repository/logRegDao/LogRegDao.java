@@ -21,21 +21,21 @@ public class LogRegDao {
 
 	public int getLoginCheck(MemberVO membervo) {
 		Map<String, String> map = new HashMap<String, String>();
-		map.put("userID", membervo.getUserID());
-		map.put("passwd", membervo.getPasswd());
+		map.put("memberID", membervo.getMemberID());
+		map.put("memberPasswd", membervo.getMemberPasswd());
 		return sqlSession.selectOne("register.getLoginCheck", map);
 	}
 
 	public int getRegisterCheck(MemberVO membervo) {
 		Map<String, String> map = new HashMap<String, String>();
-		map.put("userID", membervo.getUserID());
+		map.put("memberID", membervo.getMemberID());
 		return sqlSession.selectOne("register.getRegisterCheck", map);
 	}
 
 	public MemberVO getMemberInfo(MemberVO membervo) {
 		Map<String, String> map = new HashMap<String, String>();
-		map.put("userID", membervo.getUserID());
-		map.put("passwd", membervo.getPasswd());
+		map.put("memberID", membervo.getMemberID());
+		map.put("memberPasswd", membervo.getMemberPasswd());
 		return sqlSession.selectOne("register.getMemberInfo", map);
 	}
 
