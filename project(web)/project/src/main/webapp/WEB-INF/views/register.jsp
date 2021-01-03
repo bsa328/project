@@ -33,7 +33,9 @@
 					</div>
 				</div>
 			</form>
-			<div class="" style="font-size: 15px; font-weight: 700; margin-top: 40px; text-align: center; color: #f00;">${registerMsg}</div>
+			<div class="" style="font-size: 15px; font-weight: 700; margin-top: 40px; text-align: center; color: #f00;">
+			${registerMsg}
+			</div>
 		</div>
 	</div>
 </body>

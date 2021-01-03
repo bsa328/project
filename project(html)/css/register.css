@@ -188,3 +188,7 @@ a:hover {
     background-color: rgb(185, 206, 226);
     margin-top: 320px;
 }
+
+.bold {
+    font-weight: 700;
+}

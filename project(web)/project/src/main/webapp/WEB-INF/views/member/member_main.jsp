@@ -27,6 +27,24 @@
 								<td class="td-15">회원가입일</td>
 								<td class="td-15">등급</td>
 							</tr>
+							<tr class="center">
+								<td class="td-5">
+									<input type="checkbox" />
+								</td>
+								<td class="">관리자</td>
+								<td class="">admin</td>
+								<td class="td-15">2020-12-25</td>
+								<td class="td-15">관리</td>
+							</tr>
+							<tr class="center">
+								<td class="td-5">
+									<input type="checkbox" />
+								</td>
+								<td class="">배수아</td>
+								<td class="">qotndk</td>
+								<td class="td-15">2021-01-01</td>
+								<td class="td-15">일반</td>
+							</tr>
 						</table>
 					</div>
 					<div class="search-box m-t10">

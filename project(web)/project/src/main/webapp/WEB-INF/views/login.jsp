@@ -20,14 +20,14 @@
 		<div class="login-wrap">
 			<h1>로그인</h1>
 			<form method="POST" action="${pageContext.request.contextPath}/login" autocomplete="off">
-				<input type="text" name="memberID" id="memberID" placeholder="아이디" required autofocus />
-				<input type="password" name="memberPasswd" id="memberPasswd" placeholder="비밀번호" required />
-				<button type="submit" class="btn bold">로그인</button>
+				<input type="text" name="memberID" id="memberID" placeholder="아이디" required  tabindex="1" autofocus />
+				<input type="password" name="memberPasswd" id="memberPasswd" placeholder="비밀번호"  tabindex="2" required />
+				<button type="submit" class="btn bold" tabindex="3">로그인</button>
 				<div class="register">
-					<div class="forgot">
+					<div class="forgot" tabindex="4">
 						<a href="#">아이디/비밀번호 찾기</a>
 					</div>
-					<div class="join">
+					<div class="join" tabindex="5">
 						<a href="${pageContext.request.contextPath}/member/register">회원가입</a>
 					</div>
 				</div>

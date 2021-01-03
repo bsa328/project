@@ -32,13 +32,25 @@
 								<td>
 									<input type="checkbox" />
 								</td>
-								<td>${boardNum}</td>
+								<td>1</td>
 								<td class="title-left">
-									<a href="${pageContext.request.contextPath}/board">${boardTitle}</a>
+									<a href="${pageContext.request.contextPath}/board">공지사항입니다.</a>
 								</td>
-								<td>${boardWriter}</td>
-								<td>${boardRegdate}</td>
-								<td>${boardViews}</td>
+								<td>관리자</td>
+								<td>2021-01-01</td>
+								<td>3</td>
+							</tr>
+							<tr>
+								<td>
+									<input type="checkbox" />
+								</td>
+								<td>1</td>
+								<td class="title-left">
+									<a href="${pageContext.request.contextPath}/board">공지사항입니다.</a>
+								</td>
+								<td>관리자</td>
+								<td>2021-01-01</td>
+								<td>3</td>
 							</tr>
 						</table>
 					</div>
