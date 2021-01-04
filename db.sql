@@ -16,6 +16,34 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Table structure for table `board`
+--
+
+DROP TABLE IF EXISTS `board`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `board` (
+  `board_num` int NOT NULL AUTO_INCREMENT,
+  `board_title` varchar(100) NOT NULL,
+  `board_writer` varchar(20) NOT NULL,
+  `board_content` text,
+  `board_regdate` datetime DEFAULT NULL,
+  `board_views` int DEFAULT '0',
+  PRIMARY KEY (`board_num`)
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `board`
+--
+
+LOCK TABLES `board` WRITE;
+/*!40000 ALTER TABLE `board` DISABLE KEYS */;
+INSERT INTO `board` VALUES (1,'aaaaaaaaaaaaaaaaaa','배수아','<p>a</p>\r\n','2021-01-04 13:51:15',0),(2,'hhhhhhhhhhhhhhhhhhhhhhhhhh','관리자','','2021-01-04 13:51:27',0),(3,'r','관리자','','2021-01-04 13:58:32',0),(4,'dfd','배수아','<p>fdfd</p>\r\n','2021-01-04 14:15:29',0),(5,'dsdsd','배수아','<p>dsdsd</p>\r\n','2021-01-04 15:54:57',0),(6,'sdsafds','배수아','<p>fdsfds</p>\r\n','2021-01-04 16:20:44',0),(7,'aaaaaaaaaaaaaaaaaa','관리자','<p>aaa</p>\r\n','2021-01-04 16:30:54',0),(8,'ddfdfd','배수아','','2021-01-04 16:31:04',0),(9,'dsds으ㅏ르아랑늘','배수아','<p>sds</p>\r\n','2021-01-04 18:13:27',0);
+/*!40000 ALTER TABLE `board` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `member`
 --
 
@@ -23,10 +51,11 @@ DROP TABLE IF EXISTS `member`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `member` (
-  `username` varchar(10) NOT NULL,
-  `userid` varchar(20) NOT NULL,
-  `passwd` varchar(20) NOT NULL,
-  PRIMARY KEY (`userid`)
+  `member_name` varchar(10) NOT NULL,
+  `member_id` varchar(20) NOT NULL,
+  `member_passwd` varchar(20) NOT NULL,
+  `member_regdate` datetime DEFAULT NULL,
+  PRIMARY KEY (`member_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -36,7 +65,7 @@ CREATE TABLE `member` (
 
 LOCK TABLES `member` WRITE;
 /*!40000 ALTER TABLE `member` DISABLE KEYS */;
-INSERT INTO `member` VALUES ('q','bsa328','11111111'),('q','bsa3288','11111111');
+INSERT INTO `member` VALUES ('관리자','admin','admin','2021-01-03 22:50:06'),('배수아','qotndk','qotndk','2021-01-03 22:50:33');
 /*!40000 ALTER TABLE `member` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -49,4 +78,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-12-28  6:22:19
+-- Dump completed on 2021-01-04 18:14:21

@@ -18,7 +18,7 @@
 						<button class="" id=""></button>
 						<button type="button" class="td-7 btn-gray" onclick="location.href='${pageContext.request.contextPath}/board'">게시글 목록</button>
 					</div>
-					<form method="POST" action="${pageContext.request.contextPath}/board_save">
+					<form method="POST" action="${pageContext.request.contextPath}/board/board_insert">
 						<div class="board-list">
 							<table border="1" class="insert-box">
 								<tr class="" style="border-bottom: 1px solid #abb3b8a2;">
@@ -33,17 +33,19 @@
 								<tr>
 									<td class="center bg-blue">게시글 제목</td>
 									<td class="p-5">
-										<input type="text" class="td-100" />
+										<input type="text" name="boardTitle" class="td-100" autocomplete="off" required />
 									</td>
 								</tr>
 								<tr>
 									<td class="center bg-blue">작성자</td>
-									<td class="p-5"></td>
+									<td class="p-5">
+										<input type="text" name="boardWriter" class="td-100" required value="${sessionScope.memberName}" readonly />
+									</td>
 								</tr>
 								<tr>
 									<td class="center bg-blue">게시글 내용</td>
 									<td class="p-5">
-										<textarea name="" id="editor"></textarea>
+										<textarea id="editor" name="boardContent" autocomplete="off"></textarea>
 										<script>
 											CKEDITOR.replace('editor');
 											CKEDITOR.config.height = 350;
@@ -59,7 +61,7 @@
 							</table>
 						</div>
 						<div class="center m-t10">
-							<button type="submit" class="td-7 btn-blue">게시글 등록</button>
+							<button type="submit" class="td-7 btn-blue" onClick="location.href='${pageContext.request.contextPath}/board">게시글 등록</button>
 						</div>
 					</form>
 					<div class="search-box m-t10"></div>

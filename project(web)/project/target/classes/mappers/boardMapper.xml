@@ -3,13 +3,17 @@
 <mapper namespace="board">
 
 	<insert id="setBoard" parameterType="com.example.project.model.BoardVO">
-		INSERT INTO board SET 
-			board_num = #{boardNum},
-			board_title = #{boardTitle},
-			board_writer = #{boardWriter},
-			board_content = #{boardContent},
-			board_regdate = now(),
-			board_views = #{boardViews}
+		INSERT INTO board SET
+		board_num 		= #{boardNum},
+		board_title 	= #{boardTitle},
+		board_writer	= #{boardWriter},
+		board_content 	= #{boardContent},
+		board_regdate 	= now(),
+		board_views 	= 	#{boardViews}
 	</insert>
+	
+	<select id="getBoardList" resultType="com.example.project.model.BoardVO">
+		SELECT * FROM board
+	</select>
 
 </mapper>

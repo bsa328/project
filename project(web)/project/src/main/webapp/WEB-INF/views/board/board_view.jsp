@@ -23,15 +23,15 @@
 								<td class="p-5 bg-white"></td>
 							</tr>
 							<tr>
-								<td class="center bg-blue">${boardTitle}</td>
+								<td class="center bg-blue">게시글 제목</td>
 								<td class="p-5"></td>
 							</tr>
 							<tr>
-								<td class="center bg-blue">${boardWriter}</td>
+								<td class="center bg-blue">작성자</td>
 								<td class="p-5"></td>
 							</tr>
 							<tr>
-								<td class="center bg-blue">${boardContent}</td>
+								<td class="center bg-blue">게시글 내용</td>
 								<td class="p-5" style="height: 300px;"></td>
 							</tr>
 							<tr>
@@ -41,7 +41,7 @@
 						</table>
 					</div>
 					<div class="center m-t10">
-						<button class="td-7 btn-blue" onClick="location.href='${pageContext.request.contextPath}/board'">게시물 수정</button>
+						<button class="td-7 btn-blue" onClick="location.href='${pageContext.request.contextPath}/board/board_modify'">게시물 수정</button>
 						<button class="td-7 btn-red">게시글 삭제</button>
 					</div>
 					<div class="search-box m-t10"></div>

@@ -14,11 +14,11 @@
 					</div>
 					<div class="btn-box m-t10 m-b10">
 						<button class="td-5 btn-red" id="">선택삭제</button>
-						<button type="button" class="td-7 btn-blue" onclick="location.href='${pageContext.request.contextPath}/board'">게시글작성</button>
+						<button type="button" class="td-7 btn-blue" onclick="location.href='${pageContext.request.contextPath}/board/board_insert'">게시글작성</button>
 					</div>
 					<div class="board-list">
 						<table>
-							<tr class="">
+							<tr class="center">
 								<td class="td-5">
 									<input type="checkbox" />
 								</td>
@@ -29,28 +29,16 @@
 								<td class="td-7">조회수</td>
 							</tr>
 							<tr>
-								<td>
-									<input type="checkbox" />
+								<td class="center">
+									<input type="checkbox" name="check" class="check" />
 								</td>
-								<td>1</td>
-								<td class="title-left">
-									<a href="${pageContext.request.contextPath}/board">공지사항입니다.</a>
+								<td class="center">1</td>
+								<td class="title-left p-l30">
+									<a href="${pageContext.request.contextPath}/board/board_view">공지사항입니다.</a>
 								</td>
-								<td>관리자</td>
-								<td>2021-01-01</td>
-								<td>3</td>
-							</tr>
-							<tr>
-								<td>
-									<input type="checkbox" />
-								</td>
-								<td>1</td>
-								<td class="title-left">
-									<a href="${pageContext.request.contextPath}/board">공지사항입니다.</a>
-								</td>
-								<td>관리자</td>
-								<td>2021-01-01</td>
-								<td>3</td>
+								<td class="center">관리자</td>
+								<td class="center">2021-01-04</td>
+								<td class="center">15</td>
 							</tr>
 						</table>
 					</div>
