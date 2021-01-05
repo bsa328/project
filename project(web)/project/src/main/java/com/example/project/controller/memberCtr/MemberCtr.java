@@ -1,5 +1,7 @@
 package com.example.project.controller.memberCtr;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -44,7 +46,19 @@ public class MemberCtr {
 	}
 
 	@RequestMapping("")
-	public String getMemberPageMain() {
-		return "member/member_main";
+	public ModelAndView getMemberPageMain(String memberNum, String memberName, String memberID, String memberPasswd,
+			String memberRegdate) {
+		ModelAndView mav = new ModelAndView();
+		List<MemberVO> list = memberSrv.getMemberList(memberNum, memberName, memberID, memberPasswd, memberRegdate);
+
+		mav.addObject("list", list);
+		mav.addObject("memberNum", memberNum);
+		mav.addObject("memberName", memberName);
+		mav.addObject("memberID", memberID);
+		mav.addObject("memberPasswd", memberPasswd);
+		mav.addObject("memberRegdate", memberRegdate);
+
+		mav.setViewName("member/member_main");
+		return mav;
 	}
 }

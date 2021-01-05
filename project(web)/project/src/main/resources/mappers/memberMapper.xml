@@ -4,14 +4,12 @@
 
 	<select id="getMemberList" resultType="com.example.project.model.MemberVO">
 		SELECT
+			member_num AS memberNum,
 			member_name AS memberName,
 			member_id AS memberID,
-			member_regdate = memberRegdate
-		FROM member
-	</select>
-
-	<select id="getMemberCount" resultType="int">
-		SELECT COUNT(member_id) FROM member
+			member_passwd AS memberPasswd,
+			member_regdate AS memberRegdate
+		FROM member ORDER BY member_num DESC
 	</select>
 
 </mapper>

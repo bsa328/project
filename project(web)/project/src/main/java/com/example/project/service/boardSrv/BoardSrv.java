@@ -1,5 +1,7 @@
 package com.example.project.service.boardSrv;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,6 +16,11 @@ public class BoardSrv {
 
 	public void setBoard(BoardVO boardvo) {
 		boardDao.setBoard(boardvo);
+	}
+
+	public List<BoardVO> getBoardList(String boardNum, String boardTitle, String boardWriter, String boardContent,
+			String boardRegdate, String boardViews) {
+		return boardDao.getBoardList(boardNum, boardTitle, boardWriter, boardContent, boardRegdate, boardViews);
 	}
 
 }

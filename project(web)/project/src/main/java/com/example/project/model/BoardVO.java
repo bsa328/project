@@ -1,5 +1,6 @@
 package com.example.project.model;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class BoardVO {
@@ -9,6 +10,8 @@ public class BoardVO {
 	private String boardContent;
 	private Date boardRegdate;
 	private int boardViews;
+
+	SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 
 	public int getBoardNum() {
 		return boardNum;
@@ -42,8 +45,8 @@ public class BoardVO {
 		this.boardContent = boardContent;
 	}
 
-	public Date getBoardRegdate() {
-		return boardRegdate;
+	public String getBoardRegdate() {
+		return sdf.format(boardRegdate);
 	}
 
 	public void setBoardRegdate(Date boardRegdate) {

@@ -28,18 +28,20 @@
 								<td class="td-12">작성일</td>
 								<td class="td-7">조회수</td>
 							</tr>
-							<tr>
-								<td class="center">
-									<input type="checkbox" name="check" class="check" />
-								</td>
-								<td class="center">1</td>
-								<td class="title-left p-l30">
-									<a href="${pageContext.request.contextPath}/board/board_view">공지사항입니다.</a>
-								</td>
-								<td class="center">관리자</td>
-								<td class="center">2021-01-04</td>
-								<td class="center">15</td>
-							</tr>
+							<c:forEach items="${list}" var="boardList" varStatus="status">
+								<tr>
+									<td class="center">
+										<input type="checkbox" name="check" class="check" data-uid="${boardList.boardNum}" />
+									</td>
+									<td class="center">${boardList.boardNum}</td>
+									<td class="title-left p-l30">
+										<a href="${pageContext.request.contextPath}/board/board_view">${boardList.boardTitle}</a>
+									</td>
+									<td class="center">${boardList.boardWriter}</td>
+									<td class="center">${boardList.boardRegdate}</td>
+									<td class="center">${boardList.boardViews}</td>
+								</tr>
+							</c:forEach>
 						</table>
 					</div>
 					<div class="search-box m-t10">
@@ -56,6 +58,4 @@
 			</div>
 		</div>
 	</div>
-</body>
-
-</html>
+	<%@ include file="/WEB-INF/views/include/FOOTER.jsp"%>

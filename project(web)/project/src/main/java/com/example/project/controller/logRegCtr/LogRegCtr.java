@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.example.project.model.MemberVO;
@@ -30,21 +31,15 @@ public class LogRegCtr {
 		return mav;
 	}
 
-	@RequestMapping(value = "/logout", method = RequestMethod.GET)
-	public String getLogout(HttpSession session) {
-		logRegSrv.setLogout(session);
-		return "redirect:/login";
-	}
-
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
-	public ModelAndView setLogin(@ModelAttribute MemberVO membervo, HttpSession session) {
+	public ModelAndView setLogin(@ModelAttribute MemberVO membervo, HttpSession httpSession) {
 		int result = logRegSrv.getLoginCheck(membervo);
 
 		ModelAndView mav = new ModelAndView();
 
 		String loginMsg;
 		if (result > 0) {
-			logRegSrv.setSession(membervo, session);
+			logRegSrv.setSession(membervo, httpSession);
 			mav.setViewName("redirect:/admin");
 
 		} else {
@@ -54,6 +49,13 @@ public class LogRegCtr {
 		}
 
 		return mav;
+	}
+
+	@RequestMapping("/logout")
+	@ResponseBody
+	public String getLogout(HttpSession httpSession) {
+		logRegSrv.setLogout(httpSession);
+		return "success";
 	}
 
 }

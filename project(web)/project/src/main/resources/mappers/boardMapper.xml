@@ -9,11 +9,18 @@
 		board_writer	= #{boardWriter},
 		board_content 	= #{boardContent},
 		board_regdate 	= now(),
-		board_views 	= 	#{boardViews}
+		board_views 	= #{boardViews}
 	</insert>
 	
 	<select id="getBoardList" resultType="com.example.project.model.BoardVO">
-		SELECT * FROM board
+		SELECT 
+			board_num AS boardNum,
+			board_title AS boardTitle,
+			board_writer AS boardWriter,
+			board_content AS boardContent,
+			board_regdate AS boardRegdate,
+			board_views AS boardViews
+		FROM board ORDER BY board_num DESC
 	</select>
 
 </mapper>

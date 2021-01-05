@@ -1,8 +1,10 @@
 create table member(
+member_num int auto_increment,
 member_name varchar(10) not null,
-member_id varchar(20) not null primary key,
+member_id varchar(20) not null,
 member_passwd varchar(20) not null,
-member_regdate datetime
+member_regdate date,
+primary key(member_num, member_id)
 );
 
 create table board (
@@ -10,6 +12,6 @@ board_num int auto_increment primary key,
 board_title varchar(100) not null,
 board_writer varchar(20) not null,
 board_content text,
-board_regdate datetime,
+board_regdate date,
 board_views int default 0
 );

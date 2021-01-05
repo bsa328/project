@@ -61,7 +61,7 @@
 							</table>
 						</div>
 						<div class="center m-t10">
-							<button type="submit" class="td-7 btn-blue" onClick="location.href='${pageContext.request.contextPath}/board">게시글 등록</button>
+							<button type="submit" class="td-7 btn-blue">게시글 등록</button>
 						</div>
 					</form>
 					<div class="search-box m-t10"></div>
@@ -69,6 +69,4 @@
 			</div>
 		</div>
 	</div>
-</body>
-
-</html>
+	<%@ include file="/WEB-INF/views/include/FOOTER.jsp"%>

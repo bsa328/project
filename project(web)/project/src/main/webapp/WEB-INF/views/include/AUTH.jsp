@@ -5,7 +5,7 @@
 	<div class="auth">
 		<div class="user">사용자 : ${sessionScope.memberName}(${sessionScope.memberID})</div>
 		<div class="logout">
-			<a href="${pageContext.request.contextPath}/logout">로그아웃</a>
+			<a href="#" id="logout">로그아웃</a>
 		</div>
 	</div>
 </div>

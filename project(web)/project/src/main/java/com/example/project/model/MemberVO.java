@@ -1,12 +1,24 @@
 package com.example.project.model;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class MemberVO {
+	private int memberNum;
 	private String memberName;
 	private String memberID;
 	private String memberPasswd;
 	private Date memberRegdate;
+
+	SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+
+	public int getMemberNum() {
+		return memberNum;
+	}
+
+	public void setMemberNum(int memberNum) {
+		this.memberNum = memberNum;
+	}
 
 	public String getMemberName() {
 		return memberName;
@@ -32,8 +44,8 @@ public class MemberVO {
 		this.memberPasswd = memberPasswd;
 	}
 
-	public Date getMemberRegdate() {
-		return memberRegdate;
+	public String getMemberRegdate() {
+		return sdf.format(memberRegdate);
 	}
 
 	public void setMemberRegdate(Date memberRegdate) {
