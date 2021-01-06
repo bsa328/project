@@ -22,31 +22,7 @@
 			</div>
 		</div>
 	</div>
-	<footer class="center" style="height: 200px; line-height: 200px; color: #aaa; font-size: 15px;">
-	<span class="copy">&copy;Copyright All Rights reserved.</span>
-</footer>
-</body>
-
-<script>
-	$(function() {
-		$("#logout").click(function() {
-			$.ajax({
-				url		: "${pageContext.request.contextPath}/logout",
-				type	: "POST",
-				data	: "",
-				success	: function(data) {
-					if(data == "success") {
-						alert("로그아웃 되었습니다.");
-						window.location.href = '${pageContext.request.contextPath}/login';
-					}
-				},
-				error	: function() {
-					alert("시스템 에러");
-				}
-			});
-		});
-	});
-</script>
+	<%@ include file="/WEB-INF/views/include/FOOTER.jsp"%>
 
 <script src="${pageContext.request.contextPath}/calendar/core/main.js"></script>
 <script src="${pageContext.request.contextPath}/calendar/core/locales/ko.js"></script>

@@ -22,6 +22,10 @@
     margin-bottom: 10px;
 }
 
+.m-t50 {
+    margin-top: 50px;
+}
+
 .p-l100 {
     padding-left: 100px;
 }
@@ -82,4 +86,24 @@ input {
 
 .bg-blue {
     background-color: #b9cee2;
+}
+
+.page {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    text-align: center;
+    line-height: 35px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.page-active {
+    background-color: #3f51b5;
+    border: 1px solid transparent;
+}
+
+.f6 {
+    color: #fff;
 }

@@ -54,6 +54,7 @@
 							<button type="submit" class="td-5 btn-gray">검색</button>
 						</form>
 					</div>
+					<%@ include file="/WEB-INF/views/include/PAGING.jsp"%>
 				</div>
 			</div>
 		</div>

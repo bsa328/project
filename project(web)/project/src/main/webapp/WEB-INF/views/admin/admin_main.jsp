@@ -19,3 +19,5 @@
 		</div>
 	</div>
 	<%@ include file="/WEB-INF/views/include/FOOTER.jsp"%>
+	
+</html>	

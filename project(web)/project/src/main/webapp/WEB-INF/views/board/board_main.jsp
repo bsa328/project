@@ -47,15 +47,18 @@
 					<div class="search-box m-t10">
 						<form method="post" action="${pageContext.request.contextPath}/board">
 							<select class="td-7" name="search">
-								<option value="subject">게시물 제목</option>
+								<option value="subject">제목</option>
 								<option value="writer">작성자</option>
 							</select>
 							<input type="text" class="td-12" name="search-word" required autocomplete="off" />
 							<button type="submit" class="td-5 btn-gray">검색</button>
 						</form>
 					</div>
+					<%@ include file="/WEB-INF/views/include/PAGING.jsp"%>
 				</div>
 			</div>
 		</div>
 	</div>
 	<%@ include file="/WEB-INF/views/include/FOOTER.jsp"%>
+	
+</html>	
