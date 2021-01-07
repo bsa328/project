@@ -46,17 +46,60 @@
 					</div>
 					<div class="search-box m-t10">
 						<form method="post" action="${pageContext.request.contextPath}/member">
-							<select class="td-7" name="search">
-								<option value="member-name">회원이름</option>
-								<option value="member-id">회원아이디</option>
+							<select class="td-7" name="searchOpt">
+								<option value="member_name" <c:if test="${searchOpt eq 'member_name'}">selected</c:if>>회원이름</option>
+								<option value="member_id" <c:if test="${searchOpt eq 'member_id'}">selected</c:if>>회원아이디</option>
+								<option value="all" <c:if test="${searchOpt eq 'all'}">selected</c:if>>전체검색</option>
 							</select>
-							<input type="text" class="td-12" name="search-word" required autocomplete="off" />
+							<input value="${search-word}" type="text" class="td-12" name="search-word" required autocomplete="off" />
 							<button type="submit" class="td-5 btn-gray">검색</button>
 						</form>
 					</div>
-					<%@ include file="/WEB-INF/views/include/PAGING.jsp"%>
+					
+					<c:if test="${count > 0}">
+						<div class="paging m-t50 center">
+							<c:choose>
+								<c:when test="${curPage > 1}">
+									<span class="page">
+									<a href="${pageContext.request.contextPath}/member?curPage=1&searchOpt=${searchOpt}&search-word=${search-word}">
+										<i class="fas fa-angle-double-left"></i>
+									</a>
+									</span>
+								</c:when>
+							</c:choose>
+							
+							
+							<span class="page"><a href=""><i class="fas fa-angle-left"></i></a></span>
+							
+							
+							<span class="page page-active"><a href="" class="f6">1</a></span>
+							
+							
+							<span class="page"><a href="">2</a></span>
+							
+							
+							<span class="page"><a href="">3</a></span>
+							
+							
+							<span class="page"><a href="">4</a></span>
+							
+							
+							<span class="page"><a href="">5</a></span>
+							
+							
+							<span class="page"><a href=""><i class="fas fa-angle-right"></i></a></span>
+							
+							
+							<span class="page"> <a href=""><i class="fas fa-angle-double-right"></i></a></span>
+							
+							
+						</div>
+					</c:if>
+					
 				</div>
 			</div>
 		</div>
 	</div>
 	<%@ include file="/WEB-INF/views/include/FOOTER.jsp"%>
+	
+</html>
