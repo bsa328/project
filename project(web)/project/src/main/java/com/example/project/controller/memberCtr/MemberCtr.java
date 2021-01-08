@@ -53,7 +53,10 @@ public class MemberCtr {
 		ModelAndView mav = new ModelAndView();
 		List<MemberVO> list = memberSrv.getMemberList(memberNum, memberName, memberID, memberPasswd, memberRegdate);
 
+		int count = memberSrv.getMemberCount();
+
 		mav.addObject("list", list);
+		mav.addObject("count", count);
 		mav.addObject("memberNum", memberNum);
 		mav.addObject("memberName", memberName);
 		mav.addObject("memberID", memberID);

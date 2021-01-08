@@ -23,4 +23,8 @@ public class MemberSrv {
 		return memberDao.setMemberDelete(memberNum);
 	}
 
+	public int getMemberCount() {
+		return memberDao.getMemberCount();
+	}
+
 }

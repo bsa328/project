@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -27,7 +28,10 @@ public class BoardCtr {
 		List<BoardVO> list = boardSrv.getBoardList(boardNum, boardTitle, boardWriter, boardContent, boardRegdate,
 				boardViews);
 
+		int count = boardSrv.getBoardCount();
+
 		mav.addObject("list", list);
+		mav.addObject("count", count);
 		mav.addObject("boardNum", boardNum);
 		mav.addObject("boardTitle", boardTitle);
 		mav.addObject("boardWriter", boardWriter);
@@ -51,12 +55,20 @@ public class BoardCtr {
 	}
 
 	@RequestMapping(value = "/board_view", method = RequestMethod.GET)
-	public String getBoardView() {
-		return "board/board_view";
+	public ModelAndView getBoardView(@ModelAttribute BoardVO boardvo, int boardNum) {
+
+		ModelAndView mav = new ModelAndView();
+		boardSrv.viewsUp(boardvo);
+
+		mav.addObject("view", boardSrv.getBoardOne(boardNum));
+		mav.setViewName("board/board_view");
+
+		return mav;
 	}
 
 	@RequestMapping(value = "/board_modify", method = RequestMethod.GET)
 	public String getBoardModify() {
+
 		return "board/board_modify";
 	}
 

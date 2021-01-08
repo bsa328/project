@@ -31,4 +31,8 @@ public class MemberDao {
 		return sqlSession.delete("member.setMemberDelete", memberNum);
 	}
 
+	public int getMemberCount() {
+		return sqlSession.selectOne("member.getMemberCount");
+	}
+
 }

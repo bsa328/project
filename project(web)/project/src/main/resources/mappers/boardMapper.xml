@@ -26,5 +26,23 @@
 	<delete id="setBoardDelete" parameterType="int">
 		DELETE FROM board WHERE board_num = #{boardNum}
 	</delete>
-
+	
+	<select id="getBoardCount" resultType="int">
+		SELECT COUNT(board_num) FROM board
+	</select>
+	
+	<select id="getBoardOne" parameterType="int" resultType="com.example.project.model.BoardVO">
+		SELECT 
+			board_title AS boardTitle,
+			board_writer AS boardWriter,
+			board_content AS boardContent,
+			board_regdate AS boardRegdate,
+			board_views AS boardViews
+		FROM board WHERE board_num = #{boardNum}
+	</select>
+	
+	<update id="viewsUp">
+		UPDATE board SET board_views = board_views + 1 WHERE board_num = #{boardNum}
+	</update>
+	
 </mapper>

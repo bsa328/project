@@ -31,19 +31,19 @@
 									</td>
 								</tr>
 								<tr>
-									<td class="center bg-blue">게시글 제목</td>
+									<td class="center bg-blue">제목</td>
 									<td class="p-5">
-										<input type="text" class="td-100" />
+										<input value="${modify.boardTitle}" type="text" class="td-100" />
 									</td>
 								</tr>
 								<tr>
 									<td class="center bg-blue">작성자</td>
-									<td class="p-5"></td>
+									<td class="p-5">${modify.boardWriter}</td>
 								</tr>
 								<tr>
-									<td class="center bg-blue">게시글 내용</td>
+									<td class="center bg-blue">내용</td>
 									<td class="p-5">
-										<textarea name="" id="editor"></textarea>
+										<textarea name="" id="editor">${modify.boardContent}</textarea>
 										<script>
 											CKEDITOR.replace('editor');
 											CKEDITOR.config.height = 350;

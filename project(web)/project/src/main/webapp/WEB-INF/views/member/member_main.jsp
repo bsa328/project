@@ -46,7 +46,7 @@
 						</table>
 					</div>
 					<div class="search-box m-t10">
-						<div class="total-num">전체 회원수 : ?명</div>
+						<div class="total-num">전체 회원수 : ${count}명</div>
 						<div class="">
 							<form method="post" action="${pageContext.request.contextPath}/member">
 								<select class="" name="searchOpt">

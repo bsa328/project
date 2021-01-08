@@ -22,16 +22,18 @@
 								<td class="td-5">
 									<input type="checkbox" onClick="chkAll();" id="chkAll" />
 								</td>
-								<td class="td-5">글번호</td>
+								<td class="td-5">번호</td>
 								<td class="">제목</td>
 								<td class="td-12">작성자</td>
-								<td class="td-12">작성일</td>
+								<td class="td-12">등록일</td>
 								<td class="td-7">조회수</td>
 							</tr>
 
-							<tr class="center">
-								<td colspan="6">등록된 게시물이 없습니다.</td>
-							</tr>
+							<c:if test="${count == 0}">
+								<tr class="center">
+									<td colspan="6">등록된 게시물이 없습니다.</td>
+								</tr>
+							</c:if>
 
 							<c:forEach items="${list}" var="boardList" varStatus="status">
 								<tr>
@@ -40,7 +42,7 @@
 									</td>
 									<td class="center">${boardList.boardNum}</td>
 									<td class="title-left p-l30">
-										<a href="${pageContext.request.contextPath}/board/board_view">${boardList.boardTitle}</a>
+										<a href="${pageContext.request.contextPath}/board/board_view?boardNum=${boardList.boardNum}">${boardList.boardTitle}</a>
 									</td>
 									<td class="center">${boardList.boardWriter}</td>
 									<td class="center">${boardList.boardRegdate}</td>
@@ -50,7 +52,7 @@
 						</table>
 					</div>
 					<div class="search-box m-t10">
-						<div class="total-num">전체 게시글수 : ?개</div>
+						<div class="total-num">전체 게시글수 : ${count}개</div>
 						<div class="">
 							<form method="post" action="${pageContext.request.contextPath}/board">
 								<select class="" name="searchOpt">

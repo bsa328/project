@@ -19,29 +19,33 @@
 					<div class="board-list">
 						<table border="1" class="insert-box">
 							<tr class="" style="border-bottom: 1px solid #abb3b8a2;">
-								<td class="center td-15">게시글 분류</td>
-								<td class="p-5 bg-white"></td>
-							</tr>
-							<tr>
-								<td class="center bg-blue">게시글 제목</td>
-								<td class="p-5"></td>
+								<td class="center td-15">제목</td>
+								<td class="p-10 bg-white">${view.boardTitle}</td>
 							</tr>
 							<tr>
 								<td class="center bg-blue">작성자</td>
-								<td class="p-5"></td>
+								<td class="p-10">${view.boardWriter}</td>
 							</tr>
 							<tr>
-								<td class="center bg-blue">게시글 내용</td>
-								<td class="p-5" style="height: 300px;"></td>
+								<td class="center bg-blue">등록일</td>
+								<td class="p-10">${view.boardRegdate}</td>
+							</tr>
+							<tr>
+								<td class="center bg-blue">내용</td>
+								<td class="p-10" style="height: 300px;">${view.boardContent}</td>
 							</tr>
 							<tr>
 								<td class="center bg-blue">첨부파일</td>
-								<td class="p-5"></td>
+								<td class="p-10"></td>
+							</tr>
+							<tr>
+								<td class="center bg-blue">조회수</td>
+								<td class="p-10">${view.boardViews}회</td>
 							</tr>
 						</table>
 					</div>
 					<div class="center m-t10">
-						<button class="td-7 btn-blue" onClick="location.href='${pageContext.request.contextPath}/board/board_modify'">게시물 수정</button>
+						<button class="td-7 btn-blue" onClick="location.href='${pageContext.request.contextPath}/board/board_modify?boardNum=${boardList.boardNum}'">게시물 수정</button>
 						<button class="td-7 btn-red">게시글 삭제</button>
 					</div>
 					<div class="search-box m-t10"></div>

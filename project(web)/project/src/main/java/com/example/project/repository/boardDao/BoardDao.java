@@ -36,4 +36,16 @@ public class BoardDao {
 		return sqlSession.delete("board.setBoardDelete", boardNum);
 	}
 
+	public int getBoardCount() {
+		return sqlSession.selectOne("board.getBoardCount");
+	}
+
+	public BoardVO getBoardOne(int boardNum) {
+		return sqlSession.selectOne("board.getBoardOne", boardNum);
+	}
+
+	public void viewsUp(BoardVO boardvo) {
+		sqlSession.update("board.viewsUp", boardvo);
+	}
+
 }

@@ -16,5 +16,9 @@
 	<delete id="setMemberDelete" parameterType="int">
 		DELETE FROM member WHERE member_num = #{memberNum}
 	</delete>
+	
+	<select id="getMemberCount" resultType="int">
+		SELECT COUNT(member_num) FROM member
+	</select>
 
 </mapper>

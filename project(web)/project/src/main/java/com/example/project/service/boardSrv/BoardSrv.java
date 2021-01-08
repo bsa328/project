@@ -27,4 +27,16 @@ public class BoardSrv {
 		return boardDao.setBoardDelete(boardNum);
 	}
 
+	public int getBoardCount() {
+		return boardDao.getBoardCount();
+	}
+
+	public BoardVO getBoardOne(int boardNum) {
+		return boardDao.getBoardOne(boardNum);
+	}
+
+	public void viewsUp(BoardVO boardvo) {
+		boardDao.viewsUp(boardvo);
+	}
+
 }
