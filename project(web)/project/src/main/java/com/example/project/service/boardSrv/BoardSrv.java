@@ -23,4 +23,8 @@ public class BoardSrv {
 		return boardDao.getBoardList(boardNum, boardTitle, boardWriter, boardContent, boardRegdate, boardViews);
 	}
 
+	public int setBoardDelete(int boardNum) {
+		return boardDao.setBoardDelete(boardNum);
+	}
+
 }

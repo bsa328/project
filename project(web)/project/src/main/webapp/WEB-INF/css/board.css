@@ -50,8 +50,9 @@ table a:hover {
 }
 
 .search-box {
-	text-align: right;
-	height: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: space-between;
 }
 
 .insert-box {

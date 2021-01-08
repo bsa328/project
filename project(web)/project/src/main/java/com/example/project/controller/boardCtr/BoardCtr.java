@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.example.project.model.BoardVO;
@@ -45,7 +47,7 @@ public class BoardCtr {
 	@RequestMapping(value = "/board_insert", method = RequestMethod.POST)
 	public String setBoardInsert(BoardVO boardvo) {
 		boardSrv.setBoard(boardvo);
-		return "board/board_main";
+		return "redirect:/board";
 	}
 
 	@RequestMapping(value = "/board_view", method = RequestMethod.GET)
@@ -60,7 +62,18 @@ public class BoardCtr {
 
 	@RequestMapping(value = "/board_modify", method = RequestMethod.POST)
 	public String setBoardModify() {
-		return "board/board_main";
+		return "redirect:/board";
+	}
+
+	@RequestMapping(value = "/board_delete", method = RequestMethod.POST)
+	@ResponseBody
+	public String boardDelete(@RequestParam(value = "chkArr[]") List<String> chkArr) {
+		int boardNum;
+		for (String list : chkArr) {
+			boardNum = Integer.parseInt(list);
+			boardSrv.setBoardDelete(boardNum);
+		}
+		return "success";
 	}
 
 }

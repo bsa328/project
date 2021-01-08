@@ -32,4 +32,8 @@ public class BoardDao {
 		return sqlSession.selectList("board.getBoardList", map);
 	}
 
+	public int setBoardDelete(int boardNum) {
+		return sqlSession.delete("board.setBoardDelete", boardNum);
+	}
+
 }

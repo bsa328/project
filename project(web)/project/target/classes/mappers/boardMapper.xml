@@ -22,5 +22,9 @@
 			board_views AS boardViews
 		FROM board ORDER BY board_num DESC
 	</select>
+	
+	<delete id="setBoardDelete" parameterType="int">
+		DELETE FROM board WHERE board_num = #{boardNum}
+	</delete>
 
 </mapper>

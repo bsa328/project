@@ -7,6 +7,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.example.project.model.MemberVO;
@@ -46,7 +48,7 @@ public class MemberCtr {
 	}
 
 	@RequestMapping("")
-	public ModelAndView getMemberPageMain(String memberNum, String memberName, String memberID, String memberPasswd,
+	public ModelAndView getMemberMain(String memberNum, String memberName, String memberID, String memberPasswd,
 			String memberRegdate) {
 		ModelAndView mav = new ModelAndView();
 		List<MemberVO> list = memberSrv.getMemberList(memberNum, memberName, memberID, memberPasswd, memberRegdate);
@@ -61,4 +63,16 @@ public class MemberCtr {
 		mav.setViewName("member/member_main");
 		return mav;
 	}
+
+	@RequestMapping(value = "/member_delete", method = RequestMethod.POST)
+	@ResponseBody
+	public String memberDelete(@RequestParam(value = "chkArr[]") List<String> chkArr) {
+		int memberNum;
+		for (String list : chkArr) {
+			memberNum = Integer.parseInt(list);
+			memberSrv.setMemberDelete(memberNum);
+		}
+		return "success";
+	}
+
 }

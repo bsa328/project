@@ -19,4 +19,8 @@ public class MemberSrv {
 		return memberDao.getMemberList(memberNum, memberName, memberID, memberPasswd, memberRegdate);
 	}
 
+	public int setMemberDelete(int memberNum) {
+		return memberDao.setMemberDelete(memberNum);
+	}
+
 }

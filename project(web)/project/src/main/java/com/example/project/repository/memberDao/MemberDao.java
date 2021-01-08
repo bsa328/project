@@ -27,4 +27,8 @@ public class MemberDao {
 		return sqlSession.selectList("member.getMemberList", map);
 	}
 
+	public int setMemberDelete(int memberNum) {
+		return sqlSession.delete("member.setMemberDelete", memberNum);
+	}
+
 }
