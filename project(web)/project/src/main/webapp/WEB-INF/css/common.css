@@ -14,16 +14,39 @@
 	font-size: 20px;
 }
 
+.m-t5 {
+	margin-top: 5px;
+}
+
 .m-t10 {
 	margin-top: 10px;
+}
+
+.m-b5 {
+	margin-bottom: 5px;
 }
 
 .m-b10 {
 	margin-bottom: 10px;
 }
+.m-b50 {
+	margin-bottom: 50px;
+}
 
 .m-t50 {
 	margin-top: 50px;
+}
+
+.m-b100 {
+	margin-bottom: 100px;
+}
+
+.m-t50 {
+	margin-top: 50px;
+}
+
+.m-t100 {
+	margin-top: 100px;
 }
 
 .p-l100 {
@@ -34,12 +57,12 @@
 	padding-left: 100px;
 }
 
-.p-10 {
-	padding: 10px;
-}
-
 .p-5 {
 	padding: 5px;
+}
+
+.p-10 {
+	padding: 10px;
 }
 
 .center {
@@ -114,4 +137,9 @@ select, input {
 .total-num {
 	font-weight: 500;
 	font-size: 13px;
+}
+
+.hr {
+	border: 0;
+	border: 1px solid #abb3b8a2;
 }

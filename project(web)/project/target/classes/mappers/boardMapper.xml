@@ -33,6 +33,7 @@
 	
 	<select id="getBoardOne" parameterType="int" resultType="com.example.project.model.BoardVO">
 		SELECT 
+			board_num AS boardNum,
 			board_title AS boardTitle,
 			board_writer AS boardWriter,
 			board_content AS boardContent,

@@ -13,7 +13,6 @@
 					<div class="title">
 						<span class=""><i class="fas fa-cube"> 일정관리 > 일정등록</i></span>
 					</div>
-					<div class="btn-box m-t10 m-b10"></div>
 					<div class="board-list">
 						<div id="calendar" class="calendar"></div>
 					</div>
@@ -24,49 +23,48 @@
 	</div>
 	<%@ include file="/WEB-INF/views/include/FOOTER.jsp"%>
 
-<script src="${pageContext.request.contextPath}/calendar/core/main.js"></script>
-<script src="${pageContext.request.contextPath}/calendar/core/locales/ko.js"></script>
-<script src="${pageContext.request.contextPath}/calendar/interaction/main.js"></script>
-<script src="${pageContext.request.contextPath}/calendar/daygrid/main.js"></script>
+	<script src="${pageContext.request.contextPath}/calendar/core/main.js"></script>
+	<script src="${pageContext.request.contextPath}/calendar/core/locales/ko.js"></script>
+	<script src="${pageContext.request.contextPath}/calendar/interaction/main.js"></script>
+	<script src="${pageContext.request.contextPath}/calendar/daygrid/main.js"></script>
 
-<script>
-	document.addEventListener('DOMContentLoaded', function() {
-		var calendarEl = document.getElementById('calendar');
+	<script>
+		document.addEventListener('DOMContentLoaded', function() {
+			var calendarEl = document.getElementById('calendar');
 
-		var calendar = new FullCalendar.Calendar(calendarEl, {
-			plugins : [ 'interaction', 'dayGrid' ],
-			header : {
-				left : 'prevYear,prev,next,nextYear today',
-				center : 'title',
-				right : 'dayGridMonth,dayGridWeek,dayGridDay'
-			},
-			navLinks : true,
-			editable : true,
-			eventLimit : true,
-			locales : "ko",
-			events : [ {
-				title : '',
-				start : '',
-				end : '',
-				color : ''
-			}, {
-				title : '',
-				start : '',
-				end : '',
-				color : ''
-			} ]
+			var calendar = new FullCalendar.Calendar(calendarEl, {
+				plugins : [ 'interaction', 'dayGrid' ],
+				header : {
+					left : 'prevYear,prev,next,nextYear today',
+					center : 'title',
+					right : 'dayGridMonth,dayGridWeek,dayGridDay'
+				},
+				navLinks : true,
+				editable : true,
+				eventLimit : true,
+				locales : "ko",
+				events : [ {
+					title : '',
+					start : '',
+					end : '',
+					color : ''
+				}, {
+					title : '',
+					start : '',
+					end : '',
+					color : ''
+				} ]
+			});
+
+			calendar.render();
 		});
+	</script>
 
-		calendar.render();
-	});
-</script>
-
-<script>
-	$(function() {
-		$("#startDate, #endDate").datepicker({
-			dataFormat : 'yy-mm-dd'
+	<script>
+		$(function() {
+			$("#startDate, #endDate").datepicker({
+				dataFormat : 'yy-mm-dd'
+			});
 		});
-	});
-</script>
-
+	</script>
 </html>

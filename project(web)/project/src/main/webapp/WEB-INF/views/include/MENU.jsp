@@ -25,7 +25,7 @@
 		<span class="big-menu"> 마이페이지 <i class="fas fa-chevron-down"></i>
 		</span>
 		<div class="small-menu">
-			<a href="#">- 정보수정</a>
+			<a href="${pageContext.request.contextPath}/mypage">- 정보수정</a>
 		</div>
 	</div>
 </div>

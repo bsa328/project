@@ -92,8 +92,6 @@
 	        	chkArr.push($(this).attr("data-uid"));
 	        });
 	        
-	        //alert(chkArr);
-
 	        $.ajax({
 	        	url 	: "${pageContext.request.contextPath}/board/board_delete",
 	        	type 	: "POST", 	

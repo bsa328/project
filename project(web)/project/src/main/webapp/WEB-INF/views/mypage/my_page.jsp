@@ -10,10 +10,9 @@
 			<div class="main">
 				<div class="page-wrap">
 					<div class="title">
-						<span class=""><i class="fas fa-cube"> 회원관리 > 회원목록</i></span>
+						<span class=""><i class="fas fa-cube"> 마이페이지 > 정보수정</i></span>
 					</div>
 					<div class="btn-box m-t10 m-b10">
-						<button class="td-5 btn-red" id="delete">선택삭제</button>
 					</div>
 					<div class="board-list">
 						<table>
@@ -46,31 +45,6 @@
 							</c:forEach>
 
 						</table>
-					</div>
-					<div class="search-box m-t10">
-						<div class="total-num">전체 회원수 : ${count}명</div>
-						<div class="">
-							<form method="post" action="${pageContext.request.contextPath}/member">
-								<select class="" name="searchOpt">
-									<option value="member_name">이름</option>
-									<option value="member_id">아이디</option>
-									<option value="all">전체검색</option>
-								</select>
-								<input value="${words}" type="text" class="" name="words" required autocomplete="off" />
-								<button type="submit" class="btn-gray" style="width: 70px;">검색</button>
-							</form>
-						</div>
-					</div>
-					<div class="paging m-t50 center">
-						<span class="page"><a href=""><i class="fas fa-angle-double-left"></i></a></span>
-						<span class="page"><a href=""><i class="fas fa-angle-left"></i></a></span>
-						<span class="page page-active"> <a href="" class="f6">1</a></span>
-						<span class="page"><a href="">2</a></span>
-						<span class="page"><a href="">3</a></span>
-						<span class="page"><a href="">4</a></span>
-						<span class="page"><a href="">5</a></span>
-						<span class="page"><a href=""><i class="fas fa-angle-right"></i></a></span>
-						<span class="page"><a href=""><i class="fas fa-angle-double-right"></i></a></span>
 					</div>
 				</div>
 			</div>

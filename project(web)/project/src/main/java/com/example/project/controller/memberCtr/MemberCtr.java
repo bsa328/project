@@ -78,4 +78,9 @@ public class MemberCtr {
 		return "success";
 	}
 
+	@RequestMapping("/member_view")
+	public String getMemberView() {
+		return "member/member_view";
+	}
+
 }
