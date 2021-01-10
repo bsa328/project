@@ -16,7 +16,7 @@
 					</div>
 					<div class="btn-box m-t10 m-b10">
 						<button class="" id=""></button>
-						<button type="button" class="td-7 btn-gray" onclick="location.href='${pageContext.request.contextPath}/board'">게시글 목록</button>
+						<button type="button" class="td-7 btn-gray" onclick="location.href='${pageContext.request.contextPath}/board'">목록으로</button>
 					</div>
 					<form method="POST" id="frm" action="${pageContext.request.contextPath}/board/board_insert">
 						<div class="board-list">
@@ -39,7 +39,7 @@
 								<tr>
 									<td class="center bg-blue">작성자</td>
 									<td class="p-5">
-										<input type="text" name="boardWriter" class="td-100" required value="${sessionScope.memberName}" readonly />
+										<input type="text" name="boardWriter" class="td-100" value="${sessionScope.memberName}" required placeholder="${sessionScope.memberName}" readonly />
 									</td>
 								</tr>
 								<tr>
@@ -61,7 +61,7 @@
 							</table>
 						</div>
 						<div class="center m-t10">
-							<button type="submit" class="td-7 btn-blue" id="btn">게시글 등록</button>
+							<button type="submit" class="td-7 btn-blue" id="btn">등록하기</button>
 						</div>
 					</form>
 					<div class="search-box m-t10"></div>

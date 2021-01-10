@@ -4,12 +4,12 @@
 
 	<insert id="setBoard" parameterType="com.example.project.model.BoardVO">
 		INSERT INTO board SET
-		board_num 		= #{boardNum},
-		board_title 	= #{boardTitle},
-		board_writer	= #{boardWriter},
-		board_content 	= #{boardContent},
-		board_regdate 	= now(),
-		board_views 	= #{boardViews}
+			board_num 		= #{boardNum},
+			board_title 	= #{boardTitle},
+			board_writer	= #{boardWriter},
+			board_content 	= #{boardContent},
+			board_regdate 	= now(),
+			board_views 	= #{boardViews}
 	</insert>
 	
 	<select id="getBoardList" resultType="com.example.project.model.BoardVO">
@@ -44,6 +44,14 @@
 	
 	<update id="viewsUp">
 		UPDATE board SET board_views = board_views + 1 WHERE board_num = #{boardNum}
+	</update>
+	
+	<update id="setBoardModify">
+		UPDATE board SET
+			board_title 	= #{boardTitle},
+			board_content 	= #{boardContent},
+			board_regdate 	= now()
+		WHERE board_num = #{boardNum}
 	</update>
 	
 </mapper>

@@ -62,15 +62,7 @@
 						</div>
 					</div>
 					<div class="paging m-t50 center">
-						<span class="page"><a href=""><i class="fas fa-angle-double-left"></i></a></span>
-						<span class="page"><a href=""><i class="fas fa-angle-left"></i></a></span>
-						<span class="page page-active"> <a href="" class="f6">1</a></span>
-						<span class="page"><a href="">2</a></span>
-						<span class="page"><a href="">3</a></span>
-						<span class="page"><a href="">4</a></span>
-						<span class="page"><a href="">5</a></span>
-						<span class="page"><a href=""><i class="fas fa-angle-right"></i></a></span>
-						<span class="page"><a href=""><i class="fas fa-angle-double-right"></i></a></span>
+						<span class="page"><a href=""><i class="fas fa-angle-double-left"></i></a></span> <span class="page"><a href=""><i class="fas fa-angle-left"></i></a></span> <span class="page page-active"> <a href="" class="f6">1</a></span> <span class="page"><a href="">2</a></span> <span class="page"><a href="">3</a></span> <span class="page"><a href="">4</a></span> <span class="page"><a href="">5</a></span> <span class="page"><a href=""><i class="fas fa-angle-right"></i></a></span> <span class="page"><a href=""><i class="fas fa-angle-double-right"></i></a></span>
 					</div>
 				</div>
 			</div>
@@ -91,9 +83,7 @@
 				$.ajax({
 					url : "${pageContext.request.contextPath}/member/member_delete",
 					type : "POST",
-					data : {
-						chkArr : chkArr
-					},
+					data : { chkArr : chkArr },
 					success : function(resData) {
 						alert("삭제되었습니다.");
 						window.location.reload();

@@ -17,11 +17,11 @@ tr:nth-child(1) {
 			<div class="main">
 				<div class="page-wrap">
 					<div class="title">
-						<span class=""><i class="fas fa-cube"> 회원관리 > 회원목록 > 상세보기</i></span>
+						<span class=""><i class="fas fa-cube"> 마이페이지 > 내 정보</i></span>
 					</div>
 					<div class="btn-box m-t10 m-b10">
 						<button class="" id=""></button>
-						<button type="button" class="td-7 btn-gray" onclick="location.href='${pageContext.request.contextPath}/member'">목록으로</button>
+						<button type="button" class="td-7 btn-gray" onclick="location.href='${pageContext.request.contextPath}/mypage/mypage_modify'">내 정보 수정</button>
 					</div>
 					<div class="board-list btn-box">
 						<div class="photo p-5">
@@ -33,9 +33,9 @@ tr:nth-child(1) {
 									<td class="td-10 bg-blue">이름</td>
 									<td class="p-5 td-23"></td>
 									<td class="td-10 bg-blue">아이디</td>
-									<td class="p-5 td-23"></td>
+									<td class="p-5 td-23">${sessionScope.memberID}</td>
 									<td class="td-10 bg-blue">비밀번호</td>
-									<td class="p-5 td-23"></td>
+									<td class="p-5 td-23">${sessionScope.memberPasswd}</td>
 								</tr>
 								<tr class="">
 									<td class="td-10 bg-blue">회원번호</td>
@@ -43,7 +43,7 @@ tr:nth-child(1) {
 									<td class="td-10 bg-blue">회원가입일</td>
 									<td class="p-5"></td>
 									<td class="td-10 bg-blue">회원등급</td>
-									<td class="p-5"></td>
+									<td class="p-5">-</td>
 								</tr>
 								<tr class="">
 									<td class="td-10 bg-blue">성별</td>

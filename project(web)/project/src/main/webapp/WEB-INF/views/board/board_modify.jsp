@@ -18,7 +18,7 @@
 						<button class="" id=""></button>
 						<button type="button" class="td-7 btn-gray" onclick="location.href='${pageContext.request.contextPath}/board'">게시글 목록</button>
 					</div>
-					<form method="POST" action="${pageContext.request.contextPath}/board">
+					<form id="frm" method="POST" action="${pageContext.request.contextPath}/board/board_view" autocomplete="off">
 						<div class="board-list">
 							<table border="1" class="insert-box">
 								<tr class="" style="border-bottom: 1px solid #abb3b8a2;">
@@ -33,17 +33,19 @@
 								<tr>
 									<td class="center bg-blue">제목</td>
 									<td class="p-5">
-										<input value="${modify.boardTitle}" type="text" class="td-100" />
+										<input value="${view.boardTitle}" name="boardTitle" type="text" class="td-100" required />
 									</td>
 								</tr>
 								<tr>
 									<td class="center bg-blue">작성자</td>
-									<td class="p-5">${modify.boardWriter}</td>
+									<td class="p-5">
+										<input type="text" value="${view.boardWriter}" name="boardWriter" class="td-100" required placeholder="${view.boardWriter}" readonly />
+									</td>
 								</tr>
 								<tr>
 									<td class="center bg-blue">내용</td>
 									<td class="p-5">
-										<textarea name="" id="editor">${modify.boardContent}</textarea>
+										<textarea name="boardContent" id="editor">${view.boardContent}</textarea>
 										<script>
 											CKEDITOR.replace('editor');
 											CKEDITOR.config.height = 350;
@@ -59,7 +61,7 @@
 							</table>
 						</div>
 						<div class="center m-t10">
-							<button type="submit" class="td-7 btn-blue">게시물 수정</button>
+							<button type="submit" class="td-7 btn-blue">수정하기</button>
 						</div>
 					</form>
 					<div class="search-box m-t10"></div>
@@ -68,5 +70,4 @@
 		</div>
 	</div>
 	<%@ include file="/WEB-INF/views/include/FOOTER.jsp"%>
-	
-</html>	
+</html>

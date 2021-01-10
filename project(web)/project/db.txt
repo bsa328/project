@@ -9,7 +9,7 @@ primary key(member_num, member_id)
 
 create table board (
 board_num int auto_increment primary key,
-board_title varchar(100) not null,
+board_title varchar(100),
 board_writer varchar(20) not null,
 board_content text,
 board_regdate date,

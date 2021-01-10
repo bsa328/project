@@ -57,9 +57,8 @@
 						<hr class="hr" />
 						<div class="comment-box m-t10">
 							<form id="frm">
-								<div class="">${sessionScope.memberName}</div>
 								<div>
-									<textarea class="comment m-t5 p-10 m-b5" id="comment" name="comment"></textarea>
+									<textarea class="comment m-t5 p-10 m-b5" id="comment" name="comment" autocomplete="off" placeholder="댓글을 입력하세요."></textarea>
 								</div>
 								<div class="" style="text-align: right;">
 									<button id="btn" class="td-5 btn-blue" type="button">댓글등록</button>
@@ -68,15 +67,10 @@
 								<div class="m-t100 m-b50 center">등록된 댓글이 없습니다.</div>
 								<div class="">
 									<table>
-										<tr class="center" style="background-color: #fff; border-bottom: 1px solid #abb3b8a2;">
+										<tr class="center" style="background-color: #fff; border-bottom: 1px solid #abb3b8a2; height: 100px;">
 											<td class="td-12">포도</td>
 											<td class="text-left">ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ</td>
-											<td class="td-15">2020-10-20</td>
-										</tr>
-										<tr class="center" style="background-color: #fff; border-bottom: 1px solid #abb3b8a2;">
-											<td class="td-12">사과</td>
-											<td class="text-left">아..</td>
-											<td class="td-15">2020-10-20</td>
+											<td class="td-15 total-num">2020-10-20</td>
 										</tr>
 									</table>
 								</div>
@@ -88,4 +82,5 @@
 		</div>
 	</div>
 	<%@ include file="/WEB-INF/views/include/FOOTER.jsp"%>
+	
 </html>

@@ -50,6 +50,7 @@ public class BoardCtr {
 
 	@RequestMapping(value = "/board_insert", method = RequestMethod.POST)
 	public String setBoardInsert(BoardVO boardvo) {
+
 		boardSrv.setBoard(boardvo);
 		return "redirect:/board";
 	}
@@ -59,7 +60,6 @@ public class BoardCtr {
 
 		ModelAndView mav = new ModelAndView();
 		boardSrv.viewsUp(boardvo);
-
 		mav.addObject("view", boardSrv.getBoardOne(boardNum));
 		mav.setViewName("board/board_view");
 
@@ -74,6 +74,7 @@ public class BoardCtr {
 
 	@RequestMapping(value = "/board_modify", method = RequestMethod.POST)
 	public String setBoardModify() {
+
 		return "redirect:/board";
 	}
 

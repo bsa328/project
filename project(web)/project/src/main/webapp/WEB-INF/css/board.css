@@ -64,3 +64,28 @@ table a:hover {
 	height: 100px;
 	border: 1px solid #abb3b8a2;
 }
+
+.photo {
+	width: 12%;
+	border: 1px solid #abb3b8a2;
+}
+
+.info-table {
+	width: 87%;
+}
+
+.td-10 {
+	width: 10%;
+}
+
+.td-23 {
+	width: 23%;
+}
+
+.td-25 {
+	width: 25%;
+}
+
+.td-33 {
+	width: 33%;
+}
