@@ -66,17 +66,25 @@ public class BoardCtr {
 		return mav;
 	}
 
-	@RequestMapping(value = "/board_modify", method = RequestMethod.GET)
-	public String getBoardModify() {
+	////////////////////////////////////////
 
-		return "board/board_modify";
+	@RequestMapping(value = "/board_modify", method = RequestMethod.GET)
+	public ModelAndView getBoardModify(BoardVO boardvo) {
+
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("view", boardSrv.getBoardOne(boardvo.getBoardNum()));
+		mav.setViewName("board/board_modify");
+
+		return mav;
 	}
 
 	@RequestMapping(value = "/board_modify", method = RequestMethod.POST)
 	public String setBoardModify() {
 
-		return "redirect:/board";
+		return "board/board_view";
 	}
+
+	//////////////////////////////////////
 
 	@RequestMapping(value = "/board_delete", method = RequestMethod.POST)
 	@ResponseBody

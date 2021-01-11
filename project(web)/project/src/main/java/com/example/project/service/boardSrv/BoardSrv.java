@@ -39,8 +39,4 @@ public class BoardSrv {
 		boardDao.viewsUp(boardvo);
 	}
 
-	public int setBoardModify(BoardVO boardvo) {
-		return boardDao.setBoardModify(boardvo);
-	}
-
 }

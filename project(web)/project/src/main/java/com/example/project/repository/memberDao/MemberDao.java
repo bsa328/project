@@ -35,4 +35,8 @@ public class MemberDao {
 		return sqlSession.selectOne("member.getMemberCount");
 	}
 
+	public MemberVO getMemberOne(int memberNum) {
+		return sqlSession.selectOne("member.getMemberOne", memberNum);
+	}
+
 }

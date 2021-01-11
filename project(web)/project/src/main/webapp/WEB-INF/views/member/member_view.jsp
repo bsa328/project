@@ -31,19 +31,19 @@ tr:nth-child(1) {
 							<table border="1" class="insert-box center">
 								<tr class="">
 									<td class="td-10 bg-blue">이름</td>
-									<td class="p-5 td-23"></td>
+									<td class="p-5 td-23">${view.memberName}</td>
 									<td class="td-10 bg-blue">아이디</td>
-									<td class="p-5 td-23"></td>
+									<td class="p-5 td-23">${view.memberID}</td>
 									<td class="td-10 bg-blue">비밀번호</td>
-									<td class="p-5 td-23"></td>
+									<td class="p-5 td-23">${view.memberPasswd}</td>
 								</tr>
 								<tr class="">
 									<td class="td-10 bg-blue">회원번호</td>
-									<td class="p-5"></td>
+									<td class="p-5">${view.memberNum}</td>
 									<td class="td-10 bg-blue">회원가입일</td>
-									<td class="p-5"></td>
+									<td class="p-5">${view.memberRegdate}</td>
 									<td class="td-10 bg-blue">회원등급</td>
-									<td class="p-5"></td>
+									<td class="p-5">-</td>
 								</tr>
 								<tr class="">
 									<td class="td-10 bg-blue">성별</td>
@@ -72,7 +72,9 @@ tr:nth-child(1) {
 							</table>
 						</div>
 					</div>
-					<div class="center m-t10"></div>
+					<div class="center m-t10">
+						<button class="td-7 btn-blue" onClick="location.href='${pageContext.request.contextPath}/member/member_modify?memberNum=${view.memberNum}'">수정하기</button>
+					</div>
 					<div class="search-box m-t10"></div>
 				</div>
 			</div>

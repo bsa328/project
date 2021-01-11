@@ -26,5 +26,9 @@ public class MemberSrv {
 	public int getMemberCount() {
 		return memberDao.getMemberCount();
 	}
+	
+	public MemberVO getMemberOne(int memberNum) {
+		return memberDao.getMemberOne(memberNum);
+	}
 
 }

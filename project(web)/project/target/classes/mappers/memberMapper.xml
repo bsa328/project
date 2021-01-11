@@ -20,5 +20,15 @@
 	<select id="getMemberCount" resultType="int">
 		SELECT COUNT(member_num) FROM member
 	</select>
+	
+	<select id="getMemberOne" parameterType="int" resultType="com.example.project.model.MemberVO">
+		SELECT 
+			member_num AS memberNum,
+			member_name AS memberName,
+			member_id AS memberID,
+			member_passwd AS memberPasswd,
+			member_regdate AS memberRegdate
+		FROM member WHERE member_num = #{memberNum}
+	</select>
 
 </mapper>

@@ -18,7 +18,7 @@
 						<button class="" id=""></button>
 						<button type="button" class="td-7 btn-gray" onclick="location.href='${pageContext.request.contextPath}/board'">게시글 목록</button>
 					</div>
-					<form id="frm" method="POST" action="${pageContext.request.contextPath}/board/board_view" autocomplete="off">
+					<form id="frm" method="POST" action="${pageContext.request.contextPath}/board/board_modify" autocomplete="off">
 						<div class="board-list">
 							<table border="1" class="insert-box">
 								<tr class="" style="border-bottom: 1px solid #abb3b8a2;">
@@ -70,4 +70,5 @@
 		</div>
 	</div>
 	<%@ include file="/WEB-INF/views/include/FOOTER.jsp"%>
+	
 </html>

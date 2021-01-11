@@ -14,6 +14,7 @@
 					</div>
 					<div class="btn-box m-t10 m-b10">
 						<button class="td-5 btn-red" id="delete">선택삭제</button>
+						<button type="button" class="td-7 btn-blue" onclick="location.href='${pageContext.request.contextPath}/member/member_insert'">회원 등록</button>
 					</div>
 					<div class="board-list">
 						<table>
@@ -36,10 +37,12 @@
 									</td>
 									<td class="td-5">${memberList.memberNum}</td>
 									<td class="">
-										<a href="${pageContext.request.contextPath}/member/member_view?memberNum=${boardList.memberNum}">${memberList.memberName} </a>
+										<a href="${pageContext.request.contextPath}/member/member_view?memberNum=${memberList.memberNum}">${memberList.memberName} </a>
 									</td>
-									<td class="">${memberList.memberID}</td>
-									<td class="">${memberList.memberPasswd}</td>
+									<td class="">
+										<a href="${pageContext.request.contextPath}/member/member_view?memberNum=${memberList.memberNum}">${memberList.memberID} </a>
+									</td>
+									<td class="">****</td>
 									<td class="td-15">${memberList.memberRegdate}</td>
 									<td class="td-15">-</td>
 								</tr>

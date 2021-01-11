@@ -48,7 +48,4 @@ public class BoardDao {
 		sqlSession.update("board.viewsUp", boardvo);
 	}
 
-	public int setBoardModify(BoardVO boardvo) {
-		return sqlSession.update("board.setBoardModify", boardvo);
-	}
 }

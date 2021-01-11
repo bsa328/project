@@ -21,9 +21,9 @@ tr:nth-child(1) {
 					</div>
 					<div class="btn-box m-t10 m-b10">
 						<button class="" id=""></button>
-						<button type="button" class="td-7 btn-gray" onclick="location.href='${pageContext.request.contextPath}/mypage'">이전으로</button>
+						<button type="button" class="td-7 btn-gray" onclick="location.href='${pageContext.request.contextPath}/member/member_view'">이전으로</button>
 					</div>
-					<form id="frm" method="POST" action="${pageContext.request.contextPath}/mypage/mypage_modify" autocomplete="off">
+					<form id="frm" method="POST" action="${pageContext.request.contextPath}/member/member_modify" autocomplete="off">
 						<div class="board-list btn-box">
 							<div class="photo p-5">
 								<div class="" style="background-color: #eee; width: 100%; height: 100%;"></div>
@@ -37,11 +37,11 @@ tr:nth-child(1) {
 										</td>
 										<td class="td-10 bg-blue">아이디</td>
 										<td class="p-5 td-23">
-											<input type="text" class="td-100" placeholder="${sessionScope.memberID}" readonly />
+											<input type="text" class="td-100" placeholder="" readonly />
 										</td>
 										<td class="td-10 bg-blue">비밀번호</td>
 										<td class="p-5 td-23">
-											<input type="text" class="td-100" value="${sessionScope.memberPasswd}" />
+											<input type="text" class="td-100" value="" />
 										</td>
 									</tr>
 									<tr class="">
@@ -51,7 +51,7 @@ tr:nth-child(1) {
 										</td>
 										<td class="td-10 bg-blue">회원가입일</td>
 										<td class="p-5">
-											<input type="text" class="td-100" placeholder="회원가입일" readonly />
+											<input type="text" class="td-100" placeholder="-" readonly />
 										</td>
 										<td class="td-10 bg-blue">회원등급</td>
 										<td class="p-5">
@@ -69,7 +69,7 @@ tr:nth-child(1) {
 										</td>
 										<td class="td-10 bg-blue">생년월일</td>
 										<td class="p-5">
-											<input type="text" class="td-100" />
+											<input type="text" class="td-100" placeholder="ex) 19970328" maxlength="8" />
 										</td>
 										<td class="td-10 bg-blue">전화번호</td>
 										<td class="p-5">
@@ -78,8 +78,8 @@ tr:nth-child(1) {
 												<option value="2">051</option>
 												<option value="no">없음</option>
 											</select>
-											- <input type="text" class="td-33" />
-											- <input type="text" class="td-33" />
+											- <input type="text" class="td-33" maxlength="4" />
+											- <input type="text" class="td-33" maxlength="4" />
 										</td>
 									</tr>
 									<tr class="">

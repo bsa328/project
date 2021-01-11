@@ -21,11 +21,4 @@
 			<a href="${pageContext.request.contextPath}/member">- 회원목록</a>
 		</div>
 	</div>
-	<div class="menu-box">
-		<span class="big-menu"> 마이페이지 <i class="fas fa-chevron-down"></i>
-		</span>
-		<div class="small-menu">
-			<a href="${pageContext.request.contextPath}/mypage">- 내 정보</a>
-		</div>
-	</div>
 </div>

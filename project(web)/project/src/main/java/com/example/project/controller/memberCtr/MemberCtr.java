@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.example.project.model.BoardVO;
 import com.example.project.model.MemberVO;
 import com.example.project.service.logRegSrv.LogRegSrv;
 import com.example.project.service.memberSrv.MemberSrv;
@@ -79,8 +80,37 @@ public class MemberCtr {
 	}
 
 	@RequestMapping("/member_view")
-	public String getMemberView() {
+	public ModelAndView getMemberView(@ModelAttribute MemberVO membervo, int memberNum) {
+
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("view", memberSrv.getMemberOne(memberNum));
+		mav.setViewName("member/member_view");
+
+		return mav;
+	}
+
+	@RequestMapping(value = "/member_modify", method = RequestMethod.GET)
+	public String getMemberModify() {
+
+		return "member/member_modify";
+	}
+
+	@RequestMapping(value = "/member_modify", method = RequestMethod.POST)
+	public String setMemberModify() {
+
 		return "member/member_view";
+	}
+
+	@RequestMapping(value = "/member_insert", method = RequestMethod.GET)
+	public String getMemberInsert() {
+
+		return "member/member_insert";
+	}
+
+	@RequestMapping(value = "/member_insert", method = RequestMethod.POST)
+	public String setMemberInsert() {
+
+		return "redirect:/member";
 	}
 
 }
