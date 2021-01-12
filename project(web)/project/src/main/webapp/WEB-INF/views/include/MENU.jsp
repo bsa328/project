@@ -1,24 +1,33 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <div class="menu">
 	<div class="menu-box">
-		<span class="big-menu"> 공지사항 <i class="fas fa-chevron-down"></i>
+		<span class="big-menu"> 사원관리 <i class="fas fa-chevron-down"></i>
 		</span>
 		<div class="small-menu">
-			<a href="${pageContext.request.contextPath}/board">- 게시판</a>
+			<div>
+				<a href="${pageContext.request.contextPath}/member/member_main">- 사원목록</a>
+			</div>
+			<div>
+				<a href="${pageContext.request.contextPath}/member/member_register">- 사원등록</a>
+			</div>
+			<div>
+				<a href="#">- 조직도</a>
+			</div>
+		</div>
+	</div>
+	<div class="menu-box">
+		<span class="big-menu"> 게시판관리 <i class="fas fa-chevron-down"></i>
+		</span>
+		<div class="small-menu">
+			<a href="${pageContext.request.contextPath}/board">- 게시판생성</a>
 		</div>
 	</div>
 	<div class="menu-box">
 		<span class="big-menu"> 일정관리 <i class="fas fa-chevron-down"></i>
 		</span>
 		<div class="small-menu">
-			<a href="${pageContext.request.contextPath}/calendar">- 일정등록</a>
+			<a href="${pageContext.request.contextPath}/calendar">- 일정목록</a>
 		</div>
 	</div>
-	<div class="menu-box">
-		<span class="big-menu"> 회원관리 <i class="fas fa-chevron-down"></i>
-		</span>
-		<div class="small-menu">
-			<a href="${pageContext.request.contextPath}/member">- 회원목록</a>
-		</div>
-	</div>
+
 </div>

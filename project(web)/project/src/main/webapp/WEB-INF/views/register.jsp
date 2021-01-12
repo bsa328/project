@@ -7,9 +7,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>LOGO</title>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/register.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-</head>
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.8.18/themes/base/jquery-ui.css" type="text/css" />
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="http://code.jquery.com/ui/1.8.18/jquery-ui.min.js"></script>
 
+<script>
+	$(document).ready(function() {
+		$("#empEnter").datepicker({
+			dateFormat : 'yy-mm-dd'
+		});
+	});
+</script>
 <body>
 	<div class="login-box">
 		<div class="image-wrap">
@@ -19,13 +27,28 @@
 			</div>
 		</div>
 		<div class="login-wrap">
-			<h1>회원가입</h1>
-			<form onSubmit="return checkPwd();" method="POST" action="${pageContext.request.contextPath}/member/register" autocomplete="off">
-				<input type="text" name="memberName" id="memberName" placeholder="이름" required tabindex="1" autofocus />
-				<input type="text" name="memberID" id="memberID" placeholder="아이디 4~10자리" required tabindex="2" />
-				<input type="password" name="memberPasswd" id="memberPasswd" placeholder="비밀번호 5자리 이상" required tabindex="3" />
-				<input type="password" name="repasswd" id="repasswd" placeholder="비밀번호 확인" required tabindex="4" />
-				<button type="submit" class="btn bold" tabindex="5">가입하기</button>
+			<h1>사원가입</h1>
+			<form id="frm" method="post" action="${pageContext.request.contextPath}/register" autocomplete="off">
+				<select name="empBuseoCode" id="empBuseoCode" class="noto">
+					<option value="buseo">부서를 선택하세요.</option>
+					<option value="100">관리부</option>
+					<option value="200">기획부</option>
+					<option value="300">인사부</option>
+					<option value="400">영업부</option>
+					<option value="500">생산부</option>
+				</select>
+				<select name="empgGradeCode" id="empgGradeCode" class="noto">
+					<option value="grade">직책을 선택하세요.</option>
+					<option value="1">부장</option>
+					<option value="2">과장</option>
+					<option value="3">대리</option>
+					<option value="4">사원</option>
+				</select>
+				<input type="text" class="noto" name="empEnter" id="empEnter" placeholder="입사년월일을 선택하세요." required tabindex="1" />
+				<input type="text" class="noto" name="empName" id="empName" placeholder="사원명을 입력하세요." required tabindex="2" />
+				<input type="password" class="noto" name="empPwd" id="empPwd" placeholder="비밀번호를 입력하세요." required tabindex="3" />
+				<input type="password" class="noto" name="repasswd" id="repasswd" placeholder="비밀번호 확인을 입력하세요." required tabindex="4" />
+				<button type="button" id="btn" class="btn bold" tabindex="5">가입하기</button>
 				<div class="register">
 					<div class="forgot"></div>
 					<div class="join" tabindex="6">
@@ -33,40 +56,71 @@
 					</div>
 				</div>
 			</form>
-			<div class="" style="font-size: 15px; font-weight: 700; margin-top: 40px; text-align: center; color: #f00;">
-			${registerMsg}
-			</div>
 		</div>
 	</div>
 </body>
+
 <script>
-	function checkPwd() {
-		var a = $("#memberID");
-		var b = $("#memberPasswd");
-		var c = $("#repasswd");
+	function checkInfo() {
 
-		if (a.val().length < 4 || a.val().length > 10) {
-			alert("아이디는 4자리 이상 10자리 이하로 입력하셔야 합니다.");
-			a.val("");
-			a.focus();
-			return false;
-		}
+		$("#btn").click(function() {
 
-		if (b.val().length < 5) {
-			alert("비밀번호는 5자리 이상 입력하셔야 합니다.");
-			b.val("");
-			b.focus();
-			return false;
-		}
+			if ($("#empBuseoCode").val() == 'buseo') {
+				alert("부서를 선택해주세요.");
+				
+				return false;
+			}
 
-		if (b.val() != c.val()) {
-			alert("입력하신 비밀번호가 다릅니다. 다시 입력해주세요.");
-			c.val("");
-			c.focus();
-			return false;
-		}
+			if ($("#empgGradeCode").val() == 'grade') {
+				alert("직책을 선택해주세요.");
+				
+				return false;
+			}
 
+			if ($("#empEnter").val() == '') {
+				alert("입사년월일을 선택하세요.");
+				
+				return false;
+			}
+
+			if ($("#empName").val() == '') {
+				alert("사원명을 입력하세요.");
+				$("#empName").focus();
+				
+				return false;
+			}
+
+			if ($("#empPwd").val() == '') {
+				alert("비밀번호를 입력하세요.");
+				$("#empPwd").focus();
+				
+				return false;
+			}
+			
+			if ($("#repasswd").val() == '') {
+				alert("비밀번호 확인을 입력하세요.");
+				$("#repasswd").focus();
+				
+				return false;
+			}
+			
+			if ($("#empPwd").val() != $("#repasswd").val()) {
+				alert("비밀번호를 다시 확인해주세요.");
+				$("#repasswd").val("");
+				$("#repasswd").focus();
+				
+				return false;
+			}
+
+			$("#frm").submit();
+			
+		});
+		
 	}
+
+	$(function() {
+		checkInfo();
+	});
 </script>
 
 </html>

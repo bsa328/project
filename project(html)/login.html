@@ -19,20 +19,21 @@
         <div class="login-wrap">
             <h1>로그인</h1>
             <form method="POST" action="admin.html" autocomplete="off">
-                <input type="text" name="userID" id="userID" placeholder="아이디" required autofocus />
-                <input type="password" name="passwd" id="passwd" placeholder="비밀번호" required />
+                <input type="text" class="noto" name="userID" id="userID" placeholder="사원번호를 입력하세요." required
+                    autofocus tabindex="1" />
+                <input type="password" class="noto" name="passwd" id="passwd" placeholder="비밀번호를 입력하세요." required tabindex="1" />
                 <button type="submit" class="btn bold">로그인</button>
                 <div class="register">
                     <div class="forgot">
-                        <a href="#">아이디/비밀번호 찾기</a>
+                        <a href="#">사원번호·비밀번호 찾기</a>
                     </div>
                     <div class="join">
-                        <a href="register.html">회원가입</a>
+                        <a href="register.html">사원가입</a>
                     </div>
                 </div>
             </form>
             <div class="" style="font-size: 15px;font-weight: 700;margin-top:80px;text-align: center;color: #f00;">
-                등록된 회원이 아닙니다.
+                등록된 사원이 아닙니다.
             </div>
         </div>
     </div>

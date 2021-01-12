@@ -2,28 +2,16 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="register">
 
-	<insert id="setMemberRegister" parameterType="com.example.project.model.MemberVO">
-		INSERT INTO member SET 
-			member_name		= #{memberName},
-			member_id		= #{memberID},
-			member_passwd	= #{memberPasswd},
-			member_regdate	= now()
+	<insert id="setEmpRegister" parameterType="com.example.project.model.RegisterVO">
+		INSERT INTO employee SET
+			emp_buseo	= #{empBuseoCode},
+			emp_grade	= #{empGradeCode},
+			emp_num 	= #{empNum},
+			emp_name	= #{empName},
+			emp_pwd		= #{empPwd},
+			emp_enter	= #{empEnter},
+			emp_regdate	= now(),
+			emp_photo	= #{empPhoto}
 	</insert>
-	
-	<select id="getLoginCheck" parameterType="hashmap" resultType="int">
-		SELECT COUNT(*) FROM member WHERE member_id = #{memberID} AND member_passwd = #{memberPasswd}
-	</select>
-	
-	<select id="getRegisterCheck" parameterType="hashmap" resultType="int">
-		SELECT COUNT(*) FROM member WHERE member_id = #{memberID}
-	</select>
-	
-	<select id="getMemberInfo" parameterType="hashmap" resultType="com.example.project.model.MemberVO">
-		SELECT 
-			member_name AS memberName,
-			member_id AS memberID,
-			member_passwd AS memberPasswd 
-		FROM member WHERE member_id = #{memberID} AND member_passwd = #{memberPasswd}
-	</select>
 
 </mapper>

@@ -19,16 +19,16 @@
 		</div>
 		<div class="login-wrap">
 			<h1>로그인</h1>
-			<form method="POST" action="${pageContext.request.contextPath}/login" autocomplete="off">
-				<input type="text" name="memberID" id="memberID" placeholder="아이디" required  tabindex="1" autofocus />
-				<input type="password" name="memberPasswd" id="memberPasswd" placeholder="비밀번호"  tabindex="2" required />
+			<form method="post" id="frm" action="${pageContext.request.contextPath}/login" autocomplete="off">
+				<input type="text" class="noto" name="memberID" id="memberID" placeholder="사원번호를 입력하세요." required  tabindex="1" autofocus />
+				<input type="password" class="noto" name="memberPasswd" id="memberPasswd" placeholder="비밀번호를 입력하세요."  tabindex="2" required />
 				<button type="submit" class="btn bold" tabindex="3">로그인</button>
 				<div class="register">
 					<div class="forgot" tabindex="4">
-						<a href="#">아이디/비밀번호 찾기</a>
+						<a href="#">사원번호·비밀번호 찾기</a>
 					</div>
 					<div class="join" tabindex="5">
-						<a href="${pageContext.request.contextPath}/member/register">회원가입</a>
+						<a href="${pageContext.request.contextPath}/register">사원가입</a>
 					</div>
 				</div>
 			</form>
