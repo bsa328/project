@@ -16,58 +16,82 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `board`
+-- Table structure for table `buseo`
 --
 
-DROP TABLE IF EXISTS `board`;
+DROP TABLE IF EXISTS `buseo`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `board` (
-  `board_num` int NOT NULL AUTO_INCREMENT,
-  `board_title` varchar(100) DEFAULT NULL,
-  `board_writer` varchar(20) NOT NULL,
-  `board_content` text,
-  `board_regdate` date DEFAULT NULL,
-  `board_views` int DEFAULT '0',
-  PRIMARY KEY (`board_num`)
-) ENGINE=InnoDB AUTO_INCREMENT=42 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+CREATE TABLE `buseo` (
+  `buseo_id` varchar(5) DEFAULT NULL,
+  `buseo_name` varchar(50) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `board`
+-- Dumping data for table `buseo`
 --
 
-LOCK TABLES `board` WRITE;
-/*!40000 ALTER TABLE `board` DISABLE KEYS */;
-INSERT INTO `board` VALUES (41,'sad','포도','<p>sadsad</p>\r\n','2021-01-10',2);
-/*!40000 ALTER TABLE `board` ENABLE KEYS */;
+LOCK TABLES `buseo` WRITE;
+/*!40000 ALTER TABLE `buseo` DISABLE KEYS */;
+INSERT INTO `buseo` VALUES ('100','관리부'),('200','기획부'),('300','인사부'),('400','영업부'),('500','생산부');
+/*!40000 ALTER TABLE `buseo` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `member`
+-- Table structure for table `employee`
 --
 
-DROP TABLE IF EXISTS `member`;
+DROP TABLE IF EXISTS `employee`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `member` (
-  `member_num` int NOT NULL AUTO_INCREMENT,
-  `member_name` varchar(10) NOT NULL,
-  `member_id` varchar(20) NOT NULL,
-  `member_passwd` varchar(20) NOT NULL,
-  `member_regdate` date DEFAULT NULL,
-  PRIMARY KEY (`member_num`,`member_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+CREATE TABLE `employee` (
+  `emp_id` int NOT NULL AUTO_INCREMENT,
+  `emp_buseo` varchar(20) NOT NULL,
+  `emp_grade` varchar(2) NOT NULL,
+  `emp_num` varchar(30) NOT NULL,
+  `emp_name` varchar(10) NOT NULL,
+  `emp_pwd` varchar(20) NOT NULL,
+  `emp_enter` date DEFAULT NULL,
+  `emp_regdate` date DEFAULT NULL,
+  `emp_confirm` char(1) DEFAULT 'N',
+  `emp_auth` int DEFAULT '1',
+  `emp_photo` varchar(300) DEFAULT NULL,
+  PRIMARY KEY (`emp_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `member`
+-- Dumping data for table `employee`
 --
 
-LOCK TABLES `member` WRITE;
-/*!40000 ALTER TABLE `member` DISABLE KEYS */;
-INSERT INTO `member` VALUES (1,'관리자','admin','admin','2021-01-05'),(2,'사과','apple','apple','2021-01-05'),(10,'바나나','banana','banana','2021-01-08'),(13,'포도','grape','grape','2021-01-08');
-/*!40000 ALTER TABLE `member` ENABLE KEYS */;
+LOCK TABLES `employee` WRITE;
+/*!40000 ALTER TABLE `employee` DISABLE KEYS */;
+INSERT INTO `employee` VALUES (1,'1','1','1','1','1',NULL,NULL,'N',1,NULL);
+/*!40000 ALTER TABLE `employee` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `grade`
+--
+
+DROP TABLE IF EXISTS `grade`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `grade` (
+  `grade_id` varchar(10) NOT NULL,
+  `grade_name` varchar(50) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `grade`
+--
+
+LOCK TABLES `grade` WRITE;
+/*!40000 ALTER TABLE `grade` DISABLE KEYS */;
+INSERT INTO `grade` VALUES ('1','부장'),('2','과장'),('3','대리'),('4','사원');
+/*!40000 ALTER TABLE `grade` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -79,4 +103,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-01-10 23:17:47
+-- Dump completed on 2021-01-13  4:32:40
