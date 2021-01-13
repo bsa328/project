@@ -56,9 +56,8 @@ CREATE TABLE `employee` (
   `emp_regdate` date DEFAULT NULL,
   `emp_confirm` char(1) DEFAULT 'N',
   `emp_auth` int DEFAULT '1',
-  `emp_photo` varchar(300) DEFAULT NULL,
   PRIMARY KEY (`emp_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -67,7 +66,7 @@ CREATE TABLE `employee` (
 
 LOCK TABLES `employee` WRITE;
 /*!40000 ALTER TABLE `employee` DISABLE KEYS */;
-INSERT INTO `employee` VALUES (1,'1','1','1','1','1',NULL,NULL,'N',1,NULL);
+INSERT INTO `employee` VALUES (1,'-','-','1','관리자','1',NULL,NULL,'Y',10),(2,'100','1','2110011','김씨','1','2021-01-01','2021-01-13','N',1),(3,'200','3','2120032','박씨','1','2021-01-14','2021-01-13','N',1),(4,'500','4','2150043','최씨','1','2021-01-26','2021-01-13','N',1);
 /*!40000 ALTER TABLE `employee` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -103,4 +102,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-01-13  4:32:40
+-- Dump completed on 2021-01-13 18:17:17

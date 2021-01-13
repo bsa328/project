@@ -3,7 +3,7 @@ package com.example.project.model;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class RegisterVO {
+public class EmployeeVO {
 	private int empID;
 	private String empBuseoCode;
 	private String empBuseoName;
@@ -16,7 +16,7 @@ public class RegisterVO {
 	private Date empRegdate;
 	private String empConfirm;
 	private int empAuth;
-	private String empPhoto;
+	private int ref;
 
 	SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 
@@ -116,20 +116,20 @@ public class RegisterVO {
 		this.empAuth = empAuth;
 	}
 
-	public String getEmpPhoto() {
-		return empPhoto;
-	}
-
-	public void setEmpPhoto(String empPhoto) {
-		this.empPhoto = empPhoto;
-	}
-
 	public SimpleDateFormat getSdf() {
 		return sdf;
 	}
 
 	public void setSdf(SimpleDateFormat sdf) {
 		this.sdf = sdf;
+	}
+
+	public int getRef() {
+		return ref;
+	}
+
+	public void setRef(int ref) {
+		this.ref = ref;
 	}
 
 }

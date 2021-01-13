@@ -37,7 +37,7 @@
 					<option value="400">영업부</option>
 					<option value="500">생산부</option>
 				</select>
-				<select name="empgGradeCode" id="empgGradeCode" class="noto">
+				<select name="empGradeCode" id="empGradeCode" class="noto">
 					<option value="grade">직책을 선택하세요.</option>
 					<option value="1">부장</option>
 					<option value="2">과장</option>
@@ -71,7 +71,7 @@
 				return false;
 			}
 
-			if ($("#empgGradeCode").val() == 'grade') {
+			if ($("#empGradeCode").val() == 'grade') {
 				alert("직책을 선택해주세요.");
 				
 				return false;

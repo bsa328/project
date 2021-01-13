@@ -8,8 +8,7 @@ emp_pwd varchar(20) not null,
 emp_enter date,
 emp_regdate date,
 emp_confirm char(1) default 'N',
-emp_auth int default 1,
-emp_photo varchar(300)
+emp_auth int default 1
 );
 
 create table buseo(

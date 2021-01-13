@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="login">
+
+	<select id="getEmpNumCheck" parameterType="hashmap" resultType="int">
+		SELECT COUNT(emp_id) FROM employee 
+			WHERE emp_num = #{empNum} AND emp_pwd = #{empPwd}
+	</select>
+	
+	<select id="getEmpLoginInfo" parameterType="hashmap" resultType="com.example.project.model.EmployeeVO">
+		SELECT
+			emp_num AS empNum,
+			emp_name AS empName,
+			emp_auth AS empAuth,
+			emp_confirm AS empConfirm
+		FROM employee WHERE emp_num = #{empNum} AND emp_pwd = #{empPwd}
+	</select>
+
+</mapper>

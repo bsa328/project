@@ -4,7 +4,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.example.project.model.RegisterVO;
+import com.example.project.model.EmployeeVO;
 
 @Repository
 public class RegisterDao {
@@ -12,8 +12,8 @@ public class RegisterDao {
 	@Autowired
 	SqlSession sqlSession;
 
-	public void setEmpRegister(RegisterVO registervo) {
-		sqlSession.insert("register.setEmpRegister", registervo);
+	public void setEmpRegister(EmployeeVO employeevo) {
+		sqlSession.insert("register.setEmpRegister", employeevo);
 	}
 
 }

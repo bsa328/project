@@ -2,16 +2,19 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="register">
 
-	<insert id="setEmpRegister" parameterType="com.example.project.model.RegisterVO">
+	<insert id="setEmpRegister" parameterType="com.example.project.model.EmployeeVO">
+		<selectKey resultType="int" keyProperty="ref" order="BEFORE">
+			SELECT IFNULL(MAX(emp_id), 1) FROM employee
+		</selectKey>
+		
 		INSERT INTO employee SET
 			emp_buseo	= #{empBuseoCode},
 			emp_grade	= #{empGradeCode},
-			emp_num 	= #{empNum},
+			emp_enter	= #{empEnter},
 			emp_name	= #{empName},
 			emp_pwd		= #{empPwd},
-			emp_enter	= #{empEnter},
 			emp_regdate	= now(),
-			emp_photo	= #{empPhoto}
+			emp_num 	= CONCAT(#{empNum}, #{ref})
 	</insert>
-
+	
 </mapper>
