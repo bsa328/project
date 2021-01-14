@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class MainCtr {
 
 	@RequestMapping("")
-	public String getWebsiteHome() {
+	public String getWebsiteMain() {
 		return "main";
 	}
 }

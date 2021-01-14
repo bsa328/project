@@ -10,31 +10,56 @@ table {
     width: 100%;
 }
 
-tr:nth-child(1) {
-    background-color: #b9cee2;
-    border-bottom: 0;
-}
 
 tr {
-    height: 45px;
-    border-bottom: 1px solid #abb3b8a2;
+    height: 40px;
+    border: 1px solid #d6dce7;
+    font-size: 14px;
 }
 
 table a:hover {
     text-decoration: underline;
-    color: gray;
+    color: #555;
+}
+
+.td-3 {
+    width: 3%;
+}
+
+.td-4 {
+    width: 4%;
 }
 
 .td-5 {
     width: 5%;
 }
 
+.td-6 {
+    width: 6%;
+}
+
 .td-7 {
     width: 7%;
 }
 
+.td-8 {
+    width: 8%;
+}
+
+.td-9 {
+    width: 9%;
+}
+
+.td-10 {
+    width: 10%;
+}
+
 .td-12 {
     width: 12%;
+}
+
+.td-13 {
+    width: 13%;
 }
 
 .td-15 {
@@ -88,4 +113,9 @@ table a:hover {
 
 .td-33 {
     width: 33%;
+}
+
+.notice {
+    color: tomato;
+    font-weight: 900;
 }

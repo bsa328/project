@@ -50,7 +50,9 @@
 				<input type="password" class="noto" name="repasswd" id="repasswd" placeholder="비밀번호 확인을 입력하세요." required tabindex="4" />
 				<button type="button" id="btn" class="btn bold" tabindex="5">가입하기</button>
 				<div class="register">
-					<div class="forgot"></div>
+					<div class="forgot">
+						<a href="${pageContext.request.contextPath}">메인으로</a>
+					</div>
 					<div class="join" tabindex="6">
 						<a href="${pageContext.request.contextPath}/login">로그인</a>
 					</div>
@@ -67,55 +69,55 @@
 
 			if ($("#empBuseoCode").val() == 'buseo') {
 				alert("부서를 선택해주세요.");
-				
+
 				return false;
 			}
 
 			if ($("#empGradeCode").val() == 'grade') {
 				alert("직책을 선택해주세요.");
-				
+
 				return false;
 			}
 
 			if ($("#empEnter").val() == '') {
 				alert("입사년월일을 선택하세요.");
-				
+
 				return false;
 			}
 
 			if ($("#empName").val() == '') {
 				alert("사원명을 입력하세요.");
 				$("#empName").focus();
-				
+
 				return false;
 			}
 
 			if ($("#empPwd").val() == '') {
 				alert("비밀번호를 입력하세요.");
 				$("#empPwd").focus();
-				
+
 				return false;
 			}
-			
+
 			if ($("#repasswd").val() == '') {
 				alert("비밀번호 확인을 입력하세요.");
 				$("#repasswd").focus();
-				
+
 				return false;
 			}
-			
+
 			if ($("#empPwd").val() != $("#repasswd").val()) {
 				alert("비밀번호를 다시 확인해주세요.");
 				$("#repasswd").val("");
 				$("#repasswd").focus();
-				
+
 				return false;
 			}
 
 			$("#frm").submit();
-			
+
 		});
-		
+
 	}
 
 	$(function() {

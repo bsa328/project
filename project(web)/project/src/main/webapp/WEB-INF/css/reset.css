@@ -22,7 +22,8 @@ a {
 select, input, textarea, button {
 	border: 0;
 	outline: 0;
-	vertical-align: top;
+    vertical-align: top;
+    font-family: 'Noto Sans KR', sans-serif;
 }
 
 button {
@@ -30,7 +31,7 @@ button {
 }
 
 input[type="checkbox"] {
-	width: 18px;
-	height: 18px;
+	width: 15px;
+	height: 15px;
 	vertical-align: -2px;
 }

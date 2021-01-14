@@ -3,9 +3,9 @@
 	<span class="logo"> <a href="${pageContext.request.contextPath}/admin">LOGO</a>
 	</span>
 	<div class="auth">
-		<div class="user">사용자 : ${sessionScope.empName}, 사원번호 : ${sessionScope.empNum}, 권한 : ${sessionScope.empAuth}</div>
-		<div class="logout">
-			<a href="#" id="logout">로그아웃</a>
+		<div class="user">
+			[${sessionScope.empName}, ${sessionScope.empNum}] {권한 : ${sessionScope.empAuth}} <a href="#" id="logout">로그아웃</a>
 		</div>
+		<div class="logout"><a href="${pageContext.request.contextPath}" id=""><i class="fas fa-home"></i></a></div>
 	</div>
 </div>

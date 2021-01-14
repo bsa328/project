@@ -26,7 +26,7 @@
 				<button type="submit" class="btn bold" tabindex="3" id="btn">로그인</button>
 				<div class="register">
 					<div class="forgot" tabindex="4">
-						<a href="#">사원번호·비밀번호 찾기</a>
+						<a href="${pageContext.request.contextPath}">메인으로</a>
 					</div>
 					<div class="join" tabindex="5">
 						<a href="${pageContext.request.contextPath}/register">사원가입</a>
@@ -34,7 +34,7 @@
 				</div>
 			</form>
 			<div class="" style="font-size: 15px; font-weight: 700; margin-top: 80px; text-align: center; color: #f00;">
-			${msg}
+			
 			</div>
 		</div>
 	</div>

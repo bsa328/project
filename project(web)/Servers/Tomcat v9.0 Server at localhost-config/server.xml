@@ -153,11 +153,11 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      <Context docBase="project" path="/project" reloadable="true" source="org.eclipse.jst.jee.server:project"/>
+      
       		<!-- docBase(절대경로)	: 윈도우(c,d 시작), 리눅스(/) -->
 			<!-- path(상대경로)	: localhost6789/std/상대경로이름 -->
 			<!-- <Context docBase="C:/upload" path="/upload" reloadable="true" source="org.eclipse.jst.jee.server:project"/> -->
-      </Host>
+      <Context docBase="student" path="/student" reloadable="true" source="org.eclipse.jst.jee.server:student"/></Host>
       
     </Engine>
   </Service>

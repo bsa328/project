@@ -46,29 +46,19 @@ public class IDnRegCtr {
 		response.setContentType("text/html; charset=UTF-8");
 		PrintWriter out = response.getWriter();
 
-		String msg;
 		if (result > 0) {
 			EmployeeVO empvo = loginSrv.getEmpLoginInfo(employeevo);
 
 			if (empvo.getEmpConfirm().equals("Y")) {
 				loginSrv.setSession(employeevo, httpSession);
-				mav.setViewName("redirect:/admin");
+				mav.setViewName("main");
 
 			} else {
 				loginSrv.setSession(employeevo, httpSession);
-				// msg = "관리자 승인이 필요합니다.";
-				// mav.addObject("msg", msg);
-
-				out.println("<script>alert('관리자 승인이 필요합니다.');</script>");
-				out.flush();
-
-				mav.setViewName("login");
+				mav.setViewName("main");
 			}
 
 		} else {
-			// msg = "등록된 사번이 아닙니다.";
-			// mav.addObject("msg", msg);
-
 			out.println("<script>alert('등록된 사번이 아닙니다.');</script>");
 			out.flush();
 

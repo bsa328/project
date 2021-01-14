@@ -1,63 +1,13 @@
-<!DOCTYPE html>
-<html lang="ko">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LOGO</title>
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/header_menu.css">
-    <link rel="stylesheet" href="css/common.css">
-    <link rel="stylesheet" href="css/board.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://kit.fontawesome.com/3249ba5f1a.js" crossorigin="anonymous"></script>
-</head>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ include file="/WEB-INF/views/include/HEADER.jsp"%>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/board.css">
 
 <body>
-    <div class="html">
-        <div class="header">
-            <span class="logo">
-                <a href="admin_main.html">LOGO</a>
-            </span>
-            <div class="auth">
-                <div class="user">
-                    사용자 : 관리자(admin)
-                </div>
-                <div class="logout">
-                    <a href="login.html">로그아웃</a>
-                </div>
-            </div>
-        </div>
-        <div class="body">
-            <div class="menu">
-                <div class="menu-box">
-                    <span class="big-menu">사원관리 </span>
-                    <div class="small-menu">
-                        <div>
-                            <a href="#">사원목록</a>
-                        </div>
-                        <div>
-                            <a href="#">사원등록</a>
-                        </div>
-                        <div>
-                            <a href="#">조직도</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="menu-box">
-                    <span class="big-menu">게시판관리 </span>
-                    <div class="small-menu">
-                        <a href="board_main.html">게시판생성</a>
-                    </div>
-                </div>
-                <div class="menu-box">
-                    <span class="big-menu">일정관리 </span>
-                    <div class="small-menu">
-                        <a href="calendar_main.html">일정목록</a>
-                    </div>
-                </div>
-            </div>
-            <div class="main">
+	<div class="html">
+		<%@ include file="/WEB-INF/views/include/AUTH.jsp"%>
+		<div class="body">
+			<%@ include file="/WEB-INF/views/include/MENU.jsp"%>
+			<div class="main">
                 <div class="page-wrap">
                     <div class="title m-b10 bold">
                         <span class="">게시판 관리 > 게시판 생성</span>
@@ -101,7 +51,7 @@
                                 <td class="bg-eee td-10">게시판 색상</td>
                                 <td class="td-15 p-3">
                                     <select class="select" name="searchOpt">
-                                        <option value="">색상을 선택하세요.</option>
+										<option value="">색상을 선택하세요.</option>
                                         <option value="">#fff</option>
                                         <option value="">#ccc</option>
                                         <option value="">선택안함</option>
@@ -127,7 +77,7 @@
                     <div class="board-list">
                         <table border="1">
                             <tr class="center bg-eee">
-                                <td class="td-3"><input type="checkbox" /></td>
+                                <td class="td-3"><input type="checkbox" onClick="chkAll();" id="chkAll" /></td>
                                 <td class="td-4">번호</td>
                                 <td class="td-8">게시판 그룹</td>
                                 <td class="td-8">게시판 코드</td>
@@ -140,7 +90,7 @@
                                 <td class="bold" colspan="8">등록된 게시판이 없습니다.</td>
                             </tr>
                             <tr class="center">
-                                <td><input type="checkbox" /></td>
+                                <td><input type="checkbox" name="chk" class="chk" /></td>
                                 <td>4</td>
                                 <td>영업부</td>
                                 <td>notice</td>
@@ -150,7 +100,7 @@
                                 <td class="">2021-01-14</td>
                             </tr>
                             <tr class="center">
-                                <td><input type="checkbox" /></td>
+                                <td><input type="checkbox" name="chk" class="chk" /></td>
                                 <td>3</td>
                                 <td>생산부</td>
                                 <td>normal</td>
@@ -160,7 +110,7 @@
                                 <td class="">2021-01-14</td>
                             </tr>
                             <tr class="center">
-                                <td><input type="checkbox" /></td>
+                                <td><input type="checkbox" name="chk" class="chk" /></td>
                                 <td>2</td>
                                 <td>영업부</td>
                                 <td>notice</td>
@@ -170,7 +120,7 @@
                                 <td class="">2021-01-14</td>
                             </tr>
                             <tr class="center">
-                                <td><input type="checkbox" /></td>
+                                <td><input type="checkbox" name="chk" class="chk" /></td>
                                 <td>1</td>
                                 <td>생산부</td>
                                 <td>normal</td>
@@ -219,19 +169,36 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-    <footer class="center" style="height: 200px; line-height: 200px; color: #aaa; font-size: 15px;">
-        <span class="copy">&copy;Copyright All Rights reserved.</span>
-    </footer>
-</body>
-
-<script>
-    $(function () {
-        $(".big-menu").click(function () {
-            $(this).toggleClass("active").next().toggle();
-        });
-    });
-</script>
-
+		</div>
+	</div>
+	<%@ include file="/WEB-INF/views/include/FOOTER.jsp"%>
+	
+	<script>
+	$("#delete").click(function() {
+	    var str = confirm("선택하신 게시글을 삭제하시겠습니까?");
+	    
+	    if( str ) {
+	        var chkArr = new Array();
+	        $(".chk:checked").each(function () {
+	        	chkArr.push($(this).attr("data-uid"));
+	        });
+	        
+	        $.ajax({
+	        	url 	: "${pageContext.request.contextPath}/board/board_delete",
+	        	type 	: "POST", 	
+	        	data 	: { chkArr : chkArr },
+	        	success	: function (resData) {
+	        		alert("삭제되었습니다.");
+		    		window.location.reload();
+	            },
+	            error 	: function() {
+	            	alert("선택하신 게시글이 없습니다.");
+	            }
+	        });  
+	  
+	    }
+	    
+	});
+	</script>
+	<script src="${pageContext.request.contextPath}/js/chk.js"></script>
 </html>

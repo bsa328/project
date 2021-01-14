@@ -1,5 +1,21 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+
+<c:if test="${sessionScope.empConfirm == 'N'}">
+<script>
+	alert("승인된 사용자가 아닙니다.\n관리자에게 문의하세요.");
+	window.location.replace("${pageContext.request.contextPath}");
+	</script>
+</c:if>
+
+<c:if test="${sessionScope.empNum == null}">
+<script>
+	alert("등록된 사용자가 아닙니다.\n사원가입을 하세요.");
+	window.location.replace("${pageContext.request.contextPath}");
+	</script>
+</c:if>
+
 <!DOCTYPE html>
 <html lang="ko">
 

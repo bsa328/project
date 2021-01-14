@@ -14,7 +14,7 @@
 				success	: function(data) {
 					if(data == "success") {
 						alert("로그아웃 되었습니다.");		
-						window.location.href = '${pageContext.request.contextPath}/login';
+						window.location.href = '${pageContext.request.contextPath}';
 					}
 				},
 				error	: function() {
