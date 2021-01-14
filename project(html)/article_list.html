@@ -21,11 +21,9 @@
             </span>
             <div class="auth">
                 <div class="user">
-                    사용자 : 관리자(admin)
+                    [김과장, 2110011] {권한 : 10} <a href="main.html" id="logout">로그아웃</a>
                 </div>
-                <div class="logout">
-                    <a href="login.html">로그아웃</a>
-                </div>
+                <div class="logout"><a href="main.html" id=""><i class="fas fa-home"></i></a></div>
             </div>
         </div>
         <div class="body">
@@ -64,7 +62,8 @@
                     </div>
                     <div class="btn-box m-b5">
                         <button class="btn-red" id="">선택삭제</button>
-                        <button type="button" class="btn-blue" onclick="location.href='article_insert.html'">게시글 작성</button>
+                        <button type="button" class="btn-blue" onclick="location.href='article_insert.html'">게시글
+                            작성</button>
                     </div>
                     <div class="board-list">
                         <table border="1">
@@ -73,22 +72,22 @@
                                 <td class="td-4">번호</td>
                                 <td class="td-8">분류</td>
                                 <td class="">게시글 제목</td>
-                                <td class="td-4">조회</td>
                                 <td class="td-8">작성자</td>
                                 <td class="td-8">날짜</td>
-                                <td class="td-8">관리</td>
+                                <td class="td-4">조회</td>
+                                <td class="td-8">게시글 관리</td>
                             </tr>
-                            <tr class="center">
+                            <!-- <tr class="center">
                                 <td class="bold" colspan="8">등록된 게시글이 없습니다.</td>
-                            </tr>
+                            </tr> -->
                             <tr class="center">
                                 <td><input type="checkbox" /></td>
                                 <td>-</td>
                                 <td class="notice">공지사항</td>
-                                <td><a href="article_view.html">영업팀 공지사항입니다. 반드시 필독!</a></td>
-                                <td>15</td>
+                                <td class="p-10 left"><a href="article_view.html">영업팀 공지사항입니다. 반드시 필독!</a></td>
                                 <td>김과장</td>
                                 <td>2021-01-14</td>
+                                <td>15</td>
                                 <td><button class="s-btn-blue" id="">수정</button>
                                     <button class="s-btn-white" id="">삭제</button>
                                 </td>
@@ -97,10 +96,118 @@
                                 <td><input type="checkbox" /></td>
                                 <td>-</td>
                                 <td class="notice">공지사항</td>
-                                <td><a href="article_view.html">영업팀 공지사항입니다. 반드시 필독!</a></td>
-                                <td>15</td>
+                                <td class="p-10 left"><a href="article_view.html">영업팀 공지사항입니다. 반드시 필독!</a></td>
                                 <td>김과장</td>
                                 <td>2021-01-14</td>
+                                <td>15</td>
+                                <td><button class="s-btn-blue" id="">수정</button>
+                                    <button class="s-btn-white" id="">삭제</button>
+                                </td>
+                            </tr>
+                            <tr class="center">
+                                <td><input type="checkbox" /></td>
+                                <td>-</td>
+                                <td class="notice">공지사항</td>
+                                <td class="p-10 left"><a href="article_view.html">영업팀 공지사항입니다. 반드시 필독!</a></td>
+                                <td>김과장</td>
+                                <td>2021-01-14</td>
+                                <td>15</td>
+                                <td><button class="s-btn-blue" id="">수정</button>
+                                    <button class="s-btn-white" id="">삭제</button>
+                                </td>
+                            </tr>
+                            <tr class="center">
+                                <td><input type="checkbox" /></td>
+                                <td>10</td>
+                                <td>일반</td>
+                                <td class="p-10 left"><a href="article_view.html">영업팀 공지사항입니다. 반드시 필독!</a></td>
+                                <td>김과장</td>
+                                <td>2021-01-14</td>
+                                <td>15</td>
+                                <td><button class="s-btn-blue" id="">수정</button>
+                                    <button class="s-btn-white" id="">삭제</button>
+                                </td>
+                            </tr>
+                            <tr class="center">
+                                <td><input type="checkbox" /></td>
+                                <td>9</td>
+                                <td>일반</td>
+                                <td class="p-10 left"><a href="article_view.html">영업팀 공지사항입니다. 반드시 필독!</a></td>
+                                <td>김과장</td>
+                                <td>2021-01-14</td>
+                                <td>15</td>
+                                <td><button class="s-btn-blue" id="">수정</button>
+                                    <button class="s-btn-white" id="">삭제</button>
+                                </td>
+                            </tr>
+                            <tr class="center">
+                                <td><input type="checkbox" /></td>
+                                <td>8</td>
+                                <td>일반</td>
+                                <td class="p-10 left"><a href="article_view.html">영업팀 공지사항입니다. 반드시 필독!</a></td>
+                                <td>김과장</td>
+                                <td>2021-01-14</td>
+                                <td>15</td>
+                                <td><button class="s-btn-blue" id="">수정</button>
+                                    <button class="s-btn-white" id="">삭제</button>
+                                </td>
+                            </tr>
+                            <tr class="center">
+                                <td><input type="checkbox" /></td>
+                                <td>7</td>
+                                <td>일반</td>
+                                <td class="p-10 left"><a href="article_view.html">영업팀 공지사항입니다. 반드시 필독!</a></td>
+                                <td>김과장</td>
+                                <td>2021-01-14</td>
+                                <td>15</td>
+                                <td><button class="s-btn-blue" id="">수정</button>
+                                    <button class="s-btn-white" id="">삭제</button>
+                                </td>
+                            </tr>
+                            <tr class="center">
+                                <td><input type="checkbox" /></td>
+                                <td>6</td>
+                                <td>일반</td>
+                                <td class="p-10 left"><a href="article_view.html">영업팀 공지사항입니다. 반드시 필독!</a></td>
+                                <td>김과장</td>
+                                <td>2021-01-14</td>
+                                <td>15</td>
+                                <td><button class="s-btn-blue" id="">수정</button>
+                                    <button class="s-btn-white" id="">삭제</button>
+                                </td>
+                            </tr>
+                            <tr class="center">
+                                <td><input type="checkbox" /></td>
+                                <td>5</td>
+                                <td>일반</td>
+                                <td class="p-10 left"><a href="article_view.html">영업팀 공지사항입니다. 반드시 필독!</a></td>
+                                <td>김과장</td>
+                                <td>2021-01-14</td>
+                                <td>15</td>
+                                <td><button class="s-btn-blue" id="">수정</button>
+                                    <button class="s-btn-white" id="">삭제</button>
+                                </td>
+                            </tr>
+                            <tr class="center">
+                                <td><input type="checkbox" /></td>
+                                <td>4</td>
+                                <td>일반</td>
+                                <td class="p-10 left"><a href="article_view.html">영업팀 공지사항입니다. 반드시 필독!</a></td>
+                                <td>김과장</td>
+                                <td>2021-01-14</td>
+                                <td>15</td>
+                                <td><button class="s-btn-blue" id="">수정</button>
+                                    <button class="s-btn-white" id="">삭제</button>
+                                </td>
+                            </tr>
+                            <tr class="center">
+                                <td><input type="checkbox" /></td>
+                                <td>3</td>
+                                <td>일반</td>
+                                <td class="p-10 left"><a href="article_view.html">영업팀 공지사항입니다. 반드시 필독!</a></td>
+                                <td>김과장</td>
+                                <td>2021-01-14</td>
+                                <td>15</td>
                                 <td><button class="s-btn-blue" id="">수정</button>
                                     <button class="s-btn-white" id="">삭제</button>
                                 </td>
@@ -109,10 +216,10 @@
                                 <td><input type="checkbox" /></td>
                                 <td>2</td>
                                 <td>일반</td>
-                                <td><a href="article_view.html">영업팀 공지사항입니다. 반드시 필독!</a></td>
-                                <td>15</td>
+                                <td class="p-10 left"><a href="article_view.html">영업팀 공지사항입니다. 반드시 필독!</a></td>
                                 <td>김과장</td>
                                 <td>2021-01-14</td>
+                                <td>15</td>
                                 <td><button class="s-btn-blue" id="">수정</button>
                                     <button class="s-btn-white" id="">삭제</button>
                                 </td>
@@ -121,10 +228,10 @@
                                 <td><input type="checkbox" /></td>
                                 <td>1</td>
                                 <td>일반</td>
-                                <td><a href="article_view.html">영업팀 공지사항입니다. 반드시 필독!</a></td>
-                                <td>15</td>
+                                <td class="p-10 left"><a href="article_view.html">영업팀 공지사항입니다. 반드시 필독!</a></td>
                                 <td>김과장</td>
                                 <td>2021-01-14</td>
+                                <td>15</td>
                                 <td><button class="s-btn-blue" id="">수정</button>
                                     <button class="s-btn-white" id="">삭제</button>
                                 </td>
@@ -132,7 +239,7 @@
                         </table>
                     </div>
                     <div class="search-box m-t5">
-                        <div class="total-num">전체 게시글수 : ?개</div>
+                        <div class="total-num">전체 게시글수 : 13개</div>
                         <div class="">
                             <form method="post" action="board.html">
                                 <select class="w-150" name="searchOpt">
@@ -146,7 +253,7 @@
                             </form>
                         </div>
                     </div>
-                    <div class="paging m-t50 center">
+                    <div class="paging m-t10 center">
                         <span class="page">
                             <a href=""><i class="fas fa-angle-double-left"></i></a>
                         </span>

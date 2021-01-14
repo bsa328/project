@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="css/board.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://kit.fontawesome.com/3249ba5f1a.js" crossorigin="anonymous"></script>
+    <script src="lib/jquery.js" type="text/javascript"></script>
 </head>
 
 <body>
@@ -21,11 +22,9 @@
             </span>
             <div class="auth">
                 <div class="user">
-                    사용자 : 관리자(admin)
+                    [김과장, 2110011] {권한 : 10} <a href="main.html" id="logout">로그아웃</a>
                 </div>
-                <div class="logout">
-                    <a href="login.html">로그아웃</a>
-                </div>
+                <div class="logout"><a href="main.html" id=""><i class="fas fa-home"></i></a></div>
             </div>
         </div>
         <div class="body">
@@ -60,33 +59,51 @@
             <div class="main">
                 <div class="page-wrap">
                     <div class="title m-b10 bold">
-                        <span class="">게시글 제목</span>
+                        <span class="">영업부 > notice</span>
+                    </div>
+                    <div class="btn-box m-b5">
+                        <button></button>
+                        <button type="button" class="btn-white"
+                            onclick="location.href='article_list.html'">목록으로</button>
                     </div>
                     <div class="board-list">
                         <table border="1">
-                            <tr class="center bg-eee">
-                                <td class="td-3"><input type="checkbox" /></td>
-                                <td class="td-4">번호</td>
-                                <td class="td-8">분류</td>
-                                <td class="">게시글 제목</td>
-                                <td class="td-4">조회</td>
-                                <td class="td-8">작성자</td>
-                                <td class="td-8">날짜</td>
-                                <td class="td-8">관리</td>
-                            </tr>
                             <tr class="center">
-                                <td><input type="checkbox" /></td>
-                                <td>4</td>
-                                <td>공지사항</td>
-                                <td>영업팀 공지사항입니다. 반드시 필독!</td>
-                                <td>15</td>
-                                <td>김과장</td>
-                                <td>2021-01-14</td>
-                                <td><button class="s-btn-blue" id="">수정</button>
-                                    <button class="s-btn-white" id="">삭제</button>
+                                <td class="bg-eee td-10">게시글 분류</td>
+                                <td class="p-10 left" colspan="3">
+                                    공지사항
                                 </td>
                             </tr>
+                            <tr class="center">
+                                <td class="bg-eee td-10">게시글 제목</td>
+                                <td class="p-10 left" colspan="3">
+                                    영업팀 공지사항입니다. 반드시 필독!
+                                </td>
+                            </tr>
+                            <tr class="center">
+                                <td class="bg-eee td-10">작성자</td>
+                                <td class="td-40 p-10 left">김부장</td>
+                                <td class="bg-eee td-10 p-10 center">날짜</td>
+                                <td class="td-40 p-10 left">2021-01-14</td>
+                            </tr>
+                            <tr class="center">
+                                <td class="bg-eee td-10">내용</td>
+                                <td class="p-10 left top" style="height: 320px;" colspan="3">
+                                    영업팀 공지입니다.</td>
+                            </tr>
+                            <tr class="center">
+                                <td class="bg-eee td-10">첨부파일</td>
+                                <td class="p-10 left" colspan="3">-</td>
+                            </tr>
+                            <tr class="center">
+                                <td class="bg-eee td-10">조회수</td>
+                                <td class="p-10 left" colspan="3">31</td>
+                            </tr>
                         </table>
+                    </div>
+                    <div class="center m-t5">
+                        <button class="btn-blue" onclick="location.href='article_modify.html'">수정하기</button>
+                        <button class="btn-red">삭제하기</button>
                     </div>
                 </div>
             </div>

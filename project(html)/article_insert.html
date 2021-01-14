@@ -23,11 +23,9 @@
             </span>
             <div class="auth">
                 <div class="user">
-                    사용자 : 관리자(admin)
+                    [김과장, 2110011] {권한 : 10} <a href="main.html" id="logout">로그아웃</a>
                 </div>
-                <div class="logout">
-                    <a href="login.html">로그아웃</a>
-                </div>
+                <div class="logout"><a href="main.html" id=""><i class="fas fa-home"></i></a></div>
             </div>
         </div>
         <div class="body">
@@ -96,10 +94,10 @@
                             <tr class="center">
                                 <td class="bg-eee td-10">내용</td>
                                 <td class="p-3">
-                                    <textarea name="" id="editor"></textarea>
+                                    <textarea name="" id="editor" class="noto"></textarea>
                                     <script>
                                         CKEDITOR.replace('editor');
-                                        CKEDITOR.config.height = 350;
+                                        CKEDITOR.config.height = 400;
                                     </script>
                                 </td>
                             </tr>
@@ -111,7 +109,7 @@
                             </tr>
                         </table>
                     </div>
-                    <div class="center m-t5 m-b50">
+                    <div class="center m-t5">
                         <button class="btn-blue" onclick="location.href='article_list.html'">등록하기</button>
                     </div>
                 </div>
