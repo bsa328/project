@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOGO</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/header_menu.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/board.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/3249ba5f1a.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="html">
+        <div class="header">
+            <span class="logo">
+                <a href="admin_main.html">LOGO</a>
+            </span>
+            <div class="auth">
+                <div class="user">
+                    [김과장, 2110011] {권한 : 10} <a href="main.html" id="logout">로그아웃</a>
+                </div>
+                <div class="logout"><a href="main.html" id=""><i class="fas fa-home"></i></a></div>
+            </div>
+        </div>
+        <div class="body">
+            <div class="menu">
+                <div class="menu-box">
+                    <span class="big-menu">사원관리 </span>
+                    <div class="small-menu">
+                        <div>
+                            <a href="employee_list.html">사원목록</a>
+                        </div>
+                        <div>
+                            <a href="employee_register.html">사원등록</a>
+                        </div>
+                        <div>
+                            <a href="#">조직도</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-box">
+                    <span class="big-menu">게시판관리 </span>
+                    <div class="small-menu">
+                        <a href="board_main.html">게시판생성</a>
+                    </div>
+                </div>
+                <div class="menu-box">
+                    <span class="big-menu">일정관리 </span>
+                    <div class="small-menu">
+                        <a href="calendar_main.html">일정목록</a>
+                    </div>
+                </div>
+            </div>
+            <div class="main">
+                <div class="page-wrap">
+                    <div class="title m-b10 bold">
+                        <span class="">사원관리 > 사원목록</span>
+                    </div>
+                    <div class="btn-box m-b5">
+                        <button class="btn-red" id="">선택삭제</button>
+                        <button type="button" class="btn-blue"
+                            onclick="location.href='employee_register.html'">사원등록</button>
+                    </div>
+                    <div class="board-list">
+                        <table border="1">
+                            <tr class="center bg-eee">
+                                <td class="td-3"><input type="checkbox" /></td>
+                                <td class="td-4">번호</td>
+                                <td class="">사원명</td>
+                                <td class="td-12">근무부서</td>
+                                <td class="td-8">직급</td>
+                                <td class="td-10">사원번호</td>
+                                <td class="td-10">비밀번호</td>
+                                <td class="td-10">입사년월일</td>
+                                <td class="td-10">가입일</td>
+                                <td class="td-6">승인여부</td>
+                                <td class="td-4">권한</td>
+                                <td class="td-6">비고</td>
+                            </tr>
+                            <tr class="center">
+                                <td><input type="checkbox" /></td>
+                                <td>10</td>
+                                <td><a href="employee_view.html">박부장</a></td>
+                                <td>관리부</td>
+                                <td>부장</td>
+                                <td><a href="employee_view.html">2110011</a></td>
+                                <td>1</td>
+                                <td>2021-01-01</td>
+                                <td>2021-01-15</td>
+                                <td class="p-3">
+                                    <select class="select" name="searchOpt">
+                                        <option value="">거부</option>
+                                        <option value="">승인</option>
+                                    </select>
+                                </td>
+                                <td>1</td>
+                                <td><button class="s-btn-blue" id="">수정</button>
+                                    <button class="s-btn-white" id="">삭제</button>
+                                </td>
+                            </tr>
+                            <tr class="center">
+                                <td><input type="checkbox" /></td>
+                                <td>9</td>
+                                <td><a href="employee_view.html">김과장</a></td>
+                                <td>영업부</td>
+                                <td>부장</td>
+                                <td><a href="employee_view.html">2110011</a></td>
+                                <td>1</td>
+                                <td>2021-01-01</td>
+                                <td>2021-01-15</td>
+                                <td class="p-3">
+                                    <select class="select" name="searchOpt">
+                                        <option value="">거부</option>
+                                        <option value="">승인</option>
+                                    </select>
+                                </td>
+                                <td>1</td>
+                                <td><button class="s-btn-blue" id="">수정</button>
+                                    <button class="s-btn-white" id="">삭제</button>
+                                </td>
+                            </tr>
+                            <tr class="center">
+                                <td><input type="checkbox" /></td>
+                                <td>8</td>
+                                <td><a href="employee_view.html">김과장</a></td>
+                                <td>영업부</td>
+                                <td>부장</td>
+                                <td><a href="employee_view.html">2110011</a></td>
+                                <td>1</td>
+                                <td>2021-01-01</td>
+                                <td>2021-01-15</td>
+                                <td class="p-3">
+                                    <select class="select" name="searchOpt">
+                                        <option value="">거부</option>
+                                        <option value="">승인</option>
+                                    </select>
+                                </td>
+                                <td>1</td>
+                                <td><button class="s-btn-blue" id="">수정</button>
+                                    <button class="s-btn-white" id="">삭제</button>
+                                </td>
+                            </tr>
+                            <tr class="center">
+                                <td><input type="checkbox" /></td>
+                                <td>7</td>
+                                <td><a href="employee_view.html">박부장</a></td>
+                                <td>관리부</td>
+                                <td>부장</td>
+                                <td><a href="employee_view.html">2110011</a></td>
+                                <td>1</td>
+                                <td>2021-01-01</td>
+                                <td>2021-01-15</td>
+                                <td class="p-3">
+                                    <select class="select" name="searchOpt">
+                                        <option value="">거부</option>
+                                        <option value="">승인</option>
+                                    </select>
+                                </td>
+                                <td>1</td>
+                                <td><button class="s-btn-blue" id="">수정</button>
+                                    <button class="s-btn-white" id="">삭제</button>
+                                </td>
+                            </tr>
+                            <tr class="center">
+                                <td><input type="checkbox" /></td>
+                                <td>6</td>
+                                <td><a href="employee_view.html">김과장</a></td>
+                                <td>영업부</td>
+                                <td>부장</td>
+                                <td><a href="employee_view.html">2110011</a></td>
+                                <td>1</td>
+                                <td>2021-01-01</td>
+                                <td>2021-01-15</td>
+                                <td class="p-3">
+                                    <select class="select" name="searchOpt">
+                                        <option value="">거부</option>
+                                        <option value="">승인</option>
+                                    </select>
+                                </td>
+                                <td>1</td>
+                                <td><button class="s-btn-blue" id="">수정</button>
+                                    <button class="s-btn-white" id="">삭제</button>
+                                </td>
+                            </tr>
+                            <tr class="center">
+                                <td><input type="checkbox" /></td>
+                                <td>5</td>
+                                <td><a href="employee_view.html">박부장</a></td>
+                                <td>관리부</td>
+                                <td>부장</td>
+                                <td><a href="employee_view.html">2110011</a></td>
+                                <td>1</td>
+                                <td>2021-01-01</td>
+                                <td>2021-01-15</td>
+                                <td class="p-3">
+                                    <select class="select" name="searchOpt">
+                                        <option value="">거부</option>
+                                        <option value="">승인</option>
+                                    </select>
+                                </td>
+                                <td>1</td>
+                                <td><button class="s-btn-blue" id="">수정</button>
+                                    <button class="s-btn-white" id="">삭제</button>
+                                </td>
+                            </tr>
+                            <tr class="center">
+                                <td><input type="checkbox" /></td>
+                                <td>4</td>
+                                <td><a href="employee_view.html">김과장</a></td>
+                                <td>영업부</td>
+                                <td>부장</td>
+                                <td><a href="employee_view.html">2110011</a></td>
+                                <td>1</td>
+                                <td>2021-01-01</td>
+                                <td>2021-01-15</td>
+                                <td class="p-3">
+                                    <select class="select" name="searchOpt">
+                                        <option value="">거부</option>
+                                        <option value="">승인</option>
+                                    </select>
+                                </td>
+                                <td>1</td>
+                                <td><button class="s-btn-blue" id="">수정</button>
+                                    <button class="s-btn-white" id="">삭제</button>
+                                </td>
+                            </tr>
+                            <tr class="center">
+                                <td><input type="checkbox" /></td>
+                                <td>3</td>
+                                <td><a href="employee_view.html">박부장</a></td>
+                                <td>관리부</td>
+                                <td>부장</td>
+                                <td><a href="employee_view.html">2110011</a></td>
+                                <td>1</td>
+                                <td>2021-01-01</td>
+                                <td>2021-01-15</td>
+                                <td class="p-3">
+                                    <select class="select" name="searchOpt">
+                                        <option value="">거부</option>
+                                        <option value="">승인</option>
+                                    </select>
+                                </td>
+                                <td>1</td>
+                                <td><button class="s-btn-blue" id="">수정</button>
+                                    <button class="s-btn-white" id="">삭제</button>
+                                </td>
+                            </tr>
+                            <tr class="center">
+                                <td><input type="checkbox" /></td>
+                                <td>2</td>
+                                <td><a href="employee_view.html">김과장</a></td>
+                                <td>영업부</td>
+                                <td>부장</td>
+                                <td><a href="employee_view.html">2110011</a></td>
+                                <td>1</td>
+                                <td>2021-01-01</td>
+                                <td>2021-01-15</td>
+                                <td class="p-3">
+                                    <select class="select" name="searchOpt">
+                                        <option value="">거부</option>
+                                        <option value="">승인</option>
+                                    </select>
+                                </td>
+                                <td>1</td>
+                                <td><button class="s-btn-blue" id="">수정</button>
+                                    <button class="s-btn-white" id="">삭제</button>
+                                </td>
+                            </tr>
+                            <tr class="center">
+                                <td><input type="checkbox" /></td>
+                                <td>1</td>
+                                <td><a href="employee_view.html">관리자</a></td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td><a href="employee_view.html">1</a></td>
+                                <td>1</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td class="p-3">
+                                    <select class="select" name="searchOpt">
+                                        <option value="">승인</option>
+                                        <option value="">거부</option>
+                                    </select>
+                                </td>
+                                <td>10</td>
+                                <td><button class="s-btn-blue" id="">수정</button>
+                                    <button class="s-btn-white" id="">삭제</button>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="search-box m-t5">
+                        <div class="total-num">전체 사원수 : 10명</div>
+                        <div class="">
+                            <form method="post" action="board.html">
+                                <select class="w-150" name="searchOpt">
+                                    <option value="">전체검색</option>
+                                    <option value=""> 사원명</option>
+                                    <option value="">근무부서</option>
+                                    <option value="">사원번호</option>
+                                </select>
+                                <input type="text" class="w-150" name="words" required autocomplete="off" />
+                                <button type="submit" class="btn-white" style="width: 70px;">검색</button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="paging m-t10 center">
+                        <span class="page">
+                            <a href=""><i class="fas fa-angle-double-left"></i></a>
+                        </span>
+                        <span class="page">
+                            <a href=""><i class="fas fa-angle-left"></i></a>
+                        </span>
+                        <span class="page page-active">
+                            <a href="" class="f6">1</a>
+                        </span>
+                        <span class="page"><a href="">2</a></span>
+                        <span class="page"><a href="">3</a></span>
+                        <span class="page"><a href="">4</a></span>
+                        <span class="page"><a href="">5</a></span>
+                        <span class="page">
+                            <a href=""><i class="fas fa-angle-right"></i></a>
+                        </span>
+                        <span class="page">
+                            <a href=""><i class="fas fa-angle-double-right"></i></a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="center" style="height: 200px; line-height: 200px; color: #aaa; font-size: 15px;">
+        <span class="copy">&copy;Copyright All Rights reserved.</span>
+    </footer>
+</body>
+
+<script>
+    $(function () {
+        $(".big-menu").click(function () {
+            $(this).toggleClass("active").next().toggle();
+        });
+    });
+</script>
+
+</html>
