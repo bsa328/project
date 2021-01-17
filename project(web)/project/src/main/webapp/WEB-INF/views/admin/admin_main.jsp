@@ -6,7 +6,9 @@
 		<%@ include file="/WEB-INF/views/include/AUTH.jsp"%>
 		<div class="body">
 			<%@ include file="/WEB-INF/views/include/MENU.jsp"%>
-			<div class="main">메인</div>
+			<div class="main">
+				<div class="page-wrap">메인</div>
+			</div>
 		</div>
 	</div>
 	<%@ include file="/WEB-INF/views/include/FOOTER.jsp"%>

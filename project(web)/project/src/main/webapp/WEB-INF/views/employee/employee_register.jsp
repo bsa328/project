@@ -1,77 +1,26 @@
-<!DOCTYPE html>
-<html lang="ko">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LOGO</title>
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/header_menu.css">
-    <link rel="stylesheet" href="css/common.css">
-    <link rel="stylesheet" href="css/board.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://kit.fontawesome.com/3249ba5f1a.js" crossorigin="anonymous"></script>
-    <script src="lib/jquery.js" type="text/javascript"></script>
-    <script src="ckeditor/ckeditor.js"></script>
-    <script src="js/toggle.js"></script>
-
-
-    <link rel="stylesheet" href="http://code.jquery.com/ui/1.8.18/themes/base/jquery-ui.css" type="text/css" />
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-    <script src="http://code.jquery.com/ui/1.8.18/jquery-ui.min.js"></script>
-</head>
-
-<script>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ include file="/WEB-INF/views/include/HEADER.jsp"%>
+<link rel="stylesheet" href="{pageContext.request.contextPath}/css/board.css">
+<script src="{pageContext.request.contextPath}/lib/jquery.js" type="text/javascript"></script>
+<script src="{pageContext.request.contextPath}/ckeditor/ckeditor.js"></script>
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.8.18/themes/base/jquery-ui.css" type="text/css" />
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="http://code.jquery.com/ui/1.8.18/jquery-ui.min.js"></script>
+    
+    <script>
     $(document).ready(function () {
         $("#datepicker").datepicker({
             dateFormat: 'yy-mm-dd'
         });
     });
-</script>
+	</script>
 
 <body>
-    <div class="html">
-        <div class="header">
-            <span class="logo">
-                <a href="admin_main.html">LOGO</a>
-            </span>
-            <div class="auth">
-                <div class="user">
-                    [김과장, 2110011] {권한 : 10} <a href="main.html" id="logout">로그아웃</a>
-                </div>
-                <div class="logout"><a href="main.html" id=""><i class="fas fa-home"></i></a></div>
-            </div>
-        </div>
-        <div class="body">
-            <div class="menu">
-                <div class="menu-box">
-                    <span class="big-menu">사원관리 </span>
-                    <div class="small-menu">
-                        <div>
-                            <a href="employee_list.html">사원목록</a>
-                        </div>
-                        <div>
-                            <a href="employee_register.html">사원등록</a>
-                        </div>
-                        <div>
-                            <a href="#">조직도</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="menu-box">
-                    <span class="big-menu">게시판관리 </span>
-                    <div class="small-menu">
-                        <a href="board_main.html">게시판생성</a>
-                    </div>
-                </div>
-                <div class="menu-box">
-                    <span class="big-menu">일정관리 </span>
-                    <div class="small-menu">
-                        <a href="calendar_main.html">일정목록</a>
-                    </div>
-                </div>
-            </div>
-            <div class="main">
+	<div class="html">
+		<%@ include file="/WEB-INF/views/include/AUTH.jsp"%>
+		<div class="body">
+			<%@ include file="/WEB-INF/views/include/MENU.jsp"%>
+			<div class="main">
                 <div class="page-wrap">
                     <div class="title m-b10 bold">
                         <span class="">사원관리 > 사원등록</span>
@@ -79,7 +28,7 @@
                     <div class="btn-box m-b5">
                         <button></button>
                         <button type="button" class="btn-white"
-                            onclick="location.href='employee_list.html'">목록으로</button>
+                            onclick="location.href='{pageContext.request.contextPath}/employee_list'">목록으로</button>
                     </div>
                     <div class="board-list btn-box">
                         <div class="photo-box">
@@ -329,16 +278,12 @@
                     </div>
                     <div class="center m-t5">
                         <button type="button" class="btn-blue"
-                            onclick="location.href='employee_list.html'">목록으로</button>
+                            onclick="location.href='{pageContext.request.contextPath}/employee_list'">목록으로</button>
                         <button class="btn-white">새고로침</button>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-    <footer class="center" style="height: 200px; line-height: 200px; color: #aaa; font-size: 15px;">
-        <span class="copy">&copy;Copyright All Rights reserved.</span>
-    </footer>
-</body>
-
+		</div>
+	</div>
+	<%@ include file="/WEB-INF/views/include/FOOTER.jsp"%>
 </html>

@@ -1,79 +1,81 @@
 @charset 'utf-8';
 
 .html {
-	background-color: #ebf0f3;
+    background-color: #ebf0f3;
 }
 
-.header, .body {
-	display: flex;
+.header,
+.body {
+    display: flex;
 }
 
 .logo {
-	width: 13%;
-	height: 60px;
-	background-color: #fff;
-	margin-top: 11px;
-	margin-left: 11px;
-	margin-right: 11px;
-	margin-bottom: 11px;
-	text-align: center;
-	line-height: 60px;
+    width: 13%;
+    height: 60px;
+    background-color: #fff;
+    margin-top: 11px;
+    margin-left: 11px;
+    margin-right: 11px;
+    margin-bottom: 11px;
+    text-align: center;
+    line-height: 60px;
 }
 
 .logo a {
-	text-decoration: none;
-	font-size: 35px;
-	font-weight: 700;
+    text-decoration: none;
+    font-size: 35px;
+    font-weight: 700;
 }
 
 .auth {
-	width: 87%;
-	height: 60px;
-	background-color: #fff;
-	margin-top: 11px;
-	margin-right: 11px;
-	margin-bottom: 11px;
-	line-height: 60px;
-	display: flex;
-	justify-content: space-between;
+    width: 87%;
+    height: 60px;
+    background-color: #fff;
+    margin-top: 11px;
+    margin-right: 11px;
+    margin-bottom: 11px;
+    line-height: 60px;
+    display: flex;
+    justify-content: space-between;
 }
 
-.user, .logout {
-	margin-left: 30px;
-	margin-right: 30px;
-	font-size: 18px;
-	font-weight: 700;
+.user,
+.logout {
+    margin-left: 30px;
+    margin-right: 30px;
+    font-size: 18px;
+    font-weight: 700;
 }
 
 .menu {
-	width: 13%;
-	background-color: #fff;
-	margin-left: 11px;
-	margin-right: 11px;
-	margin-bottom: 11px;
+    width: 13%;
+    background-color: #fff;
+    margin-left: 11px;
+    margin-right: 11px;
+    margin-bottom: 11px;
 }
 
 .menu-box {
-	margin: 30px;
-	padding-left: 45px;
-	text-align: left;
+    margin: 30px;
+    padding-left: 45px;
+    text-align: left;
 }
 
 .big-menu {
-	cursor: pointer;
-	font-size: 18px;
-	font-weight: 600;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 600;
 }
 
 .small-menu {
-	font-size: 14px;
-	margin-top: 5px;
-	margin-left: 5px;
+    font-size: 14px;
+    margin-top: 5px;
+    margin-left: 5px;
 }
 
 .main {
-	width: 87%;
-	background-color: #fff;
-	margin-right: 11px;
-	margin-bottom: 11px;
+    width: 87%;
+    background-color: #fff;
+    margin-right: 11px;
+    margin-bottom: 11px;
 }

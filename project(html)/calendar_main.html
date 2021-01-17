@@ -8,13 +8,31 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/header_menu.css">
     <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/calendar.css">
+    <script src="js/toggle.js"></script>
 
     <link rel="stylesheet" href="calendar/core/main.css">
     <link rel="stylesheet" href="calendar/daygrid/main.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://kit.fontawesome.com/3249ba5f1a.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.8.18/themes/base/jquery-ui.css" type="text/css" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.8.18/jquery-ui.min.js"></script>
 </head>
+
+<script>
+    $(document).ready(function () {
+        $("#startDate").datepicker({
+            dateFormat: 'yy-mm-dd'
+        });
+
+        $("#endDate").datepicker({
+            dateFormat: 'yy-mm-dd'
+        });
+    });
+</script>
 
 <body>
     <div class="html">
@@ -60,7 +78,40 @@
             </div>
             <div class="main">
                 <div class="page-wrap">
-                    일정관리 > 일정등록
+                    <div class="title m-b10 bold">
+                        <span class="">일정관리 > 일정등록</span>
+                    </div>
+                    <div class="board-list">
+                        <table border="1" class="cal">
+                            <tr class="center tr">
+                                <td class="bg-eee td-8">시작일</td>
+                                <td class="p-3 td-12">
+                                    <input type="text" id="startDate" class="td-80" />
+                                    <span class="i"><i class="far fa-calendar-alt"></i></span>
+                                </td>
+                                <td class="bg-eee td-8">종료일</td>
+                                <td class="p-3 td-12">
+                                    <input type="text" id="endDate" class="td-80" />
+                                    <span class="i"><i class="far fa-calendar-alt"></i></span>
+                                </td>
+                                <td class="bg-eee td-8">내용</td>
+                                <td class="p-3">
+                                    <input type="text" placeholder="일정 내용을 입력하세요." />
+                                </td>
+                                <td class="bg-eee td-8">등록자</td>
+                                <td class="p-3 td-15">
+                                    <input type="text" placeholder="사원명을 입력하세요." />
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="center m-t5 m-b10">
+                        <button class="btn-blue" onClick="">일정 등록</button>
+                        <button class="btn-white">새로고침</button>
+                    </div>
+                    <div class="title m-b10 bold">
+                        <span class="">일정관리 > 일정목록</span>
+                    </div>
                     <div class="board-list">
                         <div id="calendar" class="calendar"></div>
                     </div>
@@ -102,29 +153,15 @@
             eventLimit: true,
             locales: "ko",
             events: [{
-                title: '',
-                start: '',
-                end: '',
-                color: ''
-            },
-            {
-                title: '',
-                start: '',
-                end: '',
-                color: ''
+                title: '일정내용\n등록자',
+                start: '2021-01-07',
+                end: '2021-01-12',
+                color: '#61b3d2'
             }
             ]
         });
 
         calendar.render();
-    });
-</script>
-
-<script>
-    $(function () {
-        $("#startDate, #endDate").datepicker({
-            dataFormat: 'yy-mm-dd'
-        });
     });
 </script>
 

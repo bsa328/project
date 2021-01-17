@@ -1,62 +1,13 @@
-<!DOCTYPE html>
-<html lang="ko">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LOGO</title>
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/header_menu.css">
-    <link rel="stylesheet" href="css/common.css">
-    <link rel="stylesheet" href="css/board.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://kit.fontawesome.com/3249ba5f1a.js" crossorigin="anonymous"></script>
-    <script src="js/toggle.js"></script>
-</head>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ include file="/WEB-INF/views/include/HEADER.jsp"%>
+<link rel="stylesheet" href="{pageContext.request.contextPath}/css/board.css">
 
 <body>
-    <div class="html">
-        <div class="header">
-            <span class="logo">
-                <a href="admin_main.html">LOGO</a>
-            </span>
-            <div class="auth">
-                <div class="user">
-                    [김과장, 2110011] {권한 : 10} <a href="main.html" id="logout">로그아웃</a>
-                </div>
-                <div class="logout"><a href="main.html" id=""><i class="fas fa-home"></i></a></div>
-            </div>
-        </div>
-        <div class="body">
-            <div class="menu">
-                <div class="menu-box">
-                    <span class="big-menu">사원관리 </span>
-                    <div class="small-menu">
-                        <div>
-                            <a href="employee_list.html">사원목록</a>
-                        </div>
-                        <div>
-                            <a href="employee_register.html">사원등록</a>
-                        </div>
-                        <div>
-                            <a href="#">조직도</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="menu-box">
-                    <span class="big-menu">게시판관리 </span>
-                    <div class="small-menu">
-                        <a href="board_main.html">게시판생성</a>
-                    </div>
-                </div>
-                <div class="menu-box">
-                    <span class="big-menu">일정관리 </span>
-                    <div class="small-menu">
-                        <a href="calendar_main.html">일정목록</a>
-                    </div>
-                </div>
-            </div>
-            <div class="main">
+	<div class="html">
+		<%@ include file="/WEB-INF/views/include/AUTH.jsp"%>
+		<div class="body">
+			<%@ include file="/WEB-INF/views/include/MENU.jsp"%>
+			<div class="main">
                 <div class="page-wrap">
                     <div class="title m-b10 bold">
                         <span class="">사원관리 > 사원목록</span>
@@ -64,7 +15,7 @@
                     <div class="btn-box m-b5">
                         <button class="btn-red" id="">선택삭제</button>
                         <button type="button" class="btn-blue"
-                            onclick="location.href='employee_register.html'">사원등록</button>
+                            onclick="location.href='{pageContext.request.contextPath}/employee_register'">사원등록</button>
                     </div>
                     <div class="board-list">
                         <table border="1">
@@ -85,10 +36,10 @@
                             <tr class="center">
                                 <td><input type="checkbox" /></td>
                                 <td>10</td>
-                                <td><a href="employee_view.html">박부장</a></td>
+                                <td><a href="{pageContext.request.contextPath}/employee_view">박부장</a></td>
                                 <td>관리부</td>
                                 <td>부장</td>
-                                <td><a href="employee_view.html">2110011</a></td>
+                                <td><a href="{pageContext.request.contextPath}/employee_view">2110011</a></td>
                                 <td>1</td>
                                 <td>2021-01-01</td>
                                 <td>2021-01-15</td>
@@ -106,10 +57,10 @@
                             <tr class="center">
                                 <td><input type="checkbox" /></td>
                                 <td>9</td>
-                                <td><a href="employee_view.html">김과장</a></td>
+                                <td><a href="{pageContext.request.contextPath}/employee_view">김과장</a></td>
                                 <td>영업부</td>
                                 <td>부장</td>
-                                <td><a href="employee_view.html">2110011</a></td>
+                                <td><a href="{pageContext.request.contextPath}/employee_view">2110011</a></td>
                                 <td>1</td>
                                 <td>2021-01-01</td>
                                 <td>2021-01-15</td>
@@ -127,10 +78,10 @@
                             <tr class="center">
                                 <td><input type="checkbox" /></td>
                                 <td>8</td>
-                                <td><a href="employee_view.html">김과장</a></td>
+                                <td><a href="{pageContext.request.contextPath}/employee_view">김과장</a></td>
                                 <td>영업부</td>
                                 <td>부장</td>
-                                <td><a href="employee_view.html">2110011</a></td>
+                                <td><a href="{pageContext.request.contextPath}/employee_view">2110011</a></td>
                                 <td>1</td>
                                 <td>2021-01-01</td>
                                 <td>2021-01-15</td>
@@ -148,10 +99,10 @@
                             <tr class="center">
                                 <td><input type="checkbox" /></td>
                                 <td>7</td>
-                                <td><a href="employee_view.html">박부장</a></td>
+                                <td><a href="{pageContext.request.contextPath}/employee_view">박부장</a></td>
                                 <td>관리부</td>
                                 <td>부장</td>
-                                <td><a href="employee_view.html">2110011</a></td>
+                                <td><a href="{pageContext.request.contextPath}/employee_view">2110011</a></td>
                                 <td>1</td>
                                 <td>2021-01-01</td>
                                 <td>2021-01-15</td>
@@ -169,10 +120,10 @@
                             <tr class="center">
                                 <td><input type="checkbox" /></td>
                                 <td>6</td>
-                                <td><a href="employee_view.html">김과장</a></td>
+                                <td><a href="{pageContext.request.contextPath}/employee_view">김과장</a></td>
                                 <td>영업부</td>
                                 <td>부장</td>
-                                <td><a href="employee_view.html">2110011</a></td>
+                                <td><a href="{pageContext.request.contextPath}/employee_view">2110011</a></td>
                                 <td>1</td>
                                 <td>2021-01-01</td>
                                 <td>2021-01-15</td>
@@ -190,10 +141,10 @@
                             <tr class="center">
                                 <td><input type="checkbox" /></td>
                                 <td>5</td>
-                                <td><a href="employee_view.html">박부장</a></td>
+                                <td><a href="{pageContext.request.contextPath}/employee_view">박부장</a></td>
                                 <td>관리부</td>
                                 <td>부장</td>
-                                <td><a href="employee_view.html">2110011</a></td>
+                                <td><a href="{pageContext.request.contextPath}/employee_view">2110011</a></td>
                                 <td>1</td>
                                 <td>2021-01-01</td>
                                 <td>2021-01-15</td>
@@ -211,10 +162,10 @@
                             <tr class="center">
                                 <td><input type="checkbox" /></td>
                                 <td>4</td>
-                                <td><a href="employee_view.html">김과장</a></td>
+                                <td><a href="{pageContext.request.contextPath}/employee_view">김과장</a></td>
                                 <td>영업부</td>
                                 <td>부장</td>
-                                <td><a href="employee_view.html">2110011</a></td>
+                                <td><a href="{pageContext.request.contextPath}/employee_view">2110011</a></td>
                                 <td>1</td>
                                 <td>2021-01-01</td>
                                 <td>2021-01-15</td>
@@ -232,10 +183,10 @@
                             <tr class="center">
                                 <td><input type="checkbox" /></td>
                                 <td>3</td>
-                                <td><a href="employee_view.html">박부장</a></td>
+                                <td><a href="{pageContext.request.contextPath}/employee_view">박부장</a></td>
                                 <td>관리부</td>
                                 <td>부장</td>
-                                <td><a href="employee_view.html">2110011</a></td>
+                                <td><a href="{pageContext.request.contextPath}/employee_view">2110011</a></td>
                                 <td>1</td>
                                 <td>2021-01-01</td>
                                 <td>2021-01-15</td>
@@ -253,10 +204,10 @@
                             <tr class="center">
                                 <td><input type="checkbox" /></td>
                                 <td>2</td>
-                                <td><a href="employee_view.html">김과장</a></td>
+                                <td><a href="{pageContext.request.contextPath}/employee_view">김과장</a></td>
                                 <td>영업부</td>
                                 <td>부장</td>
-                                <td><a href="employee_view.html">2110011</a></td>
+                                <td><a href="{pageContext.request.contextPath}/employee_view">2110011</a></td>
                                 <td>1</td>
                                 <td>2021-01-01</td>
                                 <td>2021-01-15</td>
@@ -274,10 +225,10 @@
                             <tr class="center">
                                 <td><input type="checkbox" /></td>
                                 <td>1</td>
-                                <td><a href="employee_view.html">관리자</a></td>
+                                <td><a href="{pageContext.request.contextPath}/employee_view">관리자</a></td>
                                 <td>-</td>
                                 <td>-</td>
-                                <td><a href="employee_view.html">1</a></td>
+                                <td><a href="{pageContext.request.contextPath}/employee_view">1</a></td>
                                 <td>1</td>
                                 <td>-</td>
                                 <td>-</td>
@@ -297,7 +248,7 @@
                     <div class="search-box m-t5">
                         <div class="total-num">전체 사원수 : 10명</div>
                         <div class="">
-                            <form method="post" action="board.html">
+                            <form method="post" action="{pageContext.request.contextPath}/board">
                                 <select class="w-150" name="searchOpt">
                                     <option value="">전체검색</option>
                                     <option value=""> 사원명</option>
@@ -332,11 +283,7 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-    <footer class="center" style="height: 200px; line-height: 200px; color: #aaa; font-size: 15px;">
-        <span class="copy">&copy;Copyright All Rights reserved.</span>
-    </footer>
-</body>
-
+		</div>
+	</div>
+	<%@ include file="/WEB-INF/views/include/FOOTER.jsp"%>
 </html>

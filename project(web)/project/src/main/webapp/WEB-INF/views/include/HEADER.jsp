@@ -11,7 +11,7 @@
 
 <c:if test="${sessionScope.empNum == null}">
 <script>
-	alert("등록된 사용자가 아닙니다.\n사원가입을 하세요.");
+	alert("로그인 후에 접속가능합니다.");
 	window.location.replace("${pageContext.request.contextPath}");
 	</script>
 </c:if>

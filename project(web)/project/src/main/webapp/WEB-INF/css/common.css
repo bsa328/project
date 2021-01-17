@@ -1,9 +1,7 @@
 @charset 'utf-8';
 
 .main {
-    padding: 50px;
-    padding-left: 70px;
-    padding-right: 70px;
+    padding: 20px;
 }
 
 .title {
@@ -62,6 +60,10 @@
     padding: 5px;
 }
 
+.p-7 {
+    padding: 7px;
+}
+
 .p-10 {
     padding: 10px;
 }
@@ -78,7 +80,8 @@
     color: #fff;
     background-color: #d92550;
     border-radius: 2px;
-    
+    font-size: 13px;
+
 }
 
 .btn-blue {
@@ -92,41 +95,76 @@
     font-size: 13px;
 }
 
-.btn-gray {
+.btn-white {
     display: inline-block;
     text-align: center;
     width: 70px;
     height: 35px;
     color: #000;
-    background-color: #d4d4d4;
+    background-color: #edeff5;
+    border: 1px solid #d4d4d4;
     border-radius: 2px;
     font-size: 13px;
+}
+
+.s-btn-red {
+    display: inline-block;
+    text-align: center;
+    width: 35px;
+    height: 25px;
+    color: #fff;
+    background-color: #d92550;
+    border-radius: 2px;
+    font-size: 12px;
+}
+
+.s-btn-blue {
+    display: inline-block;
+    text-align: center;
+    width: 35px;
+    height: 25px;
+    color: #fff;
+    background-color: #3f51b5;
+    border-radius: 2px;
+    font-size: 12px;
+}
+
+.s-btn-white {
+    display: inline-block;
+    text-align: center;
+    width: 35px;
+    height: 25px;
+    color: #000;
+    background-color: #edeff5;
+    border: 1px solid #d4d4d4;
+    border-radius: 2px;
+    font-size: 12px;
 }
 
 select,
 input {
     padding: 5px;
-    font-size: 12px;
+    font-size: 13px;
     height: 35px;
-    border: 1px solid #ccc;
+    border: 1px solid #d6dce7;
 }
 
 .bg-white {
     background-color: #fff;
 }
 
-.bg-blue {
-    background-color: #b9cee2;
+.bg-eee {
+    background-color: #eee;
 }
 
 .page {
     display: inline-block;
-    width: 35px;
-    height: 35px;
+    width: 30px;
+    height: 30px;
     text-align: center;
-    line-height: 35px;
+    line-height: 30px;
     border: 1px solid #ddd;
-    font-size: 14px;
+    font-size: 13px;
     cursor: pointer;
 }
 
@@ -163,5 +201,25 @@ input {
 }
 
 .select {
+    width: 100%;
+}
+
+.top {
+    vertical-align: top;
+}
+
+.photo-box {
+    width: 10.5%;
+    height: 235px;
+}
+
+.photo {
+    width: 100%;
+    height: 220px;
+    border: 1px solid #d6dce7;
+    padding: 3px;
+}
+
+.file {
     width: 100%;
 }
