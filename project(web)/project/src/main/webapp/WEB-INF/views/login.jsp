@@ -45,14 +45,14 @@
 
 		$("#btn").click(function() {
 
-			if ($("#empNum").val() == '') {
+			if ($.trim($("#empNum").val()) == '') {
 				alert("사원번호를 입력하세요.");
 				$("#empNum").focus();
 				
 				return false;
 			}
 
-			if ($("#empPwd").val() == '') {
+			if ($.trim($("#empPwd").val()) == '') {
 				alert("비밀번호를 입력하세요.");
 				$("#empPwd").focus();
 				

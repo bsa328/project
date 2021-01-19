@@ -85,21 +85,21 @@
 				return false;
 			}
 
-			if ($("#empName").val() == '') {
+			if ($.trim($("#empName").val()) == '') {
 				alert("사원명을 입력하세요.");
 				$("#empName").focus();
 
 				return false;
 			}
 
-			if ($("#empPwd").val() == '') {
+			if ($.trim($("#empPwd").val()) == '') {
 				alert("비밀번호를 입력하세요.");
 				$("#empPwd").focus();
 
 				return false;
 			}
 
-			if ($("#repasswd").val() == '') {
+			if ($.trim($("#repasswd").val()) == '') {
 				alert("비밀번호 확인을 입력하세요.");
 				$("#repasswd").focus();
 
@@ -115,7 +115,8 @@
 			}
 
 			$("#frm").submit();
-
+			alert("회원가입이 완료되었습니다.");
+			
 		});
 
 	}

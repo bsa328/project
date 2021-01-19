@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="board">
+
+	<insert id="setBoard" parameterType="com.example.project.model.BoardVO">
+		INSERT INTO board SET 
+			board_group		= #{boardGroup},
+			board_code		= #{boardCode},
+			board_manager	= #{boardManager},
+			board_color		= #{boardColor},
+			board_title		= #{boardTitle},
+			board_read		= #{boardRead},
+			board_write		= #{boardWrite},
+			board_regdate	= now()
+	</insert>
+	
+	<select id="getBoardList" resultType="com.example.project.model.BoardVO">
+		SELECT
+			board_id 		AS boardID,
+			board_group 	AS boardGroup,
+			board_code 		AS boardCode,
+			board_manager 	AS boardManager,
+			board_color 	AS boardColor,
+			board_title 	AS boardTitle,
+			board_read 		AS boardRead,
+			board_write 	AS boardWrite,
+			board_regdate 	AS boardRegdate
+		FROM board ORDER BY board_id DESC
+	</select>
+	
+	<select id="getBoardCount" resultType="int">
+		SELECT COUNT(*) FROM board
+	</select>
+	
+</mapper>

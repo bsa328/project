@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ include file="/WEB-INF/views/include/HEADER.jsp"%>
-<link rel="stylesheet" href="{pageContext.request.contextPath}/css/board.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/board.css">
 
 <body>
 	<div class="html">
@@ -14,13 +14,13 @@
                     </div>
                     <div class="btn-box m-b5">
                         <button></button>
-                        <button type="button" class="btn-white"
-                            onclick="location.href='{pageContext.request.contextPath}/employee_list'">목록으로</button>
+                        <button class="btn-white"
+                            onclick="location.href='${pageContext.request.contextPath}/employee/employee_list'">목록으로</button>
                     </div>
                     <div class="board-list btn-box">
                         <div class="photo-box">
                             <div class="photo m-b5">
-                                <img src="{pageContext.request.contextPath}/images/not-found" style="width: 100%; height: 100%;" />
+                                <img src="${pageContext.request.contextPath}/images/not-found.jpg" style="width: 100%; height: 100%;" />
                             </div>
                             <div class="file">
                             </div>
@@ -117,8 +117,7 @@
                         <div class="memo noto p-10">영업부 김부장입니다.</div>
                     </div>
                     <div class="center m-t5">
-                        <button class="btn-blue">수정하기</button>
-                        <button class="btn-red">삭제하기</button>
+                        <button class="btn-blue">인쇄하기</button>
                     </div>
                 </div>
             </div>
