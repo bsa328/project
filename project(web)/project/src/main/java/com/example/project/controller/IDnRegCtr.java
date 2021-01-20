@@ -37,24 +37,24 @@ public class IDnRegCtr {
 	}
 
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
-	public ModelAndView setLogin(@ModelAttribute EmployeeVO employeevo, HttpSession httpSession,
+	public ModelAndView setLogin(@ModelAttribute EmployeeVO employeeVO, HttpSession httpSession,
 			HttpServletResponse response) throws IOException {
 
 		ModelAndView mav = new ModelAndView();
-		int result = loginSrv.getEmpNumCheck(employeevo);
+		int result = loginSrv.getEmpNumCheck(employeeVO);
 
 		response.setContentType("text/html; charset=UTF-8");
 		PrintWriter out = response.getWriter();
 
 		if (result > 0) {
-			EmployeeVO empvo = loginSrv.getEmpLoginInfo(employeevo);
+			EmployeeVO empvo = loginSrv.getEmpLoginInfo(employeeVO);
 
 			if (empvo.getEmpConfirm().equals("Y")) {
-				loginSrv.setSession(employeevo, httpSession);
+				loginSrv.setSession(employeeVO, httpSession);
 				mav.setViewName("main");
 
 			} else {
-				loginSrv.setSession(employeevo, httpSession);
+				loginSrv.setSession(employeeVO, httpSession);
 				mav.setViewName("main");
 			}
 
@@ -83,13 +83,13 @@ public class IDnRegCtr {
 	}
 
 	@RequestMapping(value = "/register", method = RequestMethod.POST)
-	public String setRegister(@ModelAttribute EmployeeVO employeevo) {
+	public String setRegister(@ModelAttribute EmployeeVO employeeVO) {
 
-		int enterYear = Integer.parseInt(employeevo.getEmpEnter().substring(2, 4));
-		String empNum = enterYear + employeevo.getEmpBuseoCode() + employeevo.getEmpGradeCode();
+		int enterYear = Integer.parseInt(employeeVO.getEmpEnter().substring(2, 4));
+		String empNum = enterYear + employeeVO.getEmpBuseoCode() + employeeVO.getEmpGradeCode();
 
-		employeevo.setEmpNum(empNum);
-		registerSrv.setEmpRegister(employeevo);
+		employeeVO.setEmpNum(empNum);
+		registerSrv.setEmpRegister(employeeVO);
 
 		return "redirect:/login";
 	}

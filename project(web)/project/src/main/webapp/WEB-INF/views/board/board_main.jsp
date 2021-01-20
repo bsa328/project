@@ -22,7 +22,7 @@
 									</td>
 									<td class="bg-eee td-10">게시판 코드</td>
 									<td class="td-15 p-3">
-										<input type="text" placeholder="영어로 입력" name="boardCode" id="boardCode" />
+										<input type="text" onBlur="codeCheck();" placeholder="영어로 입력하세요." name="boardCode" id="boardCode" />
 									</td>
 									<td class="bg-eee td-10">게시판 관리자</td>
 									<td class="td-15 p-3">
@@ -204,6 +204,30 @@
 		$("#btn").click(function() {
 			boardMake();
 		});
+	</script>
+	
+	<script>
+	function codeCheck() {
+		var formData = {
+			boardCode : $("#boardCode").val()
+		};
+
+		$.ajax({
+			url		: "${pageContext.request.contextPath}/board/code_check",
+			type 	: "POST",
+			data 	: formData,
+			success	: function(resData) {
+				if(resData == "false") {
+					alert("이미 사용중인 게시판 코드입니다.");
+					$("#boardCode").val("");
+					$("#boardCode").focus();
+				}
+			},
+			error	: function() {
+				alert("시스템 에러");
+			}
+		});
+	}
 	</script>
 
 	<script>

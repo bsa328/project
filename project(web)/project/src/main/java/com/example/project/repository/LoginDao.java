@@ -15,18 +15,18 @@ public class LoginDao {
 	@Autowired
 	SqlSession sqlSession;
 
-	public int getEmpNumCheck(EmployeeVO employeevo) {
+	public int getEmpNumCheck(EmployeeVO employeeVO) {
 		Map<String, String> map = new HashMap<String, String>();
-		map.put("empNum", employeevo.getEmpNum());
-		map.put("empPwd", employeevo.getEmpPwd());
+		map.put("empNum", employeeVO.getEmpNum());
+		map.put("empPwd", employeeVO.getEmpPwd());
 
 		return sqlSession.selectOne("login.getEmpNumCheck", map);
 	}
 
-	public EmployeeVO getEmpLoginInfo(EmployeeVO employeevo) {
+	public EmployeeVO getEmpLoginInfo(EmployeeVO employeeVO) {
 		Map<String, String> map = new HashMap<String, String>();
-		map.put("empNum", employeevo.getEmpNum());
-		map.put("empPwd", employeevo.getEmpPwd());
+		map.put("empNum", employeeVO.getEmpNum());
+		map.put("empPwd", employeeVO.getEmpPwd());
 
 		return sqlSession.selectOne("login.getEmpLoginInfo", map);
 	}

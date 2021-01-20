@@ -28,6 +28,10 @@
 		FROM board ORDER BY board_id DESC
 	</select>
 	
+	<select id="codeCheck" resultType="int">
+		SELECT COUNT(*) FROM board WHERE board_code = #{boardCode}
+	</select>
+	
 	<select id="getBoardCount" resultType="int">
 		SELECT COUNT(*) FROM board
 	</select>

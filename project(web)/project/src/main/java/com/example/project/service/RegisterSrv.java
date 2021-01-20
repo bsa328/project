@@ -12,8 +12,8 @@ public class RegisterSrv {
 	@Autowired
 	RegisterDao registerDao;
 
-	public void setEmpRegister(EmployeeVO employeevo) {
-		registerDao.setEmpRegister(employeevo);
+	public void setEmpRegister(EmployeeVO employeeVO) {
+		registerDao.setEmpRegister(employeeVO);
 	}
 
 }

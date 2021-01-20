@@ -14,12 +14,16 @@ public class BoardDao {
 	@Autowired
 	SqlSession sqlSession;
 
-	public void setBoard(BoardVO boardvo) {
-		sqlSession.insert("board.setBoard", boardvo);
+	public void setBoard(BoardVO boardVO) {
+		sqlSession.insert("board.setBoard", boardVO);
 	}
 
 	public List<BoardVO> getBoardList() {
 		return sqlSession.selectList("board.getBoardList");
+	}
+
+	public int codeCheck(String boardCode) {
+		return sqlSession.selectOne("board.codeCheck", boardCode);
 	}
 
 	public int getBoardCount() {

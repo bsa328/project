@@ -12,8 +12,8 @@ public class RegisterDao {
 	@Autowired
 	SqlSession sqlSession;
 
-	public void setEmpRegister(EmployeeVO employeevo) {
-		sqlSession.insert("register.setEmpRegister", employeevo);
+	public void setEmpRegister(EmployeeVO employeeVO) {
+		sqlSession.insert("register.setEmpRegister", employeeVO);
 	}
 
 }

@@ -1,8 +1,5 @@
 package com.example.project.model;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
 public class EmployeeVO {
 	private int empID;
 	private String empBuseoCode;
@@ -13,12 +10,10 @@ public class EmployeeVO {
 	private String empName;
 	private String empPwd;
 	private String empEnter;
-	private Date empRegdate;
+	private String empRegdate;
 	private String empConfirm;
 	private int empAuth;
 	private int ref;
-
-	SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 
 	public int getEmpID() {
 		return empID;
@@ -93,10 +88,10 @@ public class EmployeeVO {
 	}
 
 	public String getEmpRegdate() {
-		return sdf.format(empRegdate);
+		return empRegdate;
 	}
 
-	public void setEmpRegdate(Date empRegdate) {
+	public void setEmpRegdate(String empRegdate) {
 		this.empRegdate = empRegdate;
 	}
 
@@ -114,14 +109,6 @@ public class EmployeeVO {
 
 	public void setEmpAuth(int empAuth) {
 		this.empAuth = empAuth;
-	}
-
-	public SimpleDateFormat getSdf() {
-		return sdf;
-	}
-
-	public void setSdf(SimpleDateFormat sdf) {
-		this.sdf = sdf;
 	}
 
 	public int getRef() {

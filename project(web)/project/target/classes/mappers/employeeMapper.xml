@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="employee">
+
+	<select id="getEmpList" parameterType="hashmap" resultType="com.example.project.model.EmployeeVO">
+		SELECT
+			emp_id		 AS empID,
+			emp_name	 AS empName,
+			buseo_name	 AS empBuseoName,
+			grade_name 	 AS empGradeName,
+			emp_num 	 AS empNum,
+			emp_pwd 	 AS empPwd,
+			emp_enter 	 AS empEnter,
+			emp_regdate  AS empRegdate,
+			emp_confirm  AS empConfirm,
+			emp_auth	 AS empAuth
+		FROM employee 
+			LEFT JOIN buseo ON emp_buseo = buseo_id 
+			LEFT JOIN grade ON emp_grade = grade_id
+		AND <include refid="searchData"></include> ORDER BY emp_id DESC
+	</select>
+	
+	<sql id="searchData">
+		${searchOpt} LIKE CONCAT('%', #{words}, '%')
+	</sql>
+
+	<select id="getEmpCount" resultType="int">
+		SELECT COUNT(*) FROM employee WHERE <include refid="searchData"></include>
+	</select>
+	
+	<delete id="setEmployeeDelete" parameterType="int">
+		DELETE FROM employee WHERE emp_id = #{empID}
+	</delete>
+	
+</mapper>

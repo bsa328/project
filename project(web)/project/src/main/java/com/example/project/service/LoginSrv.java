@@ -14,16 +14,16 @@ public class LoginSrv {
 	@Autowired
 	LoginDao loginDao;
 
-	public int getEmpNumCheck(EmployeeVO employeevo) {
-		return loginDao.getEmpNumCheck(employeevo);
+	public int getEmpNumCheck(EmployeeVO employeeVO) {
+		return loginDao.getEmpNumCheck(employeeVO);
 	}
 
-	public EmployeeVO getEmpLoginInfo(EmployeeVO employeevo) {
-		return loginDao.getEmpLoginInfo(employeevo);
+	public EmployeeVO getEmpLoginInfo(EmployeeVO employeeVO) {
+		return loginDao.getEmpLoginInfo(employeeVO);
 	}
 
-	public void setSession(EmployeeVO employeevo, HttpSession httpSession) {
-		EmployeeVO empvo = loginDao.getEmpLoginInfo(employeevo);
+	public void setSession(EmployeeVO employeeVO, HttpSession httpSession) {
+		EmployeeVO empvo = loginDao.getEmpLoginInfo(employeeVO);
 
 		if (empvo != null) {
 			httpSession.setAttribute("empName", empvo.getEmpName());

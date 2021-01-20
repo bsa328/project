@@ -14,12 +14,16 @@ public class BoardSrv {
 	@Autowired
 	BoardDao boardDao;
 
-	public void setBoard(BoardVO boardvo) {
-		boardDao.setBoard(boardvo);
+	public void setBoard(BoardVO boardVO) {
+		boardDao.setBoard(boardVO);
 	}
 
 	public List<BoardVO> getBoardList() {
 		return boardDao.getBoardList();
+	}
+
+	public int codeCheck(String boardCode) {
+		return boardDao.codeCheck(boardCode);
 	}
 
 	public int getBoardCount() {
