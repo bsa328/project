@@ -32,15 +32,12 @@
 									<td class="td-15 p-3">
 										<select class="select" name="boardColor" id="boardColor">
 											<option value="color">색상을 선택하세요.</option>
-											<option value="#6F809A">#6F809A</option>
-											<option value="#B00020">#B00020</option>
-											<option value="#5D1049">#5D1049</option>
-											<option value="#4A148C">#4A148C</option>
-											<option value="#2962FF">#2962FF</option>
-											<option value="#404E67">#404E67</option>
-											<option value="#FE5E71">#FE5E71</option>
-											<option value="#1A237E">#1A237E</option>
-											<option value="no">선택안함</option>
+											<option value="#e68fcd">분홍</option>
+											<option value="#e9d565">노랑</option>
+											<option value="#78dc57">초록</option>
+											<option value="#98d1e6">파랑</option>
+											<option value="#a578ca">보라</option>
+											<option value="#eee">선택안함</option>
 										</select>
 									</td>
 								</tr>
@@ -78,11 +75,11 @@
 						<span class="">게시판 관리 > 게시판 목록</span>
 					</div>
 					<div class="btn-box m-b5">
-						<button class="btn-red" id="">선택삭제</button>
+						<button class="btn-red" id="delete">선택삭제</button>
 					</div>
 					<div class="board-list">
 						<table border="1">
-							<tr class="center bg-eee">
+							<tr class="center bg-eee" id="rowColor">
 								<td class="td-3">
 									<input type="checkbox" onClick="chkAll();" id="chkAll" />
 								</td>
@@ -127,7 +124,7 @@
 						<div class="total-num">전체 게시판수 : ${count}개</div>
 						<form method="post" action="${pageContext.request.contextPath}/board">
 							<div class="">
-								<select class="w-150" name="searchOpt">
+								<select class="w-150" name="">
 									<option value="">전체검색</option>
 									<option value="">게시판 그룹</option>
 									<option value="">게시판 코드</option>
@@ -138,19 +135,90 @@
 							</div>
 						</form>
 					</div>
-					<div class="paging m-t10 center">
-						<span class="page"><a href=""><i class="fas fa-angle-double-left"></i></a></span>
-						<span class="page"><a href=""><i class="fas fa-angle-left"></i></a></span>
-						<span class="page page-active"><a href="" class="f6">1</a></span>
-						<span class="page"><a href=""><i class="fas fa-angle-right"></i></a></span>
-						<span class="page"><a href=""><i class="fas fa-angle-double-right"></i></a></span>
-					</div>
+					<c:if test="${count > 0}">
+                    	<div class="paging m-t10 center">
+                    		<c:choose>
+                    			<c:when test="${curPage > 1}">
+                    				<a href="${pageContext.request.contextPath}/board?curPage=1"><span class="page"><i class="fas fa-angle-double-left"></i></span></a>
+                    			</c:when>
+                    			<c:otherwise>
+	                    			<a href=""><span class="page"><i class="fas fa-angle-double-left"></i></span></a>
+	                    		</c:otherwise>
+                    		</c:choose>
+                    		<c:choose>
+                    			<c:when test="${curPage > 1}">
+                    				<a href="${pageContext.request.contextPath}/board?curPage=${curPage-1}"><span class="page"><i class="fas fa-angle-left"></i></span></a>
+                    			</c:when>
+                    			<c:otherwise>
+                    				<span class="page"><i class="fas fa-angle-left"></i></span>
+                    			</c:otherwise>
+                    		</c:choose>
+                    		<c:forEach begin="${blockBegin}" end="${blockEnd}" var="num">
+                    			<c:if test="${selected != num}">
+                    				<a href="${pageContext.request.contextPath}/board?curPage=${num}"><span class="page">${num}</span></a>
+                    			</c:if>
+                    			<c:if test="${selected == num}">
+                    				<a href="" class="f6"><span class="page page-active">${num}</span></a>
+                    			</c:if>
+                    		</c:forEach>
+                    		<c:choose>
+                    			<c:when test="${curPage != totalPage}">
+									<a href="${pageContext.request.contextPath}/board?curPage=${curPage+1}"><span class="page"><i class="fas fa-angle-right"></i></span></a>
+								</c:when>
+								<c:otherwise>
+									<span class="page"><i class="fas fa-angle-right"></i></span>
+								</c:otherwise>
+							</c:choose>
+							<c:choose>
+								<c:when test="${curPage != totalPage}">
+									<a href="${pageContext.request.contextPath}/board?curPage=${totalPage}"><span class="page"><i class="fas fa-angle-double-right"></i></span></a>
+								</c:when>
+								<c:otherwise>
+									<a href=""><span class="page"><i class="fas fa-angle-double-right"></i></span></a>
+								</c:otherwise>
+							</c:choose>
+						</div>
+					</c:if>
 				</div>
 			</div>
 		</div>
 	</div>
 	<%@ include file="/WEB-INF/views/include/FOOTER.jsp"%>
+	<script>
+	$(function () {
+	    $("#boardColor").change(function() {
+	        $("#rowColor").css({
+	            backgroundColor : this.value
+	        });
+	    });
+	});
+	</script>
+	<script>
+	$("#delete").click(function () {
+		var str = confirm("선택하신 게시판을 삭제하시겠습니까?");
 
+		if(str) {
+			var chkArr = new Array();
+			$(".chk:checked").each(function () {
+				chkArr.push($(this).attr("data-uid"));
+			});
+
+	        $.ajax({
+	        	url 	: "${pageContext.request.contextPath}/board/board_delete",
+	        	type 	: "POST", 	
+	        	data 	: { chkArr : chkArr },
+	        	success	: function (resData) {
+	        		alert("삭제되었습니다.");
+		    		window.location.reload();
+	            },
+	            error 	: function() {
+	            	alert("삭제할 게시판을 선택하세요.");
+	            }
+	        });
+		}
+		
+	});
+	</script>
 	<script>
 		function boardMake() {
 

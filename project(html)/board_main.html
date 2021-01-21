@@ -21,7 +21,7 @@
                 <a href="admin_main.html">LOGO</a>
             </span>
             <div class="auth">
-            	<div class="user">
+                <div class="user">
                     [김과장, 2110011] {권한 : 10} <a href="main.html" id="logout">로그아웃</a>
                 </div>
                 <div class="logout"><a href="main.html" id=""><i class="fas fa-home"></i></a></div>
@@ -75,11 +75,14 @@
                                 </td>
                                 <td class="bg-eee td-10">게시판 색상</td>
                                 <td class="td-15 p-3">
-                                    <select class="select" name="searchOpt">
-                                        <option value="">색상을 선택하세요.</option>
-                                        <option value="">#fff</option>
-                                        <option value="">#ccc</option>
-                                        <option value="">선택안함</option>
+                                    <select class="select">
+                                        <option value="color">색상을 선택하세요.</option>
+                                        <option value="#e68fcd">#e68fcd</option>
+                                        <option value="#e9d565">#e9d565</option>
+                                        <option value="#78dc57">#78dc57</option>
+                                        <option value="#98d1e6">#98d1e6</option>
+                                        <option value="#a578ca">#a578ca</option>
+                                        <option value="#eee">선택안함</option>
                                     </select>
                                 </td>
                             </tr>
@@ -215,7 +218,7 @@
                                 <td class=""><a href="article_list.html" target="_blank">연말 행사 및 축제 공고입니다.</a></td>
                                 <td class="">김과장</td>
                                 <td>1</td>
-                                <td>2</td>  
+                                <td>2</td>
                                 <td>#fff</td>
                                 <td class="">2021-01-14</td>
                             </tr>
@@ -273,25 +276,15 @@
                         </div>
                     </div>
                     <div class="paging m-t10 center">
-                        <span class="page">
-                            <a href=""><i class="fas fa-angle-double-left"></i></a>
-                        </span>
-                        <span class="page">
-                            <a href=""><i class="fas fa-angle-left"></i></a>
-                        </span>
-                        <span class="page page-active">
-                            <a href="" class="f6">1</a>
-                        </span>
-                        <span class="page"><a href="">2</a></span>
-                        <span class="page"><a href="">3</a></span>
-                        <span class="page"><a href="">4</a></span>
-                        <span class="page"><a href="">5</a></span>
-                        <span class="page">
-                            <a href=""><i class="fas fa-angle-right"></i></a>
-                        </span>
-                        <span class="page">
-                            <a href=""><i class="fas fa-angle-double-right"></i></a>
-                        </span>
+                        <a href=""><span class="page"><i class="fas fa-angle-double-left"></i></span></a>
+                        <a href=""><span class="page"><i class="fas fa-angle-left"></i></span></a>
+                        <a href="" class="f6"><span class="page page-active">1</span></a>
+                        <a href=""><span class="page">2</span></a>
+                        <a href=""><span class="page">3</span></a>
+                        <a href=""><span class="page">4</span></a>
+                        <a href=""><span class="page">5</span></a>
+                        <a href=""><span class="page"><i class="fas fa-angle-right"></i></span></a>
+                        <a href=""><span class="page"><i class="fas fa-angle-double-right"></i></span></a>
                     </div>
                 </div>
             </div>

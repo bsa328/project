@@ -2,7 +2,6 @@ package com.example.project.repository;
 
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,20 +15,16 @@ public class EmployeeDao {
 	@Autowired
 	SqlSession sqlSession;
 
-	public List<EmployeeVO> getEmpList(String searchOpt, String words) {
+	public List<EmployeeVO> getEmpList(int start, int end) {
 		HashMap<String, Object> map = new HashMap<String, Object>();
-		map.put("searchOpt", searchOpt);
-		map.put("words", words);
+		map.put("start", start);
+		map.put("end", end);
 
 		return sqlSession.selectList("employee.getEmpList", map);
 	}
 
-	public int getEmpCount(String searchOpt, String words) {
-		Map<String, String> map = new HashMap<String, String>();
-		map.put("searchOpt", searchOpt);
-		map.put("words", words);
-
-		return sqlSession.selectOne("employee.getEmpCount", map);
+	public int getEmpCount() {
+		return sqlSession.selectOne("employee.getEmpCount");
 	}
 
 	public int setEmployeeDelete(int empID) {

@@ -26,7 +26,7 @@
 								<tr class="center">
 									<td class="bg-eee td-10">게시글 분류</td>
 									<td class="p-3">
-										<select class="select" name="searchOpt">
+										<select class="select" name="">
 											<option value="">게시글 종류</option>
 											<option value="">공지사항</option>
 											<option value="">일반 게시글</option>
@@ -64,7 +64,7 @@
 							</table>
 						</div>
 						<div class="center m-t5">
-							<button type="submit" class="btn-blue">수정하기</button>
+							<button type="submit" class="btn-blue" id="btn">수정하기</button>
 						</div>
 					</form>
 				</div>
@@ -72,4 +72,9 @@
 		</div>
 	</div>
 	<%@ include file="/WEB-INF/views/include/FOOTER.jsp"%>
+	<script>
+	$("#btn").click(function() {
+		alert("게시글이 수정되었습니다.");
+	});
+	</script>
 </html>

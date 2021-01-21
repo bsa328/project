@@ -73,7 +73,7 @@
 						<div class="total-num">전체 게시글수 : 13개</div>
 						<form method="post" action="${pageContext.request.contextPath}/article/article_list">
 							<div class="">
-								<select class="w-150" name="searchOpt">
+								<select class="w-150" name="">
 									<option value="">전체검색</option>
 									<option value="">분류</option>
 									<option value="">게시글 제목</option>
@@ -84,9 +84,50 @@
 							</div>
 						</form>
 					</div>
-					<div class="paging m-t10 center">
-						<span class="page"><a href=""><i class="fas fa-angle-double-left"></i></a></span> <span class="page"> <a href=""><i class="fas fa-angle-left"></i></a></span> <span class="page page-active"><a href="" class="f6">1</a></span> <span class="page"> <a href=""><i class="fas fa-angle-right"></i></a></span> <span class="page"> <a href=""><i class="fas fa-angle-double-right"></i></a></span>
-					</div>
+					<c:if test="${count > 0}">
+                    	<div class="paging m-t10 center">
+                    		<c:choose>
+                    			<c:when test="${curPage > 1}">
+                    				<a href="${pageContext.request.contextPath}/article/article_list?boardCode=${boardCode}&curPage=1"><span class="page"><i class="fas fa-angle-double-left"></i></span></a>
+                    			</c:when>
+                    			<c:otherwise>
+	                    			<a href=""><span class="page"><i class="fas fa-angle-double-left"></i></span></a>
+	                    		</c:otherwise>
+                    		</c:choose>
+                    		<c:choose>
+                    			<c:when test="${curPage > 1}">
+                    				<a href="${pageContext.request.contextPath}/article/article_list?boardCode=${boardCode}&curPage=${curPage-1}"><span class="page"><i class="fas fa-angle-left"></i></span></a>
+                    			</c:when>
+                    			<c:otherwise>
+                    				<span class="page"><i class="fas fa-angle-left"></i></span>
+                    			</c:otherwise>
+                    		</c:choose>
+                    		<c:forEach begin="${blockBegin}" end="${blockEnd}" var="num">
+                    			<c:if test="${selected != num}">
+                    				<a href="${pageContext.request.contextPath}/article/article_list?boardCode=${boardCode}&curPage=${num}"><span class="page">${num}</span></a>
+                    			</c:if>
+                    			<c:if test="${selected == num}">
+                    				<a href="" class="f6"><span class="page page-active">${num}</span></a>
+                    			</c:if>
+                    		</c:forEach>
+                    		<c:choose>
+                    			<c:when test="${curPage != totalPage}">
+									<a href="${pageContext.request.contextPath}/article/article_list?boardCode=${boardCode}&curPage=${curPage+1}"><span class="page"><i class="fas fa-angle-right"></i></span></a>
+								</c:when>
+								<c:otherwise>
+									<span class="page"><i class="fas fa-angle-right"></i></span>
+								</c:otherwise>
+							</c:choose>
+							<c:choose>
+								<c:when test="${curPage != totalPage}">
+									<a href="${pageContext.request.contextPath}/article/article_list?boardCode=${boardCode}&curPage=${totalPage}"><span class="page"><i class="fas fa-angle-double-right"></i></span></a>
+								</c:when>
+								<c:otherwise>
+									<a href=""><span class="page"><i class="fas fa-angle-double-right"></i></span></a>
+								</c:otherwise>
+							</c:choose>
+						</div>
+					</c:if>
 				</div>
 			</div>
 		</div>

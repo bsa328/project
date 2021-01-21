@@ -14,12 +14,12 @@ public class EmployeeSrv {
 	@Autowired
 	EmployeeDao employeeDao;
 
-	public List<EmployeeVO> getEmpList(String searchOpt, String words) {
-		return employeeDao.getEmpList(searchOpt, words);
+	public List<EmployeeVO> getEmpList(int start, int end) {
+		return employeeDao.getEmpList(start, end);
 	}
 
-	public int getEmpCount(String searchOpt, String words) {
-		return employeeDao.getEmpCount(searchOpt, words);
+	public int getEmpCount() {
+		return employeeDao.getEmpCount();
 	}
 
 	public int setEmployeeDelete(int empID) {

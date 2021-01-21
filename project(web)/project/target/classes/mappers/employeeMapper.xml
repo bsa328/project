@@ -17,15 +17,11 @@
 		FROM employee 
 			LEFT JOIN buseo ON emp_buseo = buseo_id 
 			LEFT JOIN grade ON emp_grade = grade_id
-		AND <include refid="searchData"></include> ORDER BY emp_id DESC
+		ORDER BY emp_id DESC LIMIT #{start}, #{end}
 	</select>
 	
-	<sql id="searchData">
-		${searchOpt} LIKE CONCAT('%', #{words}, '%')
-	</sql>
-
 	<select id="getEmpCount" resultType="int">
-		SELECT COUNT(*) FROM employee WHERE <include refid="searchData"></include>
+		SELECT COUNT(*) FROM employee
 	</select>
 	
 	<delete id="setEmployeeDelete" parameterType="int">

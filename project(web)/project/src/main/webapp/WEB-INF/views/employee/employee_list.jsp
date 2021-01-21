@@ -65,7 +65,7 @@
                         <div class="total-num">전체 사원수 : ${count}명</div>
                         <form method="post" action="${pageContext.request.contextPath}/employee/employee_list">
 	                        <div class="">
-	                        	<select class="w-150" name="searchOpt">
+	                        	<select class="w-150" name="">
 									<option value="all">전체검색</option>
 									<option value="emp_name"> 사원명</option>
 									<option value="buseo_name">근무부서</option>
@@ -76,13 +76,50 @@
 	                        </div>
                         </form>
                     </div>
-                    <div class="paging m-t10 center">
-						<span class="page"><a href=""><i class="fas fa-angle-double-left"></i></a></span>
-						<span class="page"> <a href=""><i class="fas fa-angle-left"></i></a></span>
-						<span class="page page-active"><a href="" class="f6">1</a></span>
-						<span class="page"> <a href=""><i class="fas fa-angle-right"></i></a></span>
-						<span class="page"> <a href=""><i class="fas fa-angle-double-right"></i></a></span>
-					</div>
+                    <c:if test="${count > 0}">
+                    	<div class="paging m-t10 center">
+                    		<c:choose>
+                    			<c:when test="${curPage > 1}">
+                    				<a href="${pageContext.request.contextPath}/employee/employee_list?curPage=1"><span class="page"><i class="fas fa-angle-double-left"></i></span></a>
+                    			</c:when>
+                    			<c:otherwise>
+	                    			<a href=""><span class="page"><i class="fas fa-angle-double-left"></i></span></a>
+	                    		</c:otherwise>
+                    		</c:choose>
+                    		<c:choose>
+                    			<c:when test="${curPage > 1}">
+                    				<a href="${pageContext.request.contextPath}/employee/employee_list?curPage=${curPage-1}"><span class="page"><i class="fas fa-angle-left"></i></span></a>
+                    			</c:when>
+                    			<c:otherwise>
+                    				<span class="page"><i class="fas fa-angle-left"></i></span>
+                    			</c:otherwise>
+                    		</c:choose>
+                    		<c:forEach begin="${blockBegin}" end="${blockEnd}" var="num">
+                    			<c:if test="${selected != num}">
+                    				<a href="${pageContext.request.contextPath}/employee/employee_list?curPage=${num}"><span class="page">${num}</span></a>
+                    			</c:if>
+                    			<c:if test="${selected == num}">
+                    				<a href="" class="f6"><span class="page page-active">${num}</span></a>
+                    			</c:if>
+                    		</c:forEach>
+                    		<c:choose>
+                    			<c:when test="${curPage != totalPage}">
+									<a href="${pageContext.request.contextPath}/employee/employee_list?curPage=${curPage+1}"><span class="page"><i class="fas fa-angle-right"></i></span></a>
+								</c:when>
+								<c:otherwise>
+									<span class="page"><i class="fas fa-angle-right"></i></span>
+								</c:otherwise>
+							</c:choose>
+							<c:choose>
+								<c:when test="${curPage != totalPage}">
+									<a href="${pageContext.request.contextPath}/employee/employee_list?curPage=${totalPage}"><span class="page"><i class="fas fa-angle-double-right"></i></span></a>
+								</c:when>
+								<c:otherwise>
+									<a href=""><span class="page"><i class="fas fa-angle-double-right"></i></span></a>
+								</c:otherwise>
+							</c:choose>
+						</div>
+					</c:if>
                 </div>
             </div>
 		</div>

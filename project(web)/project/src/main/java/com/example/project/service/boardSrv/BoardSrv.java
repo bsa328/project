@@ -18,8 +18,8 @@ public class BoardSrv {
 		boardDao.setBoard(boardVO);
 	}
 
-	public List<BoardVO> getBoardList() {
-		return boardDao.getBoardList();
+	public List<BoardVO> getBoardList(int start, int end) {
+		return boardDao.getBoardList(start, end);
 	}
 
 	public int codeCheck(String boardCode) {
@@ -28,6 +28,10 @@ public class BoardSrv {
 
 	public int getBoardCount() {
 		return boardDao.getBoardCount();
+	}
+
+	public int setBoardDelete(int boardID) {
+		return boardDao.setBoardDelete(boardID);
 	}
 
 }

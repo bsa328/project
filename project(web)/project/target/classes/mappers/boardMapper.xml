@@ -14,7 +14,7 @@
 			board_regdate	= now()
 	</insert>
 	
-	<select id="getBoardList" resultType="com.example.project.model.BoardVO">
+	<select id="getBoardList" parameterType="hashmap" resultType="com.example.project.model.BoardVO">
 		SELECT
 			board_id 		AS boardID,
 			board_group 	AS boardGroup,
@@ -25,7 +25,7 @@
 			board_read 		AS boardRead,
 			board_write 	AS boardWrite,
 			board_regdate 	AS boardRegdate
-		FROM board ORDER BY board_id DESC
+		FROM board ORDER BY board_id DESC LIMIT #{start}, #{end}
 	</select>
 	
 	<select id="codeCheck" resultType="int">
@@ -36,4 +36,8 @@
 		SELECT COUNT(*) FROM board
 	</select>
 	
+	<delete id="setBoardDelete" parameterType="int">
+	 	DELETE FROM board WHERE board_id = #{boardID}
+	 </delete>
+		
 </mapper>

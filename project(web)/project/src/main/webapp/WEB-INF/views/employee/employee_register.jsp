@@ -43,11 +43,11 @@
 								<tr class="center">
 									<td class="bg-eee td-8">회사명</td>
 									<td class="td-12 p-3">
-										<input type="text" />
+										<input type="text" value="그린컴퓨터" readonly/>
 									</td>
 									<td class="bg-eee td-8">부서명</td>
 									<td class="td-12 p-3">
-										<select class="select" name="searchOpt">
+										<select class="select" name="">
 											<option value="buseo">부서를 선택하세요.</option>
 											<option value="100">관리부</option>
 											<option value="200">기획부</option>
@@ -58,7 +58,7 @@
 									</td>
 									<td class="bg-eee td-8">직책명</td>
 									<td class="td-12 p-3">
-										<select class="select" name="searchOpt">
+										<select class="select" name="">
 											<option value="grade">직책을 선택하세요.</option>
 											<option value="1">부장</option>
 											<option value="2">과장</option>
@@ -82,7 +82,7 @@
 									</td>
 									<td class="bg-eee td-8">성별</td>
 									<td class="td-12 p-3">
-										<select class="select" name="searchOpt">
+										<select class="select" name="">
 											<option value="1">남자</option>
 											<option value="2">여자</option>
 										</select>
@@ -113,7 +113,7 @@
 								<tr class="center">
 									<td class="bg-eee td-8">채용형태</td>
 									<td class="td-12 p-3">
-										<select class="select" name="searchOpt">
+										<select class="select" name="">
 											<option value="">공개채용</option>
 											<option value="">특별채용</option>
 											<option value="">수시채용</option>
@@ -129,7 +129,7 @@
 									</td>
 									<td class="bg-eee td-8">병역구분</td>
 									<td class="td-12 p-3">
-										<select class="select" name="searchOpt">
+										<select class="select" name="">
 											<option value="">병역필</option>
 											<option value="">병역미필</option>
 											<option value="">공익</option>
@@ -137,7 +137,7 @@
 									</td>
 									<td class="bg-eee td-8">종교</td>
 									<td class="td-12 p-3">
-										<select class="select" name="searchOpt">
+										<select class="select" name="">
 											<option value="">무교</option>
 											<option value="">불교</option>
 											<option value="">기독교</option>
@@ -155,21 +155,21 @@
 									</td>
 									<td class="bg-eee td-8">장애여부</td>
 									<td class="td-12 p-3">
-										<select class="select" name="searchOpt">
+										<select class="select" name="">
 											<option value="">비장애</option>
 											<option value="">장애</option>
 										</select>
 									</td>
 									<td class="bg-eee td-8">보훈대상여부</td>
 									<td class="td-12 p-3">
-										<select class="select" name="searchOpt">
+										<select class="select" name="">
 											<option value="">비대상</option>
 											<option value="">대상</option>
 										</select>
 									</td>
 									<td class="bg-eee td-8">결혼여부</td>
 									<td class="td-12 p-3">
-										<select class="select" name="searchOpt">
+										<select class="select" name="">
 											<option value="">미혼</option>
 											<option value="">기혼</option>
 										</select>
@@ -287,4 +287,9 @@
 		</div>
 	</div>
 	<%@ include file="/WEB-INF/views/include/FOOTER.jsp"%>
+	<script>
+	$("#btn").click(function() {
+		alert("사원이 등록되었습니다.");
+	});
+	</script>
 </html>
