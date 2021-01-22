@@ -37,11 +37,11 @@
 								<tr class="center tr">
 									<td class="bg-eee td-8">시작일</td>
 									<td class="p-3 td-12">
-										<input type="text" id="startDate" class="td-80" /> <span class="i"><i class="far fa-calendar-alt"></i></span>
+										<input type="text" id="startDate" class="td-80" readonly /> <span class="i"><i class="far fa-calendar-alt"></i></span>
 									</td>
 									<td class="bg-eee td-8">종료일</td>
 									<td class="p-3 td-12">
-										<input type="text" id="endDate" class="td-80" /> <span class="i"><i class="far fa-calendar-alt"></i></span>
+										<input type="text" id="endDate" class="td-80" readonly /> <span class="i"><i class="far fa-calendar-alt"></i></span>
 									</td>
 									<td class="bg-eee td-8">내용</td>
 									<td class="p-3">

@@ -31,4 +31,8 @@ public class EmployeeDao {
 		return sqlSession.delete("employee.setEmployeeDelete", empID);
 	}
 
+	public EmployeeVO getEmployeeOne(int empNum) {
+		return sqlSession.selectOne("employee.getEmployeeOne", empNum);
+	}
+
 }

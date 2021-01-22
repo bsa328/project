@@ -16,4 +16,8 @@ public class RegisterDao {
 		sqlSession.insert("register.setEmpRegister", employeeVO);
 	}
 
+	public void setEmpRegisterInfo(EmployeeVO employeeVO) {
+		sqlSession.insert("register.setEmpRegisterInfo", employeeVO);
+	}
+	
 }

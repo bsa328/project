@@ -44,7 +44,7 @@
 					<option value="3">대리</option>
 					<option value="4">사원</option>
 				</select>
-				<input type="text" class="noto" name="empEnter" id="empEnter" placeholder="입사년월일을 선택하세요." required tabindex="1" />
+				<input type="text" class="noto" name="empEnter" id="empEnter" placeholder="입사년월일을 선택하세요." required tabindex="1" readonly />
 				<input type="text" class="noto" name="empName" id="empName" placeholder="사원명을 입력하세요." required tabindex="2" />
 				<input type="password" class="noto" name="empPwd" id="empPwd" placeholder="비밀번호를 입력하세요." required tabindex="3" />
 				<input type="password" class="noto" name="repasswd" id="repasswd" placeholder="비밀번호 확인을 입력하세요." required tabindex="4" />

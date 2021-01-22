@@ -33,7 +33,7 @@ CREATE TABLE `board` (
   `board_write` char(1) NOT NULL,
   `board_regdate` date DEFAULT NULL,
   PRIMARY KEY (`board_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -42,7 +42,7 @@ CREATE TABLE `board` (
 
 LOCK TABLES `board` WRITE;
 /*!40000 ALTER TABLE `board` DISABLE KEYS */;
-INSERT INTO `board` VALUES (1,'영업부','notice','김과장','#6F809A','영업부 공지사항 게시판입니다.','2','2','2021-01-19'),(2,'admin','admin','admin','#5D1049','사내 공지사항입니다. 확인 바랍니다.','1','1','2021-01-19'),(3,'admin','dqwdwq','admin','#6F809A','wqdw','1','2','2021-01-19'),(4,'영업부','dadwdq','김과장','#2962FF','fsfdsf','1','3','2021-01-19'),(5,'영업부','asdasd','김과장','#B00020','asdsad','2','3','2021-01-19'),(6,'영업부','fe','김과장','#5D1049','ewfewf','1','2','2021-01-19'),(7,'영업부','dawd','김과장','#B00020','wdawd','2','1','2021-01-19'),(8,'영업부','gr','김과장','#B00020','gr','1','2','2021-01-19'),(9,'영업부','gr','김과장','#B00020','gr','1','2','2021-01-19'),(10,'영업부','ds','김과장','#B00020','sd','2','1','2021-01-19'),(11,'영업부','fsef','김과장','#B00020','sefse','2','2','2021-01-19'),(12,'영업부','dqd','김과장','#B00020','dqw','1','3','2021-01-19'),(13,'영업부','admin','김과장','#B00020','df','1','2','2021-01-19'),(14,'영업부','admin','김과장','#5D1049','asd','2','1','2021-01-19'),(15,'영업부','admin','김과장','#B00020','fse','2','1','2021-01-19'),(16,'영업부','free','김과장','#2962FF','영업부 자유게시판','2','1','2021-01-20');
+INSERT INTO `board` VALUES (28,'-','a','관리자','#e9d565','a','1','2','2021-01-22');
 /*!40000 ALTER TABLE `board` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -87,8 +87,44 @@ CREATE TABLE `employee` (
   `emp_regdate` date DEFAULT NULL,
   `emp_confirm` char(1) DEFAULT 'N',
   `emp_auth` int DEFAULT '1',
+  `emp_company` varchar(20) DEFAULT '그린컴퓨터',
+  `emp_gender` char(2) DEFAULT NULL,
+  `emp_birth` char(8) DEFAULT NULL,
+  `emp_phone` char(8) DEFAULT NULL,
+  `emp_tel` char(7) DEFAULT NULL,
+  `emp_recruit` char(4) DEFAULT NULL,
+  `emp_hope_job` varchar(20) DEFAULT NULL,
+  `emp_email` varchar(50) DEFAULT NULL,
+  `emp_military` char(4) DEFAULT NULL,
+  `emp_religion` char(3) DEFAULT NULL,
+  `emp_hobby` varchar(20) DEFAULT NULL,
+  `emp_specialty` varchar(20) DEFAULT NULL,
+  `emp_disability` char(3) DEFAULT NULL,
+  `emp_veteran` char(3) DEFAULT NULL,
+  `emp_marriage` char(2) DEFAULT NULL,
+  `emp_qualification1` varchar(20) DEFAULT NULL,
+  `emp_qualification2` varchar(20) DEFAULT NULL,
+  `emp_qualification3` varchar(20) DEFAULT NULL,
+  `emp_qualification4` varchar(20) DEFAULT NULL,
+  `emp_qualification5` varchar(20) DEFAULT NULL,
+  `emp_language1` varchar(20) DEFAULT NULL,
+  `emp_language_level1` char(2) DEFAULT NULL,
+  `emp_language2` varchar(20) DEFAULT NULL,
+  `emp_language_level2` char(2) DEFAULT NULL,
+  `emp_language3` varchar(20) DEFAULT NULL,
+  `emp_language_level3` char(2) DEFAULT NULL,
+  `emp_language4` varchar(20) DEFAULT NULL,
+  `emp_language_level4` char(2) DEFAULT NULL,
+  `emp_language5` varchar(20) DEFAULT NULL,
+  `emp_language_level5` char(2) DEFAULT NULL,
+  `emp_reward_punish1` varchar(20) DEFAULT NULL,
+  `emp_reward_punish2` varchar(20) DEFAULT NULL,
+  `emp_reward_punish3` varchar(20) DEFAULT NULL,
+  `emp_reward_punish4` varchar(20) DEFAULT NULL,
+  `emp_reward_punish5` varchar(20) DEFAULT NULL,
+  `emp_detail` text,
   PRIMARY KEY (`emp_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -97,7 +133,7 @@ CREATE TABLE `employee` (
 
 LOCK TABLES `employee` WRITE;
 /*!40000 ALTER TABLE `employee` DISABLE KEYS */;
-INSERT INTO `employee` VALUES (1,'admin','0','0','1','1',NULL,NULL,'Y',10),(2,'김부장','100','1','2110011','1','2021-01-01','2021-01-20','N',1),(5,'김과장','100','2','2110022','1','2021-01-01','2021-01-20','N',1),(6,'김과장','100','2','2110025','1','2021-01-01','2021-01-20','N',1),(7,'1','200','3','2120036','1','2021-01-06','2021-01-20','N',1),(8,'ㅋㅋ','200','2','2120027','1','2021-01-06','2021-01-20','N',1),(9,'ㄴㄴ','300','2','2130028','1','2021-01-21','2021-01-20','N',1),(10,'1','200','3','2120039','1','2021-01-06','2021-01-20','N',1),(11,'김씨','200','2','21200210','1','2021-01-06','2021-01-20','N',1),(12,'김씨','200','1','21200111','1','2021-01-13','2021-01-20','N',1);
+INSERT INTO `employee` VALUES (1,'관리자','0','0','1','1',NULL,NULL,'Y',10,'그린컴퓨터',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(2,'김부장','100','1','2110011','1','2021-01-01','2021-01-22','N',1,'그린컴퓨터',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(6,'김과장','200','1','2120012','1','2021-01-01','2021-01-22','N',1,'그린컴퓨터','남자','19750505','25198616','2516516','공개채용','기획','kim@naver.com','병역필','불교','축구','농구','비장애','비대상','기혼','없음.','없음.','없음.','없음.','없음.','중국어','상','일본어','중','영어','상','프랑스어','하','독일어','하','없음.','없음.','없음.','없음.','없음.','<p>기획부 부장 김과장입니다 ^^</p>\r\n');
 /*!40000 ALTER TABLE `employee` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -133,4 +169,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-01-20 23:52:20
+-- Dump completed on 2021-01-22 18:16:26

@@ -16,4 +16,8 @@ public class RegisterSrv {
 		registerDao.setEmpRegister(employeeVO);
 	}
 
+	public void setEmpRegisterInfo(EmployeeVO employeeVO) {
+		registerDao.setEmpRegisterInfo(employeeVO);
+	}
+
 }

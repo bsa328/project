@@ -28,4 +28,54 @@
 		DELETE FROM employee WHERE emp_id = #{empID}
 	</delete>
 	
+	<select id="getEmployeeOne" parameterType="int" resultType="com.example.project.model.EmployeeVO">
+		SELECT
+			emp_name	 		 AS empName,
+			buseo_name	 		 AS empBuseoName,
+			grade_name 			 AS empGradeName,
+			emp_num 			 AS empNum,
+			emp_pwd 			 AS empPwd,
+			emp_enter 	 		 AS empEnter,
+			emp_company	 		 AS empCompany,
+			emp_gender	 		 AS empGender,
+			emp_birth 	 		 AS empBirth,
+			emp_phone 	 		 AS empPhone,
+			emp_tel 			 AS empTel,
+			emp_recruit  		 AS empRecruit,
+			emp_hope_job		 AS empHopeJob,
+			emp_email 			 AS empEmail,
+			emp_military		 AS empMilitary,
+			emp_religion  		 AS empReligion,
+			emp_hobby 			 AS empHobby,
+			emp_specialty 		 AS empSpecialty,
+			emp_disability 		 AS empDisability,
+			emp_veteran 		 AS empVeteran,
+			emp_marriage 		 AS empMarriage,
+			emp_qualification1 	 AS empQualification1,
+			emp_qualification2 	 AS empQualification2,
+			emp_qualification3 	 AS empQualification3,
+			emp_qualification4 	 AS empQualification4,
+			emp_qualification5 	 AS empQualification5,
+			emp_language1 		 AS empLanguage1,
+			emp_language_level1	 AS empLanguageLevel1,
+			emp_language2 	 	 AS empLanguage2,
+			emp_language_level2  AS empLanguageLevel2,
+			emp_language3 	 	 AS empLanguage3,
+			emp_language_level3  AS empLanguageLevel3,
+			emp_language4 	 	 AS empLanguage4,
+			emp_language_level4  AS empLanguageLevel4,
+			emp_language5 	 	 AS empLanguage5,
+			emp_language_level5  AS empLanguageLevel5,
+			emp_reward_punish1 	 AS empRewardPunish1,
+			emp_reward_punish2 	 AS empRewardPunish2,
+			emp_reward_punish3	 AS empRewardPunish3,
+			emp_reward_punish4 	 AS empRewardPunish4,
+			emp_reward_punish5 	 AS empRewardPunish5,
+			emp_detail		 	 AS empDetail
+		FROM employee 
+			LEFT JOIN buseo ON emp_buseo = buseo_id 
+			LEFT JOIN grade ON emp_grade = grade_id
+		WHERE emp_num = #{empNum}
+	</select>
+
 </mapper>

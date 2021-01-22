@@ -8,7 +8,43 @@ emp_pwd varchar(20) not null,
 emp_enter date,
 emp_regdate date,
 emp_confirm char(1) default 'N',
-emp_auth int default 1
+emp_auth int default 1,
+emp_company varchar(20) default '그린컴퓨터',
+emp_gender char(2),
+emp_birth char(8),
+emp_phone char(8),
+emp_tel char(7),
+emp_recruit char(4),
+emp_hope_job varchar(20),
+emp_email varchar(50),
+emp_military char(4),
+emp_religion char(3),
+emp_hobby varchar(20),
+emp_specialty varchar(20),
+emp_disability char(3),
+emp_veteran char(3),
+emp_marriage char(2),
+emp_qualification1 varchar(20),
+emp_qualification2 varchar(20),
+emp_qualification3 varchar(20),
+emp_qualification4 varchar(20),
+emp_qualification5 varchar(20),
+emp_language1 varchar(20),
+emp_language_level1 char(2),
+emp_language2 varchar(20),
+emp_language_level2 char(2),
+emp_language3 varchar(20),
+emp_language_level3 char(2),
+emp_language4 varchar(20),
+emp_language_level4 char(2),
+emp_language5 varchar(20),
+emp_language_level5 char(2),
+emp_reward_punish1 varchar(20),
+emp_reward_punish2 varchar(20),
+emp_reward_punish3 varchar(20),
+emp_reward_punish4 varchar(20),
+emp_reward_punish5 varchar(20),
+emp_detail text
 );
 
 ------------------------------------------------------
@@ -61,3 +97,4 @@ board_regdate date
 );
 
 ------------------------------------------------------
+

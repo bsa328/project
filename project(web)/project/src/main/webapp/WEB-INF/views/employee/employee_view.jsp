@@ -10,7 +10,7 @@
 			<div class="main">
                 <div class="page-wrap">
                     <div class="title m-b10 bold">
-                        <span class="">2110011</span>
+                        <span class="">${view.empNum}, ${view.empName}</span>
                     </div>
                     <div class="btn-box m-b5">
                         <button></button>
@@ -28,95 +28,96 @@
                         <table border="1" style="width: 89%;">
                             <tr class="center">
                                 <td class="bg-eee td-8">회사명</td>
-                                <td class="td-12 p-10 left">삼성</td>
+                                <td class="td-12 p-10 left">${view.empCompany}</td>
                                 <td class="bg-eee td-8">부서명</td>
-                                <td class="td-12 p-10 left">영업부</td>
+                                <td class="td-12 p-10 left">${view.empBuseoName}</td>
                                 <td class="bg-eee td-8">직책명</td>
-                                <td class="td-12 p-10 left">부장</td>
+                                <td class="td-12 p-10 left">${view.empGradeName}</td>
                                 <td class="bg-eee td-8">입사년월일</td>
-                                <td class="td-12 p-10 left">2021년 01월 15일</td>
+                                <td class="td-12 p-10 left">${view.empEnter}</td>
                                 <td class="bg-eee td-8">비밀번호</td>
-                                <td class="td-12 p-10 left">1</td>
+                                <td class="td-12 p-10 left">${view.empPwd}</td>
                             </tr>
                             <tr class="center">
                                 <td class="bg-eee td-8">사원명</td>
-                                <td class="td-12 p-10 left">김부장</td>
+                                <td class="td-12 p-10 left">${view.empName}</td>
                                 <td class="bg-eee td-8">성별</td>
-                                <td class="td-12 p-10 left">남자</td>
+                                <td class="td-12 p-10 left">${view.empGender}</td>
                                 <td class="bg-eee td-8">생년월일</td>
-                                <td class="td-12 p-10 left">1970년 03월 01일 (양력)</td>
+                                <td class="td-12 p-10 left">${view.empBirth} (양력)</td>
                                 <td class="bg-eee td-8">휴대폰</td>
-                                <td class="td-12 p-10 left">010-1234-1234</td>
+                                <td class="td-12 p-10 left">${view.empPhone}</td>
                                 <td class="bg-eee td-8">내선번호</td>
-                                <td class="td-12 p-10 left">051-222-3333</td>
+                                <td class="td-12 p-10 left">${view.empTel}</td>
                             </tr>
                             <tr class="center">
                                 <td class="bg-eee td-8">채용형태</td>
-                                <td class="td-12 p-10 left">공개채용</td>
+                                <td class="td-12 p-10 left">${view.empRecruit}</td>
                                 <td class="bg-eee td-8">희망직무</td>
-                                <td class="td-12 p-10 left">마케팅</td>
+                                <td class="td-12 p-10 left">${view.empHopeJob}</td>
                                 <td class="bg-eee td-8">이메일</td>
-                                <td class="td-12 p-10 left">kim123@naver.com</td>
+                                <td class="td-12 p-10 left">${view.empEmail}</td>
                                 <td class="bg-eee td-8">병역구분</td>
-                                <td class="td-12 p-10 left">병역필</td>
+                                <td class="td-12 p-10 left">${view.empMilitary}</td>
                                 <td class="bg-eee td-8">종교</td>
-                                <td class="td-12 p-10 left">불교</td>
+                                <td class="td-12 p-10 left">${view.empReligion}</td>
                             </tr>
                             <tr class="center">
                                 <td class="bg-eee td-8">취미</td>
-                                <td class="td-12 p-10 left">-</td>
+                                <td class="td-12 p-10 left">${view.empHobby}</td>
                                 <td class="bg-eee td-8">특기</td>
-                                <td class="td-12 p-10 left">-</td>
+                                <td class="td-12 p-10 left">${view.empSpecialty}</td>
                                 <td class="bg-eee td-8">장애여부</td>
-                                <td class="td-12 p-10 left">비장애</td>
+                                <td class="td-12 p-10 left">${view.empDisability}</td>
                                 <td class="bg-eee td-8">보훈대상여부</td>
-                                <td class="td-12 p-10 left">비대상</td>
+                                <td class="td-12 p-10 left">${view.empVeteran}</td>
                                 <td class="bg-eee td-8">결혼여부</td>
-                                <td class="td-12 p-10 left">기혼</td>
+                                <td class="td-12 p-10 left">${view.empMarriage}</td>
                             </tr>
                             <tr class="center">
                                 <td class="bg-eee td-8">보유자격1</td>
-                                <td class="td-12 p-10 left">-</td>
+                                <td class="td-12 p-10 left">${view.empQualification1}</td>
                                 <td class="bg-eee td-8">보유자격2</td>
-                                <td class="td-12 p-10 left">-</td>
+                                <td class="td-12 p-10 left">${view.empQualification2}</td>
                                 <td class="bg-eee td-8">보유자격3</td>
-                                <td class="td-12 p-10 left">-</td>
+                                <td class="td-12 p-10 left">${view.empQualification3}</td>
                                 <td class="bg-eee td-8">보유자격4</td>
-                                <td class="td-12 p-10 left">-</td>
+                                <td class="td-12 p-10 left">${view.empQualification4}</td>
                                 <td class="bg-eee td-8">보유자격5</td>
-                                <td class="td-12 p-10 left">-</td>
+                                <td class="td-12 p-10 left">${view.empQualification5}</td>
                             </tr>
                             <tr class="center">
                                 <td class="bg-eee td-8">어학사항1</td>
-                                <td class="td-12 p-10 left">영어 (중)</td>
+                                <td class="td-12 p-10 left">${view.empLanguage1} (${view.empLanguageLevel1})</td>
                                 <td class="bg-eee td-8">어학사항2</td>
-                                <td class="td-12 p-10 left">중국어 (하)</td>
+                                <td class="td-12 p-10 left">${view.empLanguage2} (${view.empLanguageLevel2})</td>
                                 <td class="bg-eee td-8">어학사항3</td>
-                                <td class="td-12 p-10 left">-</td>
+                                <td class="td-12 p-10 left">${view.empLanguage3} (${view.empLanguageLevel3})</td>
                                 <td class="bg-eee td-8">어학사항4</td>
-                                <td class="td-12 p-10 left">-</td>
+                                <td class="td-12 p-10 left">${view.empLanguage4} (${view.empLanguageLevel4})</td>
                                 <td class="bg-eee td-8">어학사항5</td>
-                                <td class="td-12 p-10 left">-</td>
+                                <td class="td-12 p-10 left">${view.empLanguage5} (${view.empLanguageLevel5})</td>
                             </tr>
                             <tr class="center">
                                 <td class="bg-eee td-8">상벌사항1</td>
-                                <td class="td-12 p-10 left">-</td>
+                                <td class="td-12 p-10 left">${view.empRewardPunish1}</td>
                                 <td class="bg-eee td-8">상벌사항2</td>
-                                <td class="td-12 p-10 left">-</td>
+                                <td class="td-12 p-10 left">${view.empRewardPunish2}</td>
                                 <td class="bg-eee td-8">상벌사항3</td>
-                                <td class="td-12 p-10 left">-</td>
+                                <td class="td-12 p-10 left">${view.empRewardPunish3}</td>
                                 <td class="bg-eee td-8">상벌사항4</td>
-                                <td class="td-12 p-10 left">-</td>
-                                <td class="bg-eee td-8">상벌사항</td>
-                                <td class="td-12 p-10 left">-</td>
+                                <td class="td-12 p-10 left">${view.empRewardPunish4}</td>
+                                <td class="bg-eee td-8">상벌사항5</td>
+                                <td class="td-12 p-10 left">${view.empRewardPunish5}</td>
                             </tr>
                         </table>
                     </div>
                     <div class="board-list m-t10">
                         <div class="total-num bold m-b5">추가사항</div>
-                        <div class="memo noto p-10">영업부 김부장입니다.</div>
+                        <div class="memo noto p-10">${view.empDetail}</div>
                     </div>
                     <div class="center m-t5">
+                        <button class="btn-red">사원수정</button>
                         <button class="btn-blue">인쇄하기</button>
                     </div>
                 </div>

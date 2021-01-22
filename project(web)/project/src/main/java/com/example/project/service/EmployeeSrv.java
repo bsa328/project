@@ -26,4 +26,8 @@ public class EmployeeSrv {
 		return employeeDao.setEmployeeDelete(empID);
 	}
 
+	public EmployeeVO getEmployeeOne(int empNum) {
+		return employeeDao.getEmployeeOne(empNum);
+	}
+
 }

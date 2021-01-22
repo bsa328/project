@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -65,13 +66,25 @@ public class EmployeeCtr {
 	}
 
 	@RequestMapping(value = "/employee_register", method = RequestMethod.POST)
-	public String setEmployeeRegister() {
+	public String setEmployeeRegister(@ModelAttribute EmployeeVO employeeVO) {
+
+		int enterYear = Integer.parseInt(employeeVO.getEmpEnter().substring(2, 4));
+		String empNum = enterYear + employeeVO.getEmpBuseoCode() + employeeVO.getEmpGradeCode();
+
+		employeeVO.setEmpNum(empNum);
+		registerSrv.setEmpRegister(employeeVO);
+
 		return "redirect:/employee/employee_list";
 	}
 
 	@RequestMapping(value = "/employee_view", method = RequestMethod.GET)
-	public String getEmployeeView() {
-		return "employee/employee_view";
+	public ModelAndView getEmployeeView(@RequestParam int empNum) {
+
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("view", employeeSrv.getEmployeeOne(empNum));
+		mav.setViewName("employee/employee_view");
+
+		return mav;
 	}
 
 	@RequestMapping(value = "/employee_delete", method = RequestMethod.POST)
