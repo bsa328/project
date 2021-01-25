@@ -14,6 +14,14 @@
 			board_regdate	= now()
 	</insert>
 	
+	<insert id="createArticle">
+		${str}
+	</insert>
+	
+	<insert id="createComment">
+		${str}
+	</insert>
+	
 	<select id="getBoardList" parameterType="hashmap" resultType="com.example.project.model.BoardVO">
 		SELECT
 			board_id 		AS boardID,
@@ -36,8 +44,16 @@
 		SELECT COUNT(*) FROM board
 	</select>
 	
-	<delete id="setBoardDelete" parameterType="int">
-	 	DELETE FROM board WHERE board_id = #{boardID}
+	<delete id="setBoardDelete">
+	 	DELETE FROM board WHERE board_code = #{boardCode}
 	 </delete>
+	 
+	 <insert id="dropArticle">
+	 	${str}
+	 </insert>
+	 
+	 <insert id="dropComment">
+	 	${str}
+	 </insert>
 		
 </mapper>

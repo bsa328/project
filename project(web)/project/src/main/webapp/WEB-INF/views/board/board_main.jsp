@@ -59,8 +59,7 @@
 										<select class="select" name="boardWrite" id="boardWrite">
 											<option value="0">작성 범위를 선택하세요.</option>
 											<option value="1">모두</option>
-											<option value="2">해당 부서</option>
-											<option value="3">게시판 관리자</option>
+											<option value="2">게시판 관리자</option>
 										</select>
 									</td>
 								</tr>
@@ -101,7 +100,7 @@
 							<c:forEach items="${list}" var="boardList" varStatus="status">
 								<tr class="center">
 									<td>
-										<input type="checkbox" name="chk" class="chk" data-uid="${boardList.boardID}" />
+										<input type="checkbox" name="chk" class="chk" data-uid="${boardList.boardCode}" />
 									</td>
 									<td>${boardList.boardID}</td>
 									<td>${boardList.boardGroup}</td>
@@ -196,13 +195,12 @@
 	<script>
 	$("#delete").click(function () {
 		var str = confirm("선택하신 게시판을 삭제하시겠습니까?");
-
+		
 		if(str) {
 			var chkArr = new Array();
 			$(".chk:checked").each(function () {
 				chkArr.push($(this).attr("data-uid"));
 			});
-
 	        $.ajax({
 	        	url 	: "${pageContext.request.contextPath}/board/board_delete",
 	        	type 	: "POST", 	
@@ -221,39 +219,28 @@
 	</script>
 	<script>
 		function boardMake() {
-
 			if ($.trim($("#boardCode").val()) == '') {
 				alert("게시판 코드를 입력하세요.");
 				$("#boardCode").focus();
-
 				return false;
 			}
-
 			if ($("#boardColor").val() == 'color') {
 				alert("게시판 색상을 선택하세요.");
-
 				return false;
 			}
-
 			if ($.trim($("#boardTitle").val()) == '') {
 				alert("게시판 제목을 입력하세요.");
 				$("#boardTitle").focus();
-
 				return false;
 			}
-
 			if ($("#boardRead").val() == '0') {
 				alert("열람 권한을 선택하세요.");
-
 				return false;
 			}
-
 			if ($("#boardWrite").val() == '0') {
 				alert("작성 권한을 선택하세요.");
-
 				return false;
 			}
-
 			$.ajax({
 				url : "${pageContext.request.contextPath}/board/board_insert",
 				type : "POST",
@@ -268,7 +255,6 @@
 			});
 			
 		}
-
 		$("#btn").click(function() {
 			boardMake();
 		});
@@ -279,7 +265,6 @@
 		var formData = {
 			boardCode : $("#boardCode").val()
 		};
-
 		$.ajax({
 			url		: "${pageContext.request.contextPath}/board/code_check",
 			type 	: "POST",
@@ -304,15 +289,11 @@
 				$(this).val($(this).val().replace(/[0-9]|[^\!-z]/gi, ""));
 			});
 		});
-
 		var flag = false;
 		function chkAll() {
-
 			var chk = document.getElementsByName("chk");
-
 			if (flag == false) {
 				flag = true;
-
 				for (var i = 0; i < chk.length; i++) {
 					chk[i].checked = true;
 				}

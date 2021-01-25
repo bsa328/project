@@ -18,6 +18,14 @@ public class BoardSrv {
 		boardDao.setBoard(boardVO);
 	}
 
+	public void createArticle(String boardCode) {
+		boardDao.createArticle(boardCode);
+	}
+
+	public void createComment(String boardCode) {
+		boardDao.createComment(boardCode);
+	}
+
 	public List<BoardVO> getBoardList(int start, int end) {
 		return boardDao.getBoardList(start, end);
 	}
@@ -30,8 +38,16 @@ public class BoardSrv {
 		return boardDao.getBoardCount();
 	}
 
-	public int setBoardDelete(int boardID) {
-		return boardDao.setBoardDelete(boardID);
+	public void setBoardDelete(String boardCode) {
+		boardDao.setBoardDelete(boardCode);
+	}
+
+	public void dropArticle(String boardCode) {
+		boardDao.dropArticle(boardCode);
+	}
+
+	public void dropComment(String boardCode) {
+		boardDao.dropComment(boardCode);
 	}
 
 }

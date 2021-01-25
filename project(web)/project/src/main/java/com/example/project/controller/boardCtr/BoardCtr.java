@@ -55,6 +55,8 @@ public class BoardCtr {
 	@ResponseBody
 	public String setBoardInsert(@ModelAttribute BoardVO boardVO) {
 		boardSrv.setBoard(boardVO);
+		boardSrv.createArticle(boardVO.getBoardCode());
+		boardSrv.createComment(boardVO.getBoardCode());
 
 		return "success";
 	}
@@ -76,11 +78,13 @@ public class BoardCtr {
 	@RequestMapping(value = "/board_delete", method = RequestMethod.POST)
 	@ResponseBody
 	public String setBoardDelete(@RequestParam(value = "chkArr[]") List<String> chkArr) {
-		int boardID;
-		for (String list : chkArr) {
-			boardID = Integer.parseInt(list);
-			boardSrv.setBoardDelete(boardID);
+		
+		for (String boardCode : chkArr) {
+			boardSrv.setBoardDelete(boardCode);
+			boardSrv.dropArticle(boardCode);
+			boardSrv.dropComment(boardCode);
 		}
+		
 		return "success";
 	}
 

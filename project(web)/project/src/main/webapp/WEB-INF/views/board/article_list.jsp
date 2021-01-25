@@ -10,15 +10,15 @@
 			<div class="main">
 				<div class="page-wrap">
 					<div class="title m-b10 bold">
-						<span class="">영업부 > notice</span>
+						<span class="">${boardGroup} > ${boardTitle}</span>
 					</div>
 					<div class="btn-box m-b5">
-						<button class="btn-red" id="">선택삭제</button>
-						<button type="button" class="btn-blue" onclick="location.href='${pageContext.request.contextPath}/article/article_insert'">게시글 작성</button>
+						<button class="btn-red" id="delete">선택삭제</button>
+						<button type="button" class="btn-blue" onclick="location.href='${pageContext.request.contextPath}/article/article_insert?boardCode=${boardCode}'">게시글 작성</button>
 					</div>
 					<div class="board-list">
 						<table border="1">
-							<tr class="center bg-eee">
+							<tr class="center bg-eee" style="background-color:${boardColor}">
 								<td class="td-3">
 									<input type="checkbox" onClick="chkAll();" id="chkAll" />
 								</td>
@@ -30,47 +30,48 @@
 								<td class="td-4">조회</td>
 								<td class="td-8">게시글 관리</td>
 							</tr>
-							<tr class="center">
-								<td class="bold" colspan="8">등록된 게시글이 없습니다.</td>
-							</tr>
-							<tr class="center">
-								<td>
-									<input type="checkbox" name="chk" class="chk" />
-								</td>
-								<td>-</td>
-								<td class="notice">공지사항</td>
-								<td class="p-10 left">
-									<a href="${pageContext.request.contextPath}/article/article_view">영업팀 공지사항입니다. 반드시 필독!</a>
-								</td>
-								<td>김과장</td>
-								<td>2021-01-14</td>
-								<td>15</td>
-								<td>
-									<button class="s-btn-blue" id="">수정</button>
-									<button class="s-btn-white" id="">삭제</button>
-								</td>
-							</tr>
-							<tr class="center">
-								<td>
-									<input type="checkbox" name="chk" class="chk" />
-								</td>
-								<td>10</td>
-								<td>일반</td>
-								<td class="p-10 left">
-									<a href="${pageContext.request.contextPath}/article/article_view">영업팀 공지사항입니다. 반드시 필독!</a>
-								</td>
-								<td>김과장</td>
-								<td>2021-01-14</td>
-								<td>15</td>
-								<td>
-									<button class="s-btn-blue" id="">수정</button>
-									<button class="s-btn-white" id="">삭제</button>
-								</td>
-							</tr>
+							<c:if test="${count == 0}">
+								<tr class="center">
+									<td class="bold" colspan="8">등록된 게시글이 없습니다.</td>
+								</tr>
+							</c:if>
+							<c:forEach items="${list}" var="articleList" varStatus="status">
+								<tr class="center">
+									<td>
+										<input type="checkbox" name="chk" class="chk" data-uid="${articleList.articleID}" data-code="${boardCode}" />
+									</td>
+									<td>
+										<c:if test="${articleList.articleDivision eq 'N'}">
+				                        	${(count - status.index) - ((curPage - 1) * end)}
+				                        </c:if>
+										<c:if test="${articleList.articleDivision eq 'Y'}">
+				                        	-
+				                        </c:if>
+									</td>
+									<td class="notice">
+										<c:if test="${articleList.articleDivision eq 'Y'}">
+											<td class="notice">공지사항</td>
+										</c:if>
+										<c:if test="${articleList.articleDivision eq 'N'}">
+											<td>일반</td>
+										</c:if>
+									</td>
+									<td class="p-10 left">
+										<a href="${pageContext.request.contextPath}/article/article_view">${articleList.articleTitle}</a>
+									</td>
+									<td>${articleList.articleWriter}</td>
+									<td>${articleList.articleRegdate}</td>
+									<td>${articleList.articleHit}</td>
+									<td>
+										<button class="s-btn-blue" id="">수정</button>
+										<button class="s-btn-white" id="">삭제</button>
+									</td>
+								</tr>
+							</c:forEach>
 						</table>
 					</div>
 					<div class="search-box m-t5">
-						<div class="total-num">전체 게시글수 : 13개</div>
+						<div class="total-num">전체 게시글수 : ${count}개</div>
 						<form method="post" action="${pageContext.request.contextPath}/article/article_list">
 							<div class="">
 								<select class="w-150" name="">

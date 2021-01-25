@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="article">
+
+	<insert id="setArticle" parameterType="com.example.project.model.ArticleVO">
+		INSERT INTO article_${boardCode} SET 
+			article_division 		= #{articleDivision},
+			article_title 			= #{articleTitle},
+			article_writer 			= #{articleWriter},
+			article_content 		= #{articleContent},
+			article_regdate 		= now()
+	</insert>
+	
+	<select id="getBoardOne" resultType="com.example.project.model.BoardVO">
+		SELECT * FROM board WHERE board_code = #{boardCode}
+	</select>
+
+</mapper>
