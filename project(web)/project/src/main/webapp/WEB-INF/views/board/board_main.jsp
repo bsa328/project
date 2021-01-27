@@ -194,7 +194,7 @@
 	</script>
 	<script>
 	$("#delete").click(function () {
-		var str = confirm("선택하신 게시판을 삭제하시겠습니까?");
+		var str = confirm("선택한 게시판을 삭제하시겠습니까?");
 		
 		if(str) {
 			var chkArr = new Array();

@@ -20,7 +20,9 @@
                     <div class="board-list">
                         <table border="1">
                             <tr class="center bg-eee">
-                                <td class="td-3"><input type="checkbox" onClick="chkAll();" id="chkAll" /></td>
+                                <td class="td-3">
+                                	<input type="checkbox" onClick="chkAll();" id="chkAll" />
+                                </td>
                                 <td class="td-4">번호</td>
                                 <td class="">사원명</td>
                                 <td class="td-12">근무부서</td>
@@ -127,7 +129,7 @@
 	<%@ include file="/WEB-INF/views/include/FOOTER.jsp"%>	
 	<script>
 	$("#delete").click(function () {
-		var str = confirm("선택하신 사원을 삭제하시겠습니까?");
+		var str = confirm("선택한 사원을 삭제하시겠습니까?");
 
 		if(str) {
 			var chkArr = new Array();

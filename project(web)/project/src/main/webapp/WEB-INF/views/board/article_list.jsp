@@ -10,7 +10,7 @@
 			<div class="main">
 				<div class="page-wrap">
 					<div class="title m-b10 bold">
-						<span class="">${boardGroup} > ${boardTitle}</span>
+						<span class="">${boardGroup} > ${boardCode} (관리자 : ${boardManager})</span>
 					</div>
 					<div class="btn-box m-b5">
 						<button class="btn-red" id="delete">선택삭제</button>
@@ -18,7 +18,7 @@
 					</div>
 					<div class="board-list">
 						<table border="1">
-							<tr class="center bg-eee" style="background-color:${boardColor}">
+							<tr class="center bg-eee">
 								<td class="td-3">
 									<input type="checkbox" onClick="chkAll();" id="chkAll" />
 								</td>
@@ -40,24 +40,13 @@
 									<td>
 										<input type="checkbox" name="chk" class="chk" data-uid="${articleList.articleID}" data-code="${boardCode}" />
 									</td>
+									<td>${articleList.articleID}</td>
 									<td>
-										<c:if test="${articleList.articleDivision eq 'N'}">
-				                        	${(count - status.index) - ((curPage - 1) * end)}
-				                        </c:if>
-										<c:if test="${articleList.articleDivision eq 'Y'}">
-				                        	-
-				                        </c:if>
-									</td>
-									<td class="notice">
-										<c:if test="${articleList.articleDivision eq 'Y'}">
-											<td class="notice">공지사항</td>
-										</c:if>
-										<c:if test="${articleList.articleDivision eq 'N'}">
-											<td>일반</td>
-										</c:if>
+										<c:if test="${articleList.articleDivision eq 'Y'}"><span class="notice">공지사항</span></c:if>
+										<c:if test="${articleList.articleDivision eq 'N'}">일반</c:if>
 									</td>
 									<td class="p-10 left">
-										<a href="${pageContext.request.contextPath}/article/article_view">${articleList.articleTitle}</a>
+										<a href="${pageContext.request.contextPath}/article/article_view?boardCode=${boardCode}&articleID=${articleList.articleID}">${articleList.articleTitle}</a>
 									</td>
 									<td>${articleList.articleWriter}</td>
 									<td>${articleList.articleRegdate}</td>
@@ -134,6 +123,37 @@
 		</div>
 	</div>
 	<%@ include file="/WEB-INF/views/include/FOOTER.jsp"%>
+	<script>
+	$("#delete").click(function () {
+		var str = confirm("선택한 게시글을 삭제하시겠습니까?");
+		var boardCode = $(".chk").attr("data-code");
+
+		if(str) {
+			var chkArr = new Array();
+			var boardArr = new Array();
+			$(".chk:checked").each(function () {
+				chkArr.push($(this).attr("data-uid"));
+			});
+			
+	        $.ajax({
+	        	url 	: "${pageContext.request.contextPath}/article/article_delete",
+	        	type 	: "POST", 	
+	        	data 	: {
+		        	chkArr : chkArr,
+	        		boardCode : boardCode
+	        	},
+	        	success	: function (resData) {
+	        		alert("삭제되었습니다.");
+		    		window.location.reload();
+	            },
+	            error 	: function() {
+	            	alert("삭제할 게시글을 선택하세요.");
+	            }
+	        });
+		}
+		
+	});
+	</script>
 	<script>
 	var flag = false; 
 	function chkAll() {

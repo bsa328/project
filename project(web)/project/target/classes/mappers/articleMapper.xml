@@ -2,17 +2,74 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="article">
 
+	<select id="getArticleList" parameterType="hashMap" resultType="com.example.project.model.ArticleVO">
+		SELECT
+			article_id 			AS articleID,
+			article_division 	AS articleDivision,
+			article_title 		AS articleTitle,
+			article_writer 		AS articleWriter,
+			article_regdate 	AS articleRegdate,
+			article_hit 		AS articleHit
+		FROM article_${boardCode} ORDER BY article_id DESC LIMIT #{start}, #{end}
+	</select>
+
 	<insert id="setArticle" parameterType="com.example.project.model.ArticleVO">
+		<selectKey resultType="int" keyProperty="ref" order="BEFORE">
+			SELECT IFNULL( MAX(ref), 0 ) + 1 FROM article_${boardCode}
+		</selectKey>
+		
 		INSERT INTO article_${boardCode} SET 
 			article_division 		= #{articleDivision},
 			article_title 			= #{articleTitle},
 			article_writer 			= #{articleWriter},
 			article_content 		= #{articleContent},
-			article_regdate 		= now()
+			article_regdate 		= now(),
+			ref 					= #{ref}
 	</insert>
 	
 	<select id="getBoardOne" resultType="com.example.project.model.BoardVO">
-		SELECT * FROM board WHERE board_code = #{boardCode}
+		SELECT 
+			board_group 	AS boardGroup,
+			board_code 		AS boardCode,
+			board_manager 	AS boardManager,
+			board_color 	AS boardColor,
+			board_title 	AS boardTitle,
+			board_read 		AS boardRead,
+			board_write 	AS boardWrite
+		FROM board WHERE board_code = #{boardCode}
 	</select>
-
+	
+	<select id="getArticleCount" resultType="int">
+		SELECT COUNT(*) FROM article_${boardCode}
+	</select>
+	
+	<select id="getArticleOne" resultType="com.example.project.model.ArticleVO">
+		SELECT
+			article_id			AS articleID,
+			article_division 	AS articleDivision,
+			article_title 		AS articleTitle,
+			article_writer 		AS articleWriter,
+			article_content		AS articleContent,
+			article_hit 		AS articleHit
+		FROM article_${boardCode} WHERE article_id = ${articleID}
+	</select>
+	
+	<update id="setArticleModify">
+		UPDATE article_${boardCode} SET
+			article_division 		= #{articleDivision},
+			article_title 			= #{articleTitle},
+			article_writer 			= #{articleWriter},
+			article_content 		= #{articleContent},
+			article_regdate 		= now()
+		WHERE article_id = ${articleID}
+	</update>
+	
+	<update id="getArticleHit">
+		UPDATE article_${boardCode} SET article_hit = article_hit + 1 WHERE article_id = ${articleID}
+	</update>
+	
+	<delete id="setArticleDelete">
+		DELETE FROM article_${boardCode} WHERE article_id = ${articleID}
+	</delete>
+	
 </mapper>

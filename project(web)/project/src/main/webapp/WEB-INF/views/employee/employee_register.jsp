@@ -27,10 +27,10 @@
 					</div>
 					<div class="btn-box m-b5">
 						<button></button>
-						<button class="btn-white" onclick="location.href='${pageContext.request.contextPath}/employee/employee_list'">목록으로</button>
+						<button class="btn-white" id="list" onclick="location.href='${pageContext.request.contextPath}/employee/employee_list'">목록으로</button>
 					</div>
 					<form id="frm" method="post" action="${pageContext.request.contextPath}/employee/employee_register" autocomplete="off">
-						<div class="board-list btn-box">
+						<div class="board- btn-box">
 							<div class="photo-box">
 								<div class="photo m-b5">
 									<div style="width: 100%; height: 100%; background-color: #eee;"></div>
@@ -274,7 +274,7 @@
 							</table>
 						</div>
 						<div class="total-num" style="text-align: right;">*는 필수항목</div>
-						<div class="board-list m-t10">
+						<div class="board- m-t10">
 							<div class="total-num bold m-b5">추가사항 입력</div>
 							<textarea name="empDetail" id="editor" class="noto"></textarea>
 							<script>
@@ -294,51 +294,48 @@
 	</div>
 	<%@ include file="/WEB-INF/views/include/FOOTER.jsp"%>
 	<script>
-		function checkInfo() {
+	$("#list").click(function () {
+		alert("내용저장에 실패했습니다.");
+	});
+	
+	function checkInfo() {
 
-			$("#btn").click(function() {
+		$("#btn").click(function() {
+			if ($("#empBuseoCode").val() == 'buseo') {
+				alert("부서를 선택해주세요.");
+				return false;
+			}
 
-				if ($("#empBuseoCode").val() == 'buseo') {
-					alert("부서를 선택해주세요.");
+			if ($("#empGradeCode").val() == 'grade') {
+				alert("직책을 선택해주세요.");
+				return false;
+			}
 
-					return false;
-				}
+			if ($("#datepicker").val() == '') {
+				alert("입사년월일을 선택하세요.");
+				return false;
+			}
 
-				if ($("#empGradeCode").val() == 'grade') {
-					alert("직책을 선택해주세요.");
+			if ($.trim($("#empPwd").val()) == '') {
+				alert("비밀번호를 입력하세요.");
+				$("#empPwd").focus();
+				return false;
+			}
 
-					return false;
-				}
+			if ($.trim($("#empName").val()) == '') {
+				alert("사원명을 입력하세요.");
+				$("#empName").focus();
+				return false;
+			}
 
-				if ($("#datepicker").val() == '') {
-					alert("입사년월일을 선택하세요.");
-
-					return false;
-				}
-
-				if ($.trim($("#empPwd").val()) == '') {
-					alert("비밀번호를 입력하세요.");
-					$("#empPwd").focus();
-
-					return false;
-				}
-
-				if ($.trim($("#empName").val()) == '') {
-					alert("사원명을 입력하세요.");
-					$("#empName").focus();
-
-					return false;
-				}
-
-				$("#frm").submit();
-				alert("사원등록이 완료되었습니다.");
-
-			});
-
-		}
-
-		$(function() {
-			checkInfo();
+			$("#frm").submit();
+			alert("사원등록이 완료되었습니다.");
 		});
+
+	}
+
+	$(function() {
+		checkInfo();
+	});
 	</script>
 </html>
