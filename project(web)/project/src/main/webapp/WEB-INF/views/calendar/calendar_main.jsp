@@ -37,25 +37,25 @@
 								<tr class="center tr">
 									<td class="bg-eee td-8">시작일</td>
 									<td class="p-3 td-12">
-										<input type="text" id="startDate" class="td-80" readonly /> <span class="i"><i class="far fa-calendar-alt"></i></span>
+										<input type="text" id="startDate" name="startDate" class="td-80" readonly /> <span class="i"><i class="far fa-calendar-alt"></i></span>
 									</td>
 									<td class="bg-eee td-8">종료일</td>
 									<td class="p-3 td-12">
-										<input type="text" id="endDate" class="td-80" readonly /> <span class="i"><i class="far fa-calendar-alt"></i></span>
+										<input type="text" id="endDate" name="endDate" class="td-80" readonly /> <span class="i"><i class="far fa-calendar-alt"></i></span>
 									</td>
 									<td class="bg-eee td-8">내용</td>
 									<td class="p-3">
-										<input type="text" placeholder="일정 내용을 입력하세요." />
+										<input type="text" name="plan" id="plan" placeholder="일정 내용을 입력하세요." />
 									</td>
 									<td class="bg-eee td-8">등록자</td>
 									<td class="p-3 td-15">
-										<input type="text" readonly value="${sessionScope.empName}" />
+										<input type="text" readonly name="planWriter" value="${sessionScope.empName}" />
 									</td>
 								</tr>
 							</table>
 						</div>
 						<div class="center m-t5 m-b10">
-							<button type="submit" class="btn-blue" id="">일정 등록</button>
+							<button type="submit" class="btn-blue" id="btn">일정 등록</button>
 							<button type="reset" class="btn-white">새로고침</button>
 						</div>
 					</form>
@@ -108,6 +108,28 @@
 			$("#startDate, #endDate").datepicker({
 				dataFormat : 'yy-mm-dd'
 			});
+		});
+
+		$("#btn").click(function() {
+			
+			if($("#startDate").val() == '') {
+				alert("시작일을 선택하세요.");
+				return false;
+			}
+
+			if($("#endDate").val() == '') {
+				alert("종료일을 선택하세요.");
+				return false;
+			}
+
+			if($.trim($("#plan").val()) == '') {
+				alert("일정 내용을 입력하세요.");
+				return false;
+			}
+
+			$("#frm").submit();
+			alert("일정이 등록되었습니다.");
+			
 		});
 	</script>
 </html>

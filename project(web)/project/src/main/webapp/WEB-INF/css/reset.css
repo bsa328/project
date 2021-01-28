@@ -35,3 +35,11 @@ input[type="checkbox"] {
 	height: 15px;
 	vertical-align: -2px;
 }
+
+footer {
+    text-align: center;
+    height: 200px;
+    line-height: 200px;
+    color: #aaa;
+    font-size: 15px;
+}

@@ -1,0 +1,53 @@
+body {
+    height: 100vh;
+}
+
+.p400 {
+    padding-left: 400px;
+    padding-right: 400px;
+}
+
+.auth {
+    height: 30px;
+    line-height: 30px;
+    text-align: right;
+}
+
+.auth a {
+    color: #555;
+    font-size: 13px;
+    margin-left: 20px;
+}
+
+.auth a:hover {
+    text-decoration: underline;
+}
+
+.nav {
+    height: 55px;
+    line-height: 55px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #eee;
+}
+
+.menu a {
+    margin-left: 60px;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.main img {
+    width: 100%;
+}
+
+.board {
+    height: 100vh;
+}
+
+hr {
+    border-width: 1px 0px 0px 0px;
+    border-style: solid;
+    height: 1px;
+    border-color: #e7e7e7;
+}
