@@ -1,5 +1,5 @@
-body {
-    height: 100vh;
+.body {
+    height: calc(100vh - 30px);
 }
 
 .p400 {
@@ -42,7 +42,19 @@ body {
 }
 
 .board {
-    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+}
+
+.b-menu {
+    margin-top: 20px;
+    padding: 15px;
+    width: 24%;
+    font-weight: 700;
+    font-size: 17px;
+    color: #1b4188;
+    background-color: rgb(242, 242, 242);
+    height: 245px;
 }
 
 hr {
