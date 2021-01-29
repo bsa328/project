@@ -28,6 +28,7 @@ public class LoginSrv {
 		if (empvo != null) {
 			httpSession.setAttribute("empName", empvo.getEmpName());
 			httpSession.setAttribute("empBuseoName", empvo.getEmpBuseoName());
+			httpSession.setAttribute("empGradeName", empvo.getEmpGradeName());
 			httpSession.setAttribute("empNum", empvo.getEmpNum());
 			httpSession.setAttribute("empConfirm", empvo.getEmpConfirm());
 			httpSession.setAttribute("empAuth", empvo.getEmpAuth());

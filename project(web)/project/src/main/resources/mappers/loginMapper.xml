@@ -11,10 +11,11 @@
 		SELECT
 			emp_name AS empName,
 			buseo_name AS empBuseoName,
+			grade_name AS empGradeName,
 			emp_num AS empNum,
 			emp_confirm AS empConfirm,
 			emp_auth AS empAuth
-		FROM employee LEFT JOIN buseo on emp_buseo = buseo_id
+		FROM employee LEFT JOIN buseo on emp_buseo = buseo_id LEFT JOIN grade on emp_grade = grade_id
 			WHERE emp_num = #{empNum} AND emp_pwd = #{empPwd}
 	</select>
 

@@ -1,0 +1,94 @@
+@charset 'utf-8';
+
+.main-1 {
+    width: 32%;
+    margin-right: 10px;
+}
+
+.main-1-1 {
+    height: 250px;
+    background-color: white;
+    margin-bottom: 10px;
+    padding: 20px;
+}
+
+.date {
+    font-size: 12px;
+    margin-bottom: 20px;
+}
+
+.work-on {
+    margin-top: 10px;
+    width: 230px;
+    height: 40px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #2357b6;
+    border-radius: 50px;
+    border: 1px solid #2357b6;
+    background-color: #fff;
+}
+
+.work-off {
+    margin-top: 10px;
+    width: 230px;
+    height: 40px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #ccc;
+    border-radius: 50px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+}
+
+.main-1-2 {
+    height: 280px;
+    background-color: white;
+    margin-bottom: 10px;
+    padding: 20px;
+}
+
+.main-2 {
+    background-color: white;
+    width: 68%;
+    margin-bottom: 10px;
+    padding: 20px;
+}
+
+.main-3 {
+    height: 270px;
+    width: 50%;
+    margin-right: 10px;
+    background-color: white;
+    padding: 20px;
+}
+
+.main-4 {
+    background-color: white;
+    width: 50%;
+    padding: 20px;
+}
+
+hr {
+    border-width: 1px 0px 0px 0px;
+    border-style: solid;
+    height: 1px;
+    border-color: #e7e7e7;
+}
+
+.mail-btn {
+    margin-top: 10px;
+    width: 230px;
+    height: 40px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #5ebfd9;
+    border-radius: 50px;
+    border: 1px solid #5ebfd9;
+    background-color: #fff;
+}
+
+img {
+    width: 50px;
+    height: 50px;
+}

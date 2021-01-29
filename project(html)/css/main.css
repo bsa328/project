@@ -41,20 +41,38 @@
     width: 100%;
 }
 
+.intro {
+    text-align: center;
+    margin: 45px;
+    font-size: 30px;
+}
+
 .board {
     display: flex;
     justify-content: space-between;
 }
 
 .b-menu {
-    margin-top: 20px;
-    padding: 15px;
-    width: 24%;
-    font-weight: 700;
-    font-size: 17px;
-    color: #1b4188;
-    background-color: rgb(242, 242, 242);
-    height: 245px;
+    text-align: center;
+    width: 33%;
+
+}
+
+.b-menu img {
+    width: 70px;
+    height: 70px;
+    margin: 50px;
+}
+
+.a {
+    font-size: 18px;
+    font-weight: 500;
+    color: #2357b6;
+    margin-bottom: 10px;
+}
+
+.b {
+    font-size: 13px;
 }
 
 hr {
