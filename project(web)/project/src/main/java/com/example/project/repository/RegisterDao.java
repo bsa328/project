@@ -1,5 +1,7 @@
 package com.example.project.repository;
 
+import java.util.HashMap;
+
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -19,5 +21,9 @@ public class RegisterDao {
 	public void setEmpRegisterInfo(EmployeeVO employeeVO) {
 		sqlSession.insert("register.setEmpRegisterInfo", employeeVO);
 	}
-	
+
+	public void setEmpConfirmChange(HashMap<String, String> map) {
+		sqlSession.update("register.setEmpConfirmChange", map);
+	}
+
 }

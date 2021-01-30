@@ -89,6 +89,7 @@ public class IDnRegCtr {
 		String empNum = enterYear + employeeVO.getEmpBuseoCode() + employeeVO.getEmpGradeCode();
 
 		employeeVO.setEmpNum(empNum);
+		employeeVO.setEmpCompany(employeeVO.getEmpCompany());
 		registerSrv.setEmpRegister(employeeVO);
 
 		return "redirect:/login";

@@ -50,6 +50,7 @@ public class ArticleCtr {
 		mav.addObject("selected", pager.getCurPage());
 		mav.addObject("boardCode", boardVO.getBoardCode());
 		mav.addObject("boardGroup", boardVO.getBoardGroup());
+		mav.addObject("boardColor", boardVO.getBoardColor());
 		mav.addObject("boardManager", boardVO.getBoardManager());
 
 		mav.setViewName("board/article_list");
@@ -58,9 +59,11 @@ public class ArticleCtr {
 
 	@RequestMapping(value = "/article_insert", method = RequestMethod.GET)
 	public ModelAndView getArticleInsert(@RequestParam String boardCode) {
+		BoardVO boardVO = articleSrv.getBoardOne(boardCode);
 
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("boardCode", boardCode);
+		mav.addObject("boardColor", boardVO.getBoardColor());
 
 		mav.setViewName("board/article_insert");
 		return mav;
@@ -84,19 +87,21 @@ public class ArticleCtr {
 		mav.addObject("view", articlevo);
 		mav.addObject("boardCode", boardVO.getBoardCode());
 		mav.addObject("boardGroup", boardVO.getBoardGroup());
+		mav.addObject("boardColor", boardVO.getBoardColor());
 
 		mav.setViewName("board/article_view");
 		return mav;
 	}
 
 	@RequestMapping(value = "/article_modify", method = RequestMethod.GET)
-	public ModelAndView getArticleModify(@ModelAttribute ArticleVO articleVO) {
-
+	public ModelAndView getArticleModify(@ModelAttribute ArticleVO articleVO, @RequestParam String boardCode) {
+		BoardVO boardVO = articleSrv.getBoardOne(boardCode);
 		ArticleVO articlevo = articleSrv.getArticleOne(articleVO);
 
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("modify", articlevo);
 		mav.addObject("boardCode", articleVO.getBoardCode());
+		mav.addObject("boardColor", boardVO.getBoardColor());
 
 		mav.setViewName("board/article_modify");
 		return mav;

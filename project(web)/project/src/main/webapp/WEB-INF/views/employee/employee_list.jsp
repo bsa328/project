@@ -173,4 +173,32 @@
 		}	
 	}	
 	</script>
+	<script>
+	function confirmChange(empConfirm, empNum) {
+		
+		if(confirm("승인여부를 변경하시겠습니까?")) {
+			var reqData = {
+				empConfirm 	: empConfirm,
+				empNum	: empNum
+			};
+	
+			$.ajax({
+				url 	: "${pageContext.request.contextPath}/employee/employee_confirm_change",
+				type	: "POST",
+				data	: reqData,
+				success	: function(resData) {
+					alert("승인여부가 변경되었습니다.");
+					window.location.reload();
+				},
+				error	: function() {
+					alert("시스템 에러");
+				}
+			});
+			
+		}else{
+			window.location.reload();
+		}
+		
+	}
+	</script>
 </html>

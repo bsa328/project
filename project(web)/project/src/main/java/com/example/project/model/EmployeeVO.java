@@ -17,6 +17,7 @@ public class EmployeeVO {
 	private String empCompany;
 	private String empGender;
 	private String empBirth;
+	private String empBth;
 	private String empPhone;
 	private String empTel;
 	private String empRecruit;
@@ -177,6 +178,14 @@ public class EmployeeVO {
 
 	public void setEmpBirth(String empBirth) {
 		this.empBirth = empBirth;
+	}
+
+	public String getEmpBth() {
+		return empBth;
+	}
+
+	public void setEmpBth(String empBth) {
+		this.empBth = empBth;
 	}
 
 	public String getEmpPhone() {

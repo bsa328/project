@@ -18,6 +18,7 @@
 			emp_company			= #{empCompany},
 			emp_gender			= #{empGender},
 			emp_birth			= #{empBirth},
+			emp_bth				= #{empBth},
 			emp_phone			= #{empPhone},
 			emp_tel				= #{empTel},
 			emp_recruit			= #{empRecruit},
@@ -52,5 +53,9 @@
 			emp_reward_punish5	= #{empRewardPunish5},
 			emp_detail			= #{empDetail}
 	</insert>
+	
+	<update id="setEmpConfirmChange" parameterType="hashmap">
+		UPDATE employee SET emp_confirm = #{empConfirm} WHERE emp_num = #{empNum}
+	</update>
 	
 </mapper>

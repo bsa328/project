@@ -19,23 +19,23 @@
 					<div class="board-list">
 						<table border="1">
 							<tr class="center">
-								<td class="bg-eee td-10">게시글 제목</td>
+								<td class="bg-eee td-10" style="background-color:${boardColor}">게시글 제목</td>
 								<td class="p-10 left" colspan="3">${view.articleTitle}</td>
 							</tr>
 							<tr class="center">
-								<td class="bg-eee td-10">작성자</td>
+								<td class="bg-eee td-10" style="background-color:${boardColor}">작성자</td>
 								<td class="td-40 p-10 left">${view.articleWriter}</td>
 							</tr>
 							<tr class="center">
-								<td class="bg-eee td-10">내용</td>
+								<td class="bg-eee td-10" style="background-color:${boardColor}">내용</td>
 								<td class="p-10 left top" style="height: 320px;" colspan="3">${view.articleContent}</td>
 							</tr>
 							<tr class="center">
-								<td class="bg-eee td-10">첨부파일</td>
+								<td class="bg-eee td-10" style="background-color:${boardColor}">첨부파일</td>
 								<td class="p-10 left" colspan="3">-</td>
 							</tr>
 							<tr class="center">
-								<td class="bg-eee td-10">조회수</td>
+								<td class="bg-eee td-10" style="background-color:${boardColor}">조회수</td>
 								<td class="p-10 left" colspan="3">${view.articleHit}</td>
 							</tr>
 						</table>

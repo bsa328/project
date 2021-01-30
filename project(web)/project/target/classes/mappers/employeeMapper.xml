@@ -39,6 +39,7 @@
 			emp_company	 		 AS empCompany,
 			emp_gender	 		 AS empGender,
 			emp_birth 	 		 AS empBirth,
+			emp_bth 	 		 AS empBth,
 			emp_phone 	 		 AS empPhone,
 			emp_tel 			 AS empTel,
 			emp_recruit  		 AS empRecruit,

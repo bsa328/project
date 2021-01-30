@@ -90,7 +90,7 @@
 									<td class="bg-eee td-8">생년월일</td>
 									<td class="td-12 p-3">
 										<input type="text" class="td-62" id="empBirth" name="empBirth" placeholder="ex)19970328" maxlength="8" />
-										<select class="td-36">
+										<select class="td-36" name="empBth">
 											<option value="양력">양력</option>
 											<option value="음력">음력</option>
 										</select>

@@ -44,11 +44,14 @@
                                 <td class="bg-eee td-8">성별</td>
                                 <td class="td-12 p-10 left">${view.empGender}</td>
                                 <td class="bg-eee td-8">생년월일</td>
-                                <td class="td-12 p-10 left">${view.empBirth} (양력)</td>
+                                <td class="td-12 p-10 left">
+                                	<c:if test="${view.empBirth == null}"></c:if>
+                                	<c:if test="${view.empBirth != null}">${view.empBirth} (${view.empBth})</c:if>
+                                </td>
                                 <td class="bg-eee td-8">휴대폰</td>
-                                <td class="td-12 p-10 left">${view.empPhone}</td>
+                                <td class="td-12 p-10 left">010-${view.empPhone}</td>
                                 <td class="bg-eee td-8">내선번호</td>
-                                <td class="td-12 p-10 left">${view.empTel}</td>
+                                <td class="td-12 p-10 left">051-${view.empTel}</td>
                             </tr>
                             <tr class="center">
                                 <td class="bg-eee td-8">채용형태</td>
@@ -88,15 +91,30 @@
                             </tr>
                             <tr class="center">
                                 <td class="bg-eee td-8">어학사항1</td>
-                                <td class="td-12 p-10 left">${view.empLanguage1} (${view.empLanguageLevel1})</td>
+                                <td class="td-12 p-10 left">
+                                	<c:if test="${view.empLanguage1 == null}"></c:if>
+                                	<c:if test="${view.empLanguage1 != null}">${view.empLanguage1} (${view.empLanguageLevel1})</c:if>
+                                </td>
                                 <td class="bg-eee td-8">어학사항2</td>
-                                <td class="td-12 p-10 left">${view.empLanguage2} (${view.empLanguageLevel2})</td>
+                                <td class="td-12 p-10 left">
+                                	<c:if test="${view.empLanguage2 == null}"></c:if>
+                                	<c:if test="${view.empLanguage2 != null}">${view.empLanguage2} (${view.empLanguageLevel2})</c:if>
+                                </td>
                                 <td class="bg-eee td-8">어학사항3</td>
-                                <td class="td-12 p-10 left">${view.empLanguage3} (${view.empLanguageLevel3})</td>
+                                <td class="td-12 p-10 left">
+                                	<c:if test="${view.empLanguage3 == null}"></c:if>
+                                	<c:if test="${view.empLanguage3 != null}">${view.empLanguage3} (${view.empLanguageLevel3})</c:if>
+                                </td>
                                 <td class="bg-eee td-8">어학사항4</td>
-                                <td class="td-12 p-10 left">${view.empLanguage4} (${view.empLanguageLevel4})</td>
+                                <td class="td-12 p-10 left">
+                                	<c:if test="${view.empLanguage4 == null}"></c:if>
+                                	<c:if test="${view.empLanguage4 != null}">${view.empLanguage4} (${view.empLanguageLevel4})</c:if>
+                                </td>
                                 <td class="bg-eee td-8">어학사항5</td>
-                                <td class="td-12 p-10 left">${view.empLanguage5} (${view.empLanguageLevel5})</td>
+                                <td class="td-12 p-10 left">
+                                	<c:if test="${view.empLanguage5 == null}"></c:if>
+                                	<c:if test="${view.empLanguage5 != null}">${view.empLanguage5} (${view.empLanguageLevel5})</c:if>
+                                </td>
                             </tr>
                             <tr class="center">
                                 <td class="bg-eee td-8">상벌사항1</td>

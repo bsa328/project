@@ -18,7 +18,7 @@
 					</div>
 					<div class="board-list">
 						<table border="1">
-							<tr class="center bg-eee">
+							<tr class="center bg-eee" style="background-color:${boardColor}">
 								<td class="td-3">
 									<input type="checkbox" onClick="chkAll();" id="chkAll" />
 								</td>

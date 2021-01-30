@@ -16,6 +16,72 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Table structure for table `article_dinner`
+--
+
+DROP TABLE IF EXISTS `article_dinner`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `article_dinner` (
+  `article_id` int NOT NULL AUTO_INCREMENT,
+  `article_division` char(1) DEFAULT NULL,
+  `article_title` varchar(300) NOT NULL,
+  `article_writer` varchar(20) NOT NULL,
+  `article_content` text,
+  `article_regdate` datetime DEFAULT NULL,
+  `article_hit` int DEFAULT '0',
+  `article_file_name` varchar(300) DEFAULT NULL,
+  `article_file_ori_name` varchar(300) DEFAULT NULL,
+  `article_filr_url` varchar(500) DEFAULT NULL,
+  `ref` int DEFAULT NULL,
+  PRIMARY KEY (`article_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `article_dinner`
+--
+
+LOCK TABLES `article_dinner` WRITE;
+/*!40000 ALTER TABLE `article_dinner` DISABLE KEYS */;
+INSERT INTO `article_dinner` VALUES (1,'N','저녁 메뉴 투표','김영희','','2021-01-30 11:21:00',4,NULL,NULL,NULL,1);
+/*!40000 ALTER TABLE `article_dinner` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `article_notice`
+--
+
+DROP TABLE IF EXISTS `article_notice`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `article_notice` (
+  `article_id` int NOT NULL AUTO_INCREMENT,
+  `article_division` char(1) DEFAULT NULL,
+  `article_title` varchar(300) NOT NULL,
+  `article_writer` varchar(20) NOT NULL,
+  `article_content` text,
+  `article_regdate` datetime DEFAULT NULL,
+  `article_hit` int DEFAULT '0',
+  `article_file_name` varchar(300) DEFAULT NULL,
+  `article_file_ori_name` varchar(300) DEFAULT NULL,
+  `article_filr_url` varchar(500) DEFAULT NULL,
+  `ref` int DEFAULT NULL,
+  PRIMARY KEY (`article_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `article_notice`
+--
+
+LOCK TABLES `article_notice` WRITE;
+/*!40000 ALTER TABLE `article_notice` DISABLE KEYS */;
+INSERT INTO `article_notice` VALUES (1,'Y','점심메뉴','김철수','','2021-01-30 11:19:33',19,NULL,NULL,NULL,1);
+/*!40000 ALTER TABLE `article_notice` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `board`
 --
 
@@ -33,7 +99,7 @@ CREATE TABLE `board` (
   `board_write` char(1) NOT NULL,
   `board_regdate` date DEFAULT NULL,
   PRIMARY KEY (`board_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=71 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=73 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -42,6 +108,7 @@ CREATE TABLE `board` (
 
 LOCK TABLES `board` WRITE;
 /*!40000 ALTER TABLE `board` DISABLE KEYS */;
+INSERT INTO `board` VALUES (71,'관리부','notice','김철수','#e9d565','관리부 공지사항','2','2','2021-01-30'),(72,'기획부','dinner','김영희','#98d1e6','저녁 메뉴','1','1','2021-01-30');
 /*!40000 ALTER TABLE `board` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -69,6 +136,58 @@ INSERT INTO `buseo` VALUES ('0','admin'),('100','관리부'),('200','기획부')
 UNLOCK TABLES;
 
 --
+-- Table structure for table `comment_dinner`
+--
+
+DROP TABLE IF EXISTS `comment_dinner`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `comment_dinner` (
+  `comment_id` int NOT NULL AUTO_INCREMENT,
+  `article_id` int NOT NULL,
+  `comment_writer` varchar(20) DEFAULT NULL,
+  `comment_content` text,
+  `comment_regdate` datetime DEFAULT NULL,
+  PRIMARY KEY (`comment_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `comment_dinner`
+--
+
+LOCK TABLES `comment_dinner` WRITE;
+/*!40000 ALTER TABLE `comment_dinner` DISABLE KEYS */;
+/*!40000 ALTER TABLE `comment_dinner` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `comment_notice`
+--
+
+DROP TABLE IF EXISTS `comment_notice`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `comment_notice` (
+  `comment_id` int NOT NULL AUTO_INCREMENT,
+  `article_id` int NOT NULL,
+  `comment_writer` varchar(20) DEFAULT NULL,
+  `comment_content` text,
+  `comment_regdate` datetime DEFAULT NULL,
+  PRIMARY KEY (`comment_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `comment_notice`
+--
+
+LOCK TABLES `comment_notice` WRITE;
+/*!40000 ALTER TABLE `comment_notice` DISABLE KEYS */;
+/*!40000 ALTER TABLE `comment_notice` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `employee`
 --
 
@@ -89,6 +208,7 @@ CREATE TABLE `employee` (
   `emp_company` varchar(20) DEFAULT '그린컴퓨터',
   `emp_gender` char(2) DEFAULT NULL,
   `emp_birth` char(8) DEFAULT NULL,
+  `emp_bth` char(2) DEFAULT NULL,
   `emp_phone` char(8) DEFAULT NULL,
   `emp_tel` char(7) DEFAULT NULL,
   `emp_recruit` char(4) DEFAULT NULL,
@@ -123,7 +243,7 @@ CREATE TABLE `employee` (
   `emp_reward_punish5` varchar(20) DEFAULT NULL,
   `emp_detail` text,
   PRIMARY KEY (`emp_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -132,7 +252,7 @@ CREATE TABLE `employee` (
 
 LOCK TABLES `employee` WRITE;
 /*!40000 ALTER TABLE `employee` DISABLE KEYS */;
-INSERT INTO `employee` VALUES (1,'관리자','0','0','1','1',NULL,NULL,'Y',10,'그린컴퓨터',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(8,'김철수','100','1','2110011','1','2021-01-01','2021-01-30','Y',1,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(9,'김영희','200','3','2120038','1','2021-01-07','2021-01-30','N',1,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+INSERT INTO `employee` VALUES (1,'관리자','0','0','1','1',NULL,NULL,'Y',1,'그린컴퓨터',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(2,'철수','100','1','2110011','1','2021-01-01','2021-01-30','Y',1,'그린컴퓨터',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(5,'영희','200','2','2120022','1','2021-01-05','2021-01-30','N',1,'그린컴퓨터','남자','19900101','양력','42354375','6524375','공개채용','1','1','병역필','무교','1','1','비장애','비대상','미혼','1','1','1','1','1','1','상','1','중','1','상','','상','','','1','','','','','');
 /*!40000 ALTER TABLE `employee` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -168,4 +288,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-01-30  2:48:24
+-- Dump completed on 2021-01-30 15:15:41

@@ -87,6 +87,13 @@ public class EmployeeCtr {
 		return mav;
 	}
 
+	@RequestMapping(value = "employee_confirm_change", method = RequestMethod.POST)
+	@ResponseBody
+	public String setEmpConfirmChange(@RequestParam String empConfirm, @RequestParam String empNum) {
+		registerSrv.setEmpConfirmChange(empConfirm, empNum);
+		return "success";
+	}
+
 	@RequestMapping(value = "/employee_delete", method = RequestMethod.POST)
 	@ResponseBody
 	public String setEmployeeDelete(@RequestParam(value = "chkArr[]") List<String> chkArr) {

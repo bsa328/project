@@ -29,6 +29,7 @@
 		<div class="login-wrap">
 			<h1>사원가입</h1>
 			<form id="frm" method="post" action="${pageContext.request.contextPath}/register" autocomplete="off">
+				<input type="hidden" name="empCompany" value="그린컴퓨터" />
 				<select name="empBuseoCode" id="empBuseoCode" class="noto">
 					<option value="buseo">부서를 선택하세요.</option>
 					<option value="100">관리부</option>

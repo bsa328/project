@@ -24,7 +24,7 @@
 						<div class="board-list">
 							<table border="1">
 								<tr class="center">
-									<td class="bg-eee td-10">게시글 분류</td>
+									<td class="bg-eee td-10" style="background-color:${boardColor}">게시글 분류</td>
 									<td class="p-3">
 										<select class="select" name="articleDivision" id="articleDivision">
 											<option value="">게시글 종류</option>
@@ -34,19 +34,19 @@
 									</td>
 								</tr>
 								<tr class="center">
-									<td class="bg-eee td-10">게시글 제목</td>
+									<td class="bg-eee td-10" style="background-color:${boardColor}">게시글 제목</td>
 									<td class="p-3">
 										<input value="${modify.articleTitle}" type="text" name="articleTitle" id="articleTitle" placeholder="제목을 입력하세요." />
 									</td>
 								</tr>
 								<tr class="center">
-									<td class="bg-eee td-10">작성자</td>
+									<td class="bg-eee td-10" style="background-color:${boardColor}">작성자</td>
 									<td class="p-3">
 										<input value="${modify.articleWriter}" type="text" name="articleWriter" readonly />
 									</td>
 								</tr>
 								<tr class="center">
-									<td class="bg-eee td-10">내용</td>
+									<td class="bg-eee td-10" style="background-color:${boardColor}">내용</td>
 									<td class="p-3">
 										<textarea name="articleContent" id="editor" class="noto">${modify.articleContent}</textarea>
 										<script>
@@ -56,7 +56,7 @@
 									</td>
 								</tr>
 								<tr class="center">
-									<td class="bg-eee td-10">첨부파일</td>
+									<td class="bg-eee td-10" style="background-color:${boardColor}">첨부파일</td>
 									<td class="p-3">
 										<input type="file" name="" />
 									</td>
