@@ -12,17 +12,21 @@
                     <div class="title m-b10 bold">
                         <span class="">사원관리 > 사원목록</span>
                     </div>
-                    <div class="btn-box m-b5">
-                        <button class="btn-red" id="delete">선택삭제</button>
-                        <button class="btn-blue"
-                            onclick="location.href='${pageContext.request.contextPath}/employee/employee_register'">사원등록</button>
-                    </div>
+                    <c:if test="${sessionScope.empNum eq '1'}">
+	                    <div class="btn-box m-b5">
+	                        <button class="btn-red" id="delete">선택삭제</button>
+	                        <button class="btn-blue"
+	                            onclick="location.href='${pageContext.request.contextPath}/employee/employee_register'">사원등록</button>
+	                    </div>
+					</c:if>
                     <div class="board-list">
                         <table border="1">
                             <tr class="center bg-eee">
-                                <td class="td-3">
-                                	<input type="checkbox" onClick="chkAll();" id="chkAll" />
-                                </td>
+                            	<c:if test="${sessionScope.empNum eq '1'}">
+	                                <td class="td-3">
+	                                	<input type="checkbox" onClick="chkAll();" id="chkAll" />
+	                                </td>
+                                </c:if>
                                 <td class="td-4">번호</td>
                                 <td class="">사원명</td>
                                 <td class="td-12">근무부서</td>
@@ -31,15 +35,21 @@
                                 <td class="td-10">비밀번호</td>
                                 <td class="td-10">입사년월일</td>
                                 <td class="td-10">가입일</td>
-                                <td class="td-6">승인여부</td>
+                                <c:if test="${sessionScope.empNum eq '1'}">
+                                	<td class="td-6">승인여부</td>
+                                </c:if>
                                 <td class="td-4">권한</td>
-                                <td class="td-6">비고</td>
+                                <c:if test="${sessionScope.empNum eq '1'}">
+                                	<td class="td-6">비고</td>
+                                </c:if>
                             </tr>
                             <c:forEach items="${list}" var="empList" varStatus="status">
 	                            <tr class="center">
-	                                <td>
-	                                	<input type="checkbox" name="chk" class="chk" data-uid="${empList.empID}" />
-	                                </td>
+	                            	<c:if test="${sessionScope.empNum eq '1'}">
+		                                <td>
+		                                	<input type="checkbox" name="chk" class="chk" data-uid="${empList.empID}" />
+		                                </td>
+									</c:if>
 	                                <td>${empList.empID}</td>
 	                                <td><a href="${pageContext.request.contextPath}/employee/employee_view?empNum=${empList.empNum}">${empList.empName}</a></td>
 	                                <td>${empList.empBuseoName}</td>
@@ -48,17 +58,21 @@
 	                                <td>${empList.empPwd}</td>
 	                                <td><c:if test="${empList.empNum eq '1'}">-</c:if>${empList.empEnter}</td>
 	                                <td><c:if test="${empList.empNum eq '1'}">-</c:if>${empList.empRegdate}</td>
-	                                <td class="p-3">
-	                                    <select onChange="confirmChange(this.value, '${empList.empNum}');" class="select" name="empConfirm" id="empConfirm">
-	                                        <option value="Y" <c:if test="${empList.empConfirm eq 'Y'}">selected</c:if>>승인</option>
-	                                        <option value="N" <c:if test="${empList.empConfirm eq 'N'}">selected</c:if>>거부</option>
-	                                    </select>
-	                                </td>
+	                                <c:if test="${sessionScope.empNum eq '1'}">
+		                                <td class="p-3">
+		                                    <select onChange="confirmChange(this.value, '${empList.empNum}');" class="select" name="empConfirm" id="empConfirm">
+		                                        <option value="Y" <c:if test="${empList.empConfirm eq 'Y'}">selected</c:if>>승인</option>
+		                                        <option value="N" <c:if test="${empList.empConfirm eq 'N'}">selected</c:if>>거부</option>
+		                                    </select>
+		                                </td>
+									</c:if>
 	                                <td>${empList.empAuth}</td>
-	                                <td>
-	                                	<button class="s-btn-blue" id="">수정</button>
-	                                    <button class="s-btn-white" id="">삭제</button>
-	                                </td>
+	                                <c:if test="${sessionScope.empNum eq '1'}">
+		                                <td>
+		                                	<button class="s-btn-blue" id="">수정</button>
+		                                    <button class="s-btn-white" id="">삭제</button>
+		                                </td>
+	                                </c:if>
 	                            </tr>
                             </c:forEach>
                         </table>

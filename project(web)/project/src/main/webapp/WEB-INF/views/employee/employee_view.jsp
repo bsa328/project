@@ -49,9 +49,17 @@
                                 	<c:if test="${view.empBirth != null}">${view.empBirth} (${view.empBth})</c:if>
                                 </td>
                                 <td class="bg-eee td-8">휴대폰</td>
-                                <td class="td-12 p-10 left">010-${view.empPhone}</td>
+                                <td class="td-12 p-10 left">
+                                	<c:if test="${view.empPhone == null}"></c:if>
+                                	<c:if test="${view.empPhone != null}">010${view.empPhone}</c:if>
+                                </td>
                                 <td class="bg-eee td-8">내선번호</td>
-                                <td class="td-12 p-10 left">051-${view.empTel}</td>
+                                <td class="td-12 p-10 left">
+                                	<c:choose>
+										<c:when test="${view.empTel == null}"></c:when>
+	                                	<c:otherwise>051${view.empTel}</c:otherwise>
+                                	</c:choose>
+                                </td>
                             </tr>
                             <tr class="center">
                                 <td class="bg-eee td-8">채용형태</td>
@@ -135,7 +143,9 @@
                         <div class="memo noto p-10">${view.empDetail}</div>
                     </div>
                     <div class="center m-t5">
-                        <button class="btn-red">사원수정</button>
+                        <c:if test="${sessionScope.empNum eq '1' || sessionScope.empNum eq view.empNum}">
+                        	<button class="btn-red">사원수정</button>
+                        </c:if>
                         <button class="btn-blue">인쇄하기</button>
                     </div>
                 </div>

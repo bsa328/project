@@ -73,15 +73,19 @@
 					<div class="title m-b10 bold">
 						<span class="">게시판 관리 > 게시판 목록</span>
 					</div>
-					<div class="btn-box m-b5">
-						<button class="btn-red" id="delete">선택삭제</button>
-					</div>
+					<c:if test="${sessionScope.empNum eq '1'}">
+						<div class="btn-box m-b5">
+							<button class="btn-red" id="delete">선택삭제</button>
+						</div>
+					</c:if>
 					<div class="board-list">
 						<table border="1">
 							<tr class="center bg-eee" id="rowColor">
-								<td class="td-3">
-									<input type="checkbox" onClick="chkAll();" id="chkAll" />
-								</td>
+								<c:if test="${sessionScope.empNum eq '1'}">
+									<td class="td-3">
+										<input type="checkbox" onClick="chkAll();" id="chkAll" />
+									</td>
+								</c:if>
 								<td class="td-4">번호</td>
 								<td class="td-8">게시판 그룹</td>
 								<td class="td-8">게시판 코드</td>
@@ -99,9 +103,11 @@
 							</c:if>
 							<c:forEach items="${list}" var="boardList" varStatus="status">
 								<tr class="center">
-									<td>
-										<input type="checkbox" name="chk" class="chk" data-uid="${boardList.boardCode}" />
-									</td>
+									<c:if test="${sessionScope.empNum eq '1'}">
+										<td>
+											<input type="checkbox" name="chk" class="chk" data-uid="${boardList.boardCode}" />
+										</td>
+									</c:if>
 									<td>${boardList.boardID}</td>
 									<td>${boardList.boardGroup}</td>
 									<td>

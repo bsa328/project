@@ -88,6 +88,7 @@ public class ArticleCtr {
 		mav.addObject("boardCode", boardVO.getBoardCode());
 		mav.addObject("boardGroup", boardVO.getBoardGroup());
 		mav.addObject("boardColor", boardVO.getBoardColor());
+		mav.addObject("boardManager", boardVO.getBoardManager());
 
 		mav.setViewName("board/article_view");
 		return mav;

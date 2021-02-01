@@ -1,135 +1,144 @@
 @charset 'utf-8';
 
 .btn-box {
-    display: flex;
-    justify-content: space-between;
+	display: flex;
+	justify-content: space-between;
 }
 
 table {
-    border-collapse: collapse;
-    width: 100%;
+	border-collapse: collapse;
+	width: 100%;
 }
 
-
 tr {
-    height: 40px;
-    border: 1px solid #d6dce7;
-    font-size: 13px;
+	height: 40px;
+	border: 1px solid #d6dce7;
+	font-size: 13px;
 }
 
 table a:hover {
-    text-decoration: underline;
-    color: #555;
+	text-decoration: underline;
+	color: #555;
 }
 
 .td-3 {
-    width: 3%;
+	width: 3%;
 }
 
 .td-4 {
-    width: 4%;
+	width: 4%;
 }
 
 .td-5 {
-    width: 5%;
+	width: 5%;
 }
 
 .td-6 {
-    width: 6%;
+	width: 6%;
 }
 
 .td-7 {
-    width: 7%;
+	width: 7%;
 }
 
 .td-8 {
-    width: 8%;
+	width: 8%;
 }
 
 .td-9 {
-    width: 9%;
+	width: 9%;
 }
 
 .td-10 {
-    width: 10%;
+	width: 10%;
 }
 
 .td-11 {
-    width: 11%;
+	width: 11%;
 }
 
 .td-12 {
-    width: 12%;
+	width: 12%;
 }
 
 .td-13 {
-    width: 13%;
+	width: 13%;
 }
 
 .td-14 {
-    width: 14%;
+	width: 14%;
 }
 
 .td-15 {
-    width: 15%;
+	width: 15%;
 }
 
 .td-36 {
-    width: 36%;
+	width: 36%;
 }
 
 .td-62 {
-    width: 62%;
+	width: 62%;
 }
 
 .td-100 {
-    width: 100%;
+	width: 100%;
 }
 
 .left {
-    text-align: left;
+	text-align: left;
 }
 
 .search-box {
-    height: 30px;
-    display: flex;
-    justify-content: space-between;
+	height: 30px;
+	display: flex;
+	justify-content: space-between;
 }
 
 .insert-box {
-    border: 1px solid #abb3b8a2;
+	border: 1px solid #abb3b8a2;
 }
 
 .comment {
-    width: 100%;
-    height: 100px;
-    border: 1px solid #abb3b8a2;
+	width: 100%;
+	height: 100px;
+	border: 1px solid #abb3b8a2;
 }
 
 .td-10 {
-    width: 10%;
+	width: 10%;
 }
 
 .td-23 {
-    width: 23%;
+	width: 23%;
 }
 
 .td-25 {
-    width: 25%;
+	width: 25%;
 }
 
 .td-33 {
-    width: 33%;
+	width: 33%;
 }
 
 .notice {
-    color: tomato;
-    font-weight: 900;
+	color: tomato;
+	font-weight: 900;
 }
 
 .memo {
-    width: 100%;
-    height: 170px;
-    border: 1px solid #d6dce7;
-    font-size: 13px;
+	width: 100%;
+	height: 170px;
+	border: 1px solid #d6dce7;
+	font-size: 13px;
+}
+
+.comment-writer {
+	font-size: 13px;
+	color: #444;
+}
+
+.comment-regdate {
+	color: #999;
+	font-size: 13px;
 }

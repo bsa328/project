@@ -13,22 +13,29 @@
 						<span class="">${boardGroup} > ${boardCode} (관리자 : ${boardManager})</span>
 					</div>
 					<div class="btn-box m-b5">
-						<button class="btn-red" id="delete">선택삭제</button>
+						<c:choose>
+							<c:when test="${sessionScope.empName eq boardManager || sessionScope.empNum eq '1'}"><button class="btn-red" id="delete">선택삭제</button></c:when>
+							<c:otherwise><button class="" id=""></button></c:otherwise>
+						</c:choose>
 						<button type="button" class="btn-blue" onclick="location.href='${pageContext.request.contextPath}/article/article_insert?boardCode=${boardCode}'">게시글 작성</button>
 					</div>
 					<div class="board-list">
 						<table border="1">
 							<tr class="center bg-eee" style="background-color:${boardColor}">
-								<td class="td-3">
-									<input type="checkbox" onClick="chkAll();" id="chkAll" />
-								</td>
+								<c:if test="${sessionScope.empName eq boardManager || sessionScope.empNum eq '1'}">
+									<td class="td-3">
+										<input type="checkbox" onClick="chkAll();" id="chkAll" />
+									</td>
+								</c:if>
 								<td class="td-4">번호</td>
 								<td class="td-8">분류</td>
 								<td class="">게시글 제목</td>
 								<td class="td-8">작성자</td>
 								<td class="td-8">날짜</td>
 								<td class="td-4">조회</td>
-								<td class="td-8">게시글 관리</td>
+								<c:if test="${sessionScope.empName eq boardManager || sessionScope.empNum eq '1'}">
+									<td class="td-8">게시글 관리</td>
+								</c:if>
 							</tr>
 							<c:if test="${count == 0}">
 								<tr class="center">
@@ -37,9 +44,11 @@
 							</c:if>
 							<c:forEach items="${list}" var="articleList" varStatus="status">
 								<tr class="center">
-									<td>
-										<input type="checkbox" name="chk" class="chk" data-uid="${articleList.articleID}" data-code="${boardCode}" />
-									</td>
+									<c:if test="${sessionScope.empName eq boardManager || sessionScope.empNum eq '1'}">
+										<td>
+											<input type="checkbox" name="chk" class="chk" data-uid="${articleList.articleID}" data-code="${boardCode}" />
+										</td>
+									</c:if>
 									<td>${articleList.articleID}</td>
 									<td>
 										<c:if test="${articleList.articleDivision eq 'Y'}"><span class="notice">공지사항</span></c:if>
@@ -51,10 +60,12 @@
 									<td>${articleList.articleWriter}</td>
 									<td>${articleList.articleRegdate}</td>
 									<td>${articleList.articleHit}</td>
-									<td>
-										<button class="s-btn-blue" id="">수정</button>
-										<button class="s-btn-white" id="">삭제</button>
-									</td>
+									<c:if test="${sessionScope.empName eq boardManager || sessionScope.empNum eq '1'}">
+										<td>
+											<button class="s-btn-blue" id="">수정</button>
+											<button class="s-btn-white" id="">삭제</button>
+										</td>
+									</c:if>
 								</tr>
 							</c:forEach>
 						</table>
