@@ -6,6 +6,7 @@ public class CommentVO {
 	private String commentWriter;
 	private String comentContent;
 	private String commentRegdate;
+	private String boardCode;
 
 	public int getCommentID() {
 		return commentID;
@@ -45,6 +46,14 @@ public class CommentVO {
 
 	public void setCommentRegdate(String commentRegdate) {
 		this.commentRegdate = commentRegdate;
+	}
+
+	public String getBoardCode() {
+		return boardCode;
+	}
+
+	public void setBoardCode(String boardCode) {
+		this.boardCode = boardCode;
 	}
 
 }

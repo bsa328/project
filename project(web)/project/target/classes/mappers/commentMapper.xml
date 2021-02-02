@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="comment">
+
+	<insert id="setComment" parameterType="com.example.project.model.CommentVO">
+		INSERT INTO comment_${boardCode}(article_id, comment_writer, comment_content, comment_regdate)
+		VALUES (#{articleID}, #{commentWriter}, #{comentContent}, now())
+	</insert>
+	
+	<select id="getCommentCount" resultType="int">
+		SELECT COUNT(*) FROM comment_${boardCode} WHERE article_id = #{articleID}
+	</select>
+
+	<select id="getCommentList" resultType="com.example.project.model.CommentVO">
+		SELECT * FROM comment_${boardCode} WHERE article_id = #{articleID} ORDER BY comment_id DESC
+	</select>
+
+	<update id="setCommentModify" parameterType="com.example.project.model.CommentVO">
+		UPDATE comment_${boardCode}	SET	comment_content = #{comentContent} WHERE comment_id = #{commentID}
+	</update>
+
+	<delete id="setCommentDelete" parameterType="com.example.project.model.CommentVO">
+		DELETE FROM comment_${boardCode} WHERE comment_id = #{commentID}
+	</delete>
+
+</mapper>

@@ -6,14 +6,14 @@
 <script>
 	alert("승인된 사용자가 아닙니다.\n관리자에게 문의하세요.");
 	window.location.replace("${pageContext.request.contextPath}");
-	</script>
+</script>
 </c:if>
 
 <c:if test="${sessionScope.empNum == null}">
 <script>
 	alert("로그인 후에 접속가능합니다.");
 	window.location.replace("${pageContext.request.contextPath}");
-	</script>
+</script>
 </c:if>
 
 <!DOCTYPE html>

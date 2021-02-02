@@ -44,18 +44,18 @@ CREATE TABLE `article_dinner` (
 
 LOCK TABLES `article_dinner` WRITE;
 /*!40000 ALTER TABLE `article_dinner` DISABLE KEYS */;
-INSERT INTO `article_dinner` VALUES (1,'N','저녁 메뉴 투표','김영희','','2021-01-30 11:21:00',4,NULL,NULL,NULL,1);
+INSERT INTO `article_dinner` VALUES (1,'Y','ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ','철수','<p>111ㄹㅈㄷㄹ</p>\r\n','2021-02-02 10:34:42',140,NULL,NULL,NULL,1);
 /*!40000 ALTER TABLE `article_dinner` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `article_notice`
+-- Table structure for table `article_lunch`
 --
 
-DROP TABLE IF EXISTS `article_notice`;
+DROP TABLE IF EXISTS `article_lunch`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `article_notice` (
+CREATE TABLE `article_lunch` (
   `article_id` int NOT NULL AUTO_INCREMENT,
   `article_division` char(1) DEFAULT NULL,
   `article_title` varchar(300) NOT NULL,
@@ -72,13 +72,46 @@ CREATE TABLE `article_notice` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `article_notice`
+-- Dumping data for table `article_lunch`
 --
 
-LOCK TABLES `article_notice` WRITE;
-/*!40000 ALTER TABLE `article_notice` DISABLE KEYS */;
-INSERT INTO `article_notice` VALUES (1,'Y','점심메뉴','김철수','','2021-01-30 11:19:33',19,NULL,NULL,NULL,1);
-/*!40000 ALTER TABLE `article_notice` ENABLE KEYS */;
+LOCK TABLES `article_lunch` WRITE;
+/*!40000 ALTER TABLE `article_lunch` DISABLE KEYS */;
+INSERT INTO `article_lunch` VALUES (1,'N','ㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎ','영희','<p>212343</p>\r\n','2021-02-02 10:23:23',155,NULL,NULL,NULL,1);
+/*!40000 ALTER TABLE `article_lunch` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `article_zzzzzzzzzzzzzzzzzzz`
+--
+
+DROP TABLE IF EXISTS `article_zzzzzzzzzzzzzzzzzzz`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `article_zzzzzzzzzzzzzzzzzzz` (
+  `article_id` int NOT NULL AUTO_INCREMENT,
+  `article_division` char(1) DEFAULT NULL,
+  `article_title` varchar(300) NOT NULL,
+  `article_writer` varchar(20) NOT NULL,
+  `article_content` text,
+  `article_regdate` datetime DEFAULT NULL,
+  `article_hit` int DEFAULT '0',
+  `article_file_name` varchar(300) DEFAULT NULL,
+  `article_file_ori_name` varchar(300) DEFAULT NULL,
+  `article_filr_url` varchar(500) DEFAULT NULL,
+  `ref` int DEFAULT NULL,
+  PRIMARY KEY (`article_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `article_zzzzzzzzzzzzzzzzzzz`
+--
+
+LOCK TABLES `article_zzzzzzzzzzzzzzzzzzz` WRITE;
+/*!40000 ALTER TABLE `article_zzzzzzzzzzzzzzzzzzz` DISABLE KEYS */;
+INSERT INTO `article_zzzzzzzzzzzzzzzzzzz` VALUES (1,'N','ㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴ','철수','<p>ㅁㄴㅇㄴㅁㅇ</p>\r\n','2021-02-02 17:16:12',39,NULL,NULL,NULL,1),(2,'N','ㅂㅈㅇㅂㅈㅇ','영희','','2021-02-02 17:46:58',0,NULL,NULL,NULL,2);
+/*!40000 ALTER TABLE `article_zzzzzzzzzzzzzzzzzzz` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -99,7 +132,7 @@ CREATE TABLE `board` (
   `board_write` char(1) NOT NULL,
   `board_regdate` date DEFAULT NULL,
   PRIMARY KEY (`board_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=73 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=78 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -108,7 +141,7 @@ CREATE TABLE `board` (
 
 LOCK TABLES `board` WRITE;
 /*!40000 ALTER TABLE `board` DISABLE KEYS */;
-INSERT INTO `board` VALUES (71,'관리부','notice','김철수','#e9d565','관리부 공지사항','2','2','2021-01-30'),(72,'기획부','dinner','김영희','#98d1e6','저녁 메뉴','1','1','2021-01-30');
+INSERT INTO `board` VALUES (75,'관리부','dinner','철수','#78dc57','저녁 메뉴','1','1','2021-02-02'),(76,'기획부','lunch','영희','#e9d565','점심메뉴','2','2','2021-02-02'),(77,'관리부','zzzzzzzzzzzzzzzzzzz','철수','#eee','ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ','1','1','2021-02-02');
 /*!40000 ALTER TABLE `board` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -149,7 +182,7 @@ CREATE TABLE `comment_dinner` (
   `comment_content` text,
   `comment_regdate` datetime DEFAULT NULL,
   PRIMARY KEY (`comment_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -158,33 +191,62 @@ CREATE TABLE `comment_dinner` (
 
 LOCK TABLES `comment_dinner` WRITE;
 /*!40000 ALTER TABLE `comment_dinner` DISABLE KEYS */;
+INSERT INTO `comment_dinner` VALUES (3,1,'철수','ergerg','2021-02-02 16:01:37'),(4,1,'철수','retgregerg','2021-02-02 16:01:43'),(5,1,'철수','qwdqwd','2021-02-02 16:45:21');
 /*!40000 ALTER TABLE `comment_dinner` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `comment_notice`
+-- Table structure for table `comment_lunch`
 --
 
-DROP TABLE IF EXISTS `comment_notice`;
+DROP TABLE IF EXISTS `comment_lunch`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `comment_notice` (
+CREATE TABLE `comment_lunch` (
   `comment_id` int NOT NULL AUTO_INCREMENT,
   `article_id` int NOT NULL,
   `comment_writer` varchar(20) DEFAULT NULL,
   `comment_content` text,
   `comment_regdate` datetime DEFAULT NULL,
   PRIMARY KEY (`comment_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `comment_notice`
+-- Dumping data for table `comment_lunch`
 --
 
-LOCK TABLES `comment_notice` WRITE;
-/*!40000 ALTER TABLE `comment_notice` DISABLE KEYS */;
-/*!40000 ALTER TABLE `comment_notice` ENABLE KEYS */;
+LOCK TABLES `comment_lunch` WRITE;
+/*!40000 ALTER TABLE `comment_lunch` DISABLE KEYS */;
+INSERT INTO `comment_lunch` VALUES (1,1,'철수','awdawdawd','2021-02-02 16:02:04'),(2,1,'철수','fewfew','2021-02-02 16:42:06'),(3,1,'철수','wdqwdqw','2021-02-02 16:57:00'),(4,1,'철수','qdqwd','2021-02-02 16:57:04'),(5,1,'철수','ㄷㅎㄷㄱㅎㄱㄷㅎ','2021-02-02 17:32:25'),(6,1,'영희','ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ','2021-02-02 17:47:28');
+/*!40000 ALTER TABLE `comment_lunch` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `comment_zzzzzzzzzzzzzzzzzzz`
+--
+
+DROP TABLE IF EXISTS `comment_zzzzzzzzzzzzzzzzzzz`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `comment_zzzzzzzzzzzzzzzzzzz` (
+  `comment_id` int NOT NULL AUTO_INCREMENT,
+  `article_id` int NOT NULL,
+  `comment_writer` varchar(20) DEFAULT NULL,
+  `comment_content` text,
+  `comment_regdate` datetime DEFAULT NULL,
+  PRIMARY KEY (`comment_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `comment_zzzzzzzzzzzzzzzzzzz`
+--
+
+LOCK TABLES `comment_zzzzzzzzzzzzzzzzzzz` WRITE;
+/*!40000 ALTER TABLE `comment_zzzzzzzzzzzzzzzzzzz` DISABLE KEYS */;
+INSERT INTO `comment_zzzzzzzzzzzzzzzzzzz` VALUES (2,1,'영희','ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ','2021-02-02 17:47:01');
+/*!40000 ALTER TABLE `comment_zzzzzzzzzzzzzzzzzzz` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -243,7 +305,7 @@ CREATE TABLE `employee` (
   `emp_reward_punish5` varchar(20) DEFAULT NULL,
   `emp_detail` text,
   PRIMARY KEY (`emp_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -252,7 +314,7 @@ CREATE TABLE `employee` (
 
 LOCK TABLES `employee` WRITE;
 /*!40000 ALTER TABLE `employee` DISABLE KEYS */;
-INSERT INTO `employee` VALUES (1,'관리자','0','0','1','1',NULL,NULL,'Y',1,'그린컴퓨터',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(2,'철수','100','1','2110011','1','2021-01-01','2021-01-30','Y',1,'그린컴퓨터',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(5,'영희','200','2','2120022','1','2021-01-05','2021-01-30','N',1,'그린컴퓨터','남자','19900101','양력','42354375','6524375','공개채용','1','1','병역필','무교','1','1','비장애','비대상','미혼','1','1','1','1','1','1','상','1','중','1','상','','상','','','1','','','','','');
+INSERT INTO `employee` VALUES (1,'관리자','0','0','1','1',NULL,NULL,'Y',10,'그린컴퓨터',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(2,'철수','100','1','2110011','1','2021-01-01','2021-01-30','Y',1,'그린컴퓨터',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(5,'영희','200','2','2120022','1','2021-01-05','2021-01-30','Y',1,'그린컴퓨터','남자','19900101','양력','42354375','6524375','공개채용','1','1','병역필','무교','1','1','비장애','비대상','미혼','1','1','1','1','1','1','상','1','중','1','상','','상','','','1','','','','','');
 /*!40000 ALTER TABLE `employee` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -288,4 +350,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-01-30 15:15:41
+-- Dump completed on 2021-02-02 18:12:10

@@ -221,18 +221,3 @@ input {
 .file {
 	width: 100%;
 }
-
-.hr-line {
-	border-width: 1px 0px 0px 0px;
-	border-style: solid;
-	height: 1px;
-	border-color: #e7e7e7;
-}
-
-.p-30 {
-	padding: 30px;
-}
-
-.m-t30 {
-	margin-top: 30px;
-}
