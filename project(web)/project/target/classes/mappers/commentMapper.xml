@@ -4,7 +4,7 @@
 
 	<insert id="setComment" parameterType="com.example.project.model.CommentVO">
 		INSERT INTO comment_${boardCode}(article_id, comment_writer, comment_content, comment_regdate)
-		VALUES (#{articleID}, #{commentWriter}, #{comentContent}, now())
+		VALUES (#{articleID}, #{commentWriter}, #{commentContent}, now())
 	</insert>
 	
 	<select id="getCommentCount" resultType="int">
@@ -12,7 +12,12 @@
 	</select>
 
 	<select id="getCommentList" resultType="com.example.project.model.CommentVO">
-		SELECT * FROM comment_${boardCode} WHERE article_id = #{articleID} ORDER BY comment_id DESC
+		SELECT 
+			comment_id			AS commentID,
+			comment_writer 		AS commentWriter,
+			comment_content 	AS commentContent,
+			comment_regdate 	AS commentRegdate
+		FROM comment_${boardCode} WHERE article_id = #{articleID} ORDER BY comment_id DESC
 	</select>
 
 	<update id="setCommentModify" parameterType="com.example.project.model.CommentVO">

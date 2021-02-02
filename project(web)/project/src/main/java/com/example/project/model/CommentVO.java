@@ -4,7 +4,7 @@ public class CommentVO {
 	private int commentID;
 	private int articleID;
 	private String commentWriter;
-	private String comentContent;
+	private String commentContent;
 	private String commentRegdate;
 	private String boardCode;
 
@@ -32,12 +32,12 @@ public class CommentVO {
 		this.commentWriter = commentWriter;
 	}
 
-	public String getComentContent() {
-		return comentContent;
+	public String getCommentContent() {
+		return commentContent;
 	}
 
-	public void setComentContent(String comentContent) {
-		this.comentContent = comentContent;
+	public void setCommentContent(String commentContent) {
+		this.commentContent = commentContent;
 	}
 
 	public String getCommentRegdate() {

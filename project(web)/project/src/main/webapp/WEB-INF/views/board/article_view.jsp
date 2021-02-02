@@ -48,11 +48,11 @@
 				<div class="comment-box">
 					<div class="comment-make m-t50">
 						<div class="total-num m-b5">댓글 작성하기</div>
-						<form id="frm" autocomplete="off">
+						<form id="frm">
 							<input type="hidden" id="boardCode" name="boardCode" value="${boardCode}" />
 							<input type="hidden" name="articleID" value="${view.articleID}" />
-							<input type="hidden" name="commentWriter" value="${sessionScope.empName}" readonly />
-							<textarea id="comentContent" name="comentContent" class="comment p-10" placeholder="댓글을 입력하세요."></textarea>
+							<input type="hidden" name="commentWriter" value="${sessionScope.empName}" />
+							<textarea id="commentContent" name="commentContent" class="comment p-10" placeholder="댓글을 입력하세요."></textarea>
 							<div class="btn-box">
 								<button class="" id=""></button>
 								<button id="btn" type="submit" class="btn-blue m-t5">댓글 등록</button>
@@ -69,9 +69,9 @@
 	<script>
 	function insertComment() {
 		
-		if ($.trim($("#comentContent").val()) == '') {
-			alert("댓글을 입력하세요.");
-			$("#comentContent").focus();
+		if ($.trim($("#commentContent").val()) == '') {
+			alert("댓글 내용을 입력하세요.");
+			$("#commentContent").focus();
 			return false;
 		}
 
@@ -84,7 +84,7 @@
 			success : function(resData) {
 				alert("댓글이 등록 되었습니다.");
 				listComment();
-				$("#comentContent").val('');
+				$("#commentContent").val('');
 			},
 			error : function() {
 				alert("시스템 에러");
@@ -110,24 +110,25 @@
 				b += resData.count;
 				a += '<div class="total-num m-t10 m-b5">전체 댓글수 : '+b+'개</div>';
 				
+				if ( b == 0 ) {
+				a += '<div class="">';
+				a += '<hr style="border-width: 1px 0px 0px 0px; border-style: solid; height: 1px; border-color: #e7e7e7;">';
+				a += '<div class="m-t50 center" style="margin-bottom: 40px; font-size: 15px;">등록된 댓글이 없습니다.</div>';
+				a += '</div>';
+				}
+				
 				$.each(resData.list, function(key, value) {
 					a += '<div class="comment-view">';
-					a += '<c:if test="${count == 0}">';
-					a += '<div class="">';
-					a += '<hr style="border-width: 1px 0px 0px 0px; border-style: solid; height: 1px; border-color: #e7e7e7;">';
-					a += '<div class="m-t50 center" style="margin-bottom: 40px; font-size: 15px;">등록된 댓글이 없습니다.</div>';
-					a += '</div>';
-					a += '</c:if>';
 					a += '<div class="">';
 					a += '<hr style="border-width: 1px 0px 0px 0px; border-style: solid; height: 1px; border-color: #e7e7e7;">';
 					a += '<div class="" style="padding: 30px;">';
-					a += '<div class="comment-writer m-b5" style="font-size: 13px; color: #444;">작성자</div>';
-					a += '<div class="comment-content" style="font-size: 15px;">'+resData.commentContent+'</div>';
+					a += '<div class="comment-writer m-b5" style="font-size: 13px; color: #444;">'+value.commentWriter+'</div>';
+					a += '<div class="comment-content" style="font-size: 15px;">'+value.commentContent+'</div>';
 					a += '<div class="btn-box" style="margin-top: 30px;">';
-					a += '<div class="comment-regdate" style="color: #999; font-size: 13px;">날짜</div>';
+					a += '<div class="comment-regdate" style="color: #999; font-size: 13px;">'+value.commentRegdate+'</div>';
 					a += '<div class="comment-btn">';
 					a += '<button class="s-btn-blue" style="margin-right: 5px;">수정</button>';
-					a += '<button class="s-btn-white">삭제</button>';
+					a += '<button class="s-btn-white" onClick="deleteComment('+value.commentID+')">삭제</button>';
 					a += '</div>';
 					a += '</div>';
 					a += '</div>';
@@ -136,16 +137,42 @@
 				});
 
 				$("#commentList").html(a);
-				
 			},
 			error : function() {
-				alert("관리자에게 문의하세요.");
+				alert("시스템 에러");
 			},
 			complete : function() {
 			}
 				
 		});
 		
+	}
+
+	function deleteComment(commentID) {
+		var msg = "선택한 댓글을 삭제하시겠습니까?";
+		if (confirm(msg)) {
+
+			var formData = {
+				commentID : commentID,
+				boardCode : $("#boardCode").val()
+			}
+
+			$.ajax({
+				url : "${pageContext.request.contextPath}/comment/comment_delete",
+				type : "POST",
+				data : formData,
+				success : function(resData) {
+					alert("댓글이 삭제되었습니다.");
+					listComment();
+				},
+				error : function() {
+					alert("시스템 에러");
+				},
+				complete : function() {
+				}
+
+			});
+		}
 	}
 
 	$("#btn").click(function() {
