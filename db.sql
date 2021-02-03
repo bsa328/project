@@ -44,7 +44,7 @@ CREATE TABLE `article_dinner` (
 
 LOCK TABLES `article_dinner` WRITE;
 /*!40000 ALTER TABLE `article_dinner` DISABLE KEYS */;
-INSERT INTO `article_dinner` VALUES (1,'Y','ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ','철수','<p>111ㄹㅈㄷㄹ</p>\r\n','2021-02-02 10:34:42',140,NULL,NULL,NULL,1);
+INSERT INTO `article_dinner` VALUES (1,'Y','ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ','철수','<p>111ㄹㅈㄷㄹ</p>\r\n','2021-02-02 10:34:42',146,NULL,NULL,NULL,1);
 /*!40000 ALTER TABLE `article_dinner` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -77,7 +77,7 @@ CREATE TABLE `article_lunch` (
 
 LOCK TABLES `article_lunch` WRITE;
 /*!40000 ALTER TABLE `article_lunch` DISABLE KEYS */;
-INSERT INTO `article_lunch` VALUES (1,'N','ㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎ','영희','<p>212343</p>\r\n','2021-02-02 10:23:23',155,NULL,NULL,NULL,1);
+INSERT INTO `article_lunch` VALUES (1,'N','ㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎ','영희','<p>212343</p>\r\n','2021-02-02 10:23:23',173,NULL,NULL,NULL,1);
 /*!40000 ALTER TABLE `article_lunch` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -110,7 +110,7 @@ CREATE TABLE `article_zzzzzzzzzzzzzzzzzzz` (
 
 LOCK TABLES `article_zzzzzzzzzzzzzzzzzzz` WRITE;
 /*!40000 ALTER TABLE `article_zzzzzzzzzzzzzzzzzzz` DISABLE KEYS */;
-INSERT INTO `article_zzzzzzzzzzzzzzzzzzz` VALUES (1,'N','ㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴ','철수','<p>ㅁㄴㅇㄴㅁㅇ</p>\r\n','2021-02-02 17:16:12',39,NULL,NULL,NULL,1),(2,'N','ㅂㅈㅇㅂㅈㅇ','영희','','2021-02-02 17:46:58',0,NULL,NULL,NULL,2);
+INSERT INTO `article_zzzzzzzzzzzzzzzzzzz` VALUES (1,'N','ㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴ','철수','<p>ㅁㄴㅇㄴㅁㅇ</p>\r\n','2021-02-02 17:16:12',163,NULL,NULL,NULL,1),(2,'N','ㅂㅈㅇㅂㅈㅇ','영희','','2021-02-02 17:46:58',84,NULL,NULL,NULL,2);
 /*!40000 ALTER TABLE `article_zzzzzzzzzzzzzzzzzzz` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -182,7 +182,7 @@ CREATE TABLE `comment_dinner` (
   `comment_content` text,
   `comment_regdate` datetime DEFAULT NULL,
   PRIMARY KEY (`comment_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -191,7 +191,7 @@ CREATE TABLE `comment_dinner` (
 
 LOCK TABLES `comment_dinner` WRITE;
 /*!40000 ALTER TABLE `comment_dinner` DISABLE KEYS */;
-INSERT INTO `comment_dinner` VALUES (3,1,'철수','ergerg','2021-02-02 16:01:37'),(4,1,'철수','retgregerg','2021-02-02 16:01:43'),(5,1,'철수','qwdqwd','2021-02-02 16:45:21');
+INSERT INTO `comment_dinner` VALUES (3,1,'철수','ergerg','2021-02-02 16:01:37'),(4,1,'철수','retgregerg','2021-02-02 16:01:43'),(5,1,'철수','qwdqwd','2021-02-02 16:45:21'),(6,1,'관리자','라면~~~~~~~\r\n','2021-02-02 23:35:58');
 /*!40000 ALTER TABLE `comment_dinner` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -209,7 +209,7 @@ CREATE TABLE `comment_lunch` (
   `comment_content` text,
   `comment_regdate` datetime DEFAULT NULL,
   PRIMARY KEY (`comment_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -218,7 +218,7 @@ CREATE TABLE `comment_lunch` (
 
 LOCK TABLES `comment_lunch` WRITE;
 /*!40000 ALTER TABLE `comment_lunch` DISABLE KEYS */;
-INSERT INTO `comment_lunch` VALUES (1,1,'철수','awdawdawd','2021-02-02 16:02:04'),(2,1,'철수','fewfew','2021-02-02 16:42:06'),(3,1,'철수','wdqwdqw','2021-02-02 16:57:00'),(4,1,'철수','qdqwd','2021-02-02 16:57:04'),(5,1,'철수','ㄷㅎㄷㄱㅎㄱㄷㅎ','2021-02-02 17:32:25'),(6,1,'영희','ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ','2021-02-02 17:47:28');
+INSERT INTO `comment_lunch` VALUES (1,1,'철수','awdawdawd','2021-02-02 16:02:04');
 /*!40000 ALTER TABLE `comment_lunch` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -236,7 +236,7 @@ CREATE TABLE `comment_zzzzzzzzzzzzzzzzzzz` (
   `comment_content` text,
   `comment_regdate` datetime DEFAULT NULL,
   PRIMARY KEY (`comment_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -245,7 +245,7 @@ CREATE TABLE `comment_zzzzzzzzzzzzzzzzzzz` (
 
 LOCK TABLES `comment_zzzzzzzzzzzzzzzzzzz` WRITE;
 /*!40000 ALTER TABLE `comment_zzzzzzzzzzzzzzzzzzz` DISABLE KEYS */;
-INSERT INTO `comment_zzzzzzzzzzzzzzzzzzz` VALUES (2,1,'영희','ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ','2021-02-02 17:47:01');
+INSERT INTO `comment_zzzzzzzzzzzzzzzzzzz` VALUES (10,1,'관리자','ㅋㅋ','2021-02-02 23:44:13'),(11,1,'철수','ㅎㅎ','2021-02-02 23:44:30'),(12,1,'철수','ㅋㄴㅇㅁㄴㅇ','2021-02-02 23:46:43'),(13,1,'철수','ㄷㅈㄹㄷㅈㄹ','2021-02-02 23:46:58'),(14,1,'철수','ㅇㅈㅂㅈㅇ','2021-02-02 23:48:00'),(15,1,'철수','ㅈㅇㅂㅂㅈㅇㄷㄹㄷㅈㄹ','2021-02-02 23:48:03'),(16,1,'철수','ㄱㅎㄷㄱㅎ','2021-02-02 23:48:22');
 /*!40000 ALTER TABLE `comment_zzzzzzzzzzzzzzzzzzz` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -350,4 +350,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-02-02 18:12:10
+-- Dump completed on 2021-02-03 10:35:08
