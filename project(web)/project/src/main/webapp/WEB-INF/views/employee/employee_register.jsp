@@ -286,7 +286,7 @@
 							<button type="submit" class="btn-blue" id="btn">등록하기</button>
 							<button type="reset" class="btn-white">새고로침</button>
 						</div>
-						<input type="hidden" name="empNum" value="${sessionScope.empNum}" />
+						<input type="hidden" name="empNum" value="${empNum}" />
 					</form>
 				</div>
 			</div>

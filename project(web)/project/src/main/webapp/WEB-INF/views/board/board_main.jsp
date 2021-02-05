@@ -73,7 +73,7 @@
 					<div class="title m-b10 bold">
 						<span class="">게시판 관리 > 게시판 목록</span>
 					</div>
-					<c:if test="${sessionScope.empNum eq '1'}">
+					<c:if test="${sessionScope.empNum eq 'admin'}">
 						<div class="btn-box m-b5">
 							<button class="btn-red" id="delete">선택삭제</button>
 						</div>
@@ -81,7 +81,7 @@
 					<div class="board-list">
 						<table border="1">
 							<tr class="center bg-eee" id="rowColor">
-								<c:if test="${sessionScope.empNum eq '1'}">
+								<c:if test="${sessionScope.empNum eq 'admin'}">
 									<td class="td-3">
 										<input type="checkbox" onClick="chkAll();" id="chkAll" />
 									</td>
@@ -103,7 +103,7 @@
 							</c:if>
 							<c:forEach items="${list}" var="boardList" varStatus="status">
 								<tr class="center">
-									<c:if test="${sessionScope.empNum eq '1'}">
+									<c:if test="${sessionScope.empNum eq 'admin'}">
 										<td>
 											<input type="checkbox" name="chk" class="chk" data-uid="${boardList.boardCode}" />
 										</td>

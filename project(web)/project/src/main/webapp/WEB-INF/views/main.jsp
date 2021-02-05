@@ -23,7 +23,7 @@
 				<a href="${pageContext.request.contextPath}/register">사원가입</a>
 			</c:if>
 			<c:if test="${sessionScope.empName != null}">
-				<span class="user"><a href="#">${sessionScope.empBuseoName}[${sessionScope.empName}] ${sessionScope.empGradeName}님이 로그인 중입니다.</a></span>
+				<span class="user"><a href="#">[${sessionScope.empBuseoName}] ${sessionScope.empName}님이 로그인 중입니다.</a></span>
 				<a href="#" id="logout">로그아웃</a>
 			</c:if>
 			<a href="${pageContext.request.contextPath}/admin">그룹웨어로 접속</a>

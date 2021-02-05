@@ -14,7 +14,7 @@
 					</div>
 					<div class="btn-box m-b5">
 						<c:choose>
-							<c:when test="${sessionScope.empName eq boardManager || sessionScope.empNum eq '1'}"><button class="btn-red" id="delete">선택삭제</button></c:when>
+							<c:when test="${sessionScope.empName eq boardManager || sessionScope.empNum eq 'admin'}"><button class="btn-red" id="delete">선택삭제</button></c:when>
 							<c:otherwise><button class="" id=""></button></c:otherwise>
 						</c:choose>
 						<button type="button" class="btn-blue" onclick="location.href='${pageContext.request.contextPath}/article/article_insert?boardCode=${boardCode}'">게시글 작성</button>
@@ -22,7 +22,7 @@
 					<div class="board-list">
 						<table border="1">
 							<tr class="center bg-eee" style="background-color:${boardColor}">
-								<c:if test="${sessionScope.empName eq boardManager || sessionScope.empNum eq '1'}">
+								<c:if test="${sessionScope.empName eq boardManager || sessionScope.empNum eq 'admin'}">
 									<td class="td-3">
 										<input type="checkbox" onClick="chkAll();" id="chkAll" />
 									</td>
@@ -33,7 +33,7 @@
 								<td class="td-8">작성자</td>
 								<td class="td-8">날짜</td>
 								<td class="td-4">조회</td>
-								<c:if test="${sessionScope.empName eq boardManager || sessionScope.empNum eq '1'}">
+								<c:if test="${sessionScope.empName eq boardManager || sessionScope.empNum eq 'admin'}">
 									<td class="td-8">게시글 관리</td>
 								</c:if>
 							</tr>
@@ -44,7 +44,7 @@
 							</c:if>
 							<c:forEach items="${list}" var="articleList" varStatus="status">
 								<tr class="center">
-									<c:if test="${sessionScope.empName eq boardManager || sessionScope.empNum eq '1'}">
+									<c:if test="${sessionScope.empName eq boardManager || sessionScope.empNum eq 'admin'}">
 										<td>
 											<input type="checkbox" name="chk" class="chk" data-uid="${articleList.articleID}" data-code="${boardCode}" />
 										</td>
@@ -55,12 +55,12 @@
 										<c:if test="${articleList.articleDivision eq 'N'}">일반</c:if>
 									</td>
 									<td class="p-10 left">
-										<a href="${pageContext.request.contextPath}/article/article_view?boardCode=${boardCode}&articleID=${articleList.articleID}">${articleList.articleTitle}</a>
+										<a href="${pageContext.request.contextPath}/article/article_view?boardCode=${boardCode}&articleID=${articleList.articleID}">${articleList.articleTitle}</a><span style="color:#777;"> (${articleList.cnt})</span>
 									</td>
 									<td>${articleList.articleWriter}</td>
 									<td>${articleList.articleRegdate}</td>
 									<td>${articleList.articleHit}</td>
-									<c:if test="${sessionScope.empName eq boardManager || sessionScope.empNum eq '1'}">
+									<c:if test="${sessionScope.empName eq boardManager || sessionScope.empNum eq 'admin'}">
 										<td>
 											<button class="s-btn-blue" id="">수정</button>
 											<button class="s-btn-white" id="">삭제</button>

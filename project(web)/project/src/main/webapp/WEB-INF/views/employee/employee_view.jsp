@@ -36,7 +36,12 @@
                                 <td class="bg-eee td-8">입사년월일</td>
                                 <td class="td-12 p-10 left">${view.empEnter}</td>
                                 <td class="bg-eee td-8">비밀번호</td>
-                                <td class="td-12 p-10 left">${view.empPwd}</td>
+                                <td class="td-12 p-10 left">
+                                	<c:choose>
+                                		<c:when test="${sessionScope.empNum eq 'admin' || sessionScope.empNum eq view.empNum}">${view.empPwd}</c:when>
+                                		<c:otherwise>****</c:otherwise>
+                                	</c:choose>
+                                </td>
                             </tr>
                             <tr class="center">
                                 <td class="bg-eee td-8">사원명</td>
@@ -143,7 +148,7 @@
                         <div class="memo noto p-10">${view.empDetail}</div>
                     </div>
                     <div class="center m-t5">
-                        <c:if test="${sessionScope.empNum eq '1' || sessionScope.empNum eq view.empNum}">
+                        <c:if test="${sessionScope.empNum eq 'admin' || sessionScope.empNum eq view.empNum}">
                         	<button class="btn-red">사원수정</button>
                         </c:if>
                         <button class="btn-blue">인쇄하기</button>

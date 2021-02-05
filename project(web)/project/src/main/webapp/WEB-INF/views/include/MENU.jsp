@@ -6,7 +6,7 @@
 			<div>
 				<a href="${pageContext.request.contextPath}/employee/employee_list">사원목록</a>
 			</div>
-			<c:if test="${sessionScope.empNum eq '1'}">
+			<c:if test="${sessionScope.empNum eq 'admin'}">
 				<div>
 					<a href="${pageContext.request.contextPath}/employee/employee_register">사원등록</a>
 				</div>

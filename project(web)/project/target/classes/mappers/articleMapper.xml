@@ -9,8 +9,9 @@
 			article_title 		AS articleTitle,
 			article_writer 		AS articleWriter,
 			article_regdate 	AS articleRegdate,
-			article_hit 		AS articleHit
-		FROM article_${boardCode} ORDER BY article_id DESC LIMIT #{start}, #{end}
+			article_hit 		AS articleHit,
+			(SELECT COUNT(*) FROM comment_${boardCode} c WHERE c.article_id = a.article_id) AS cnt
+		FROM article_${boardCode} a ORDER BY article_id DESC LIMIT #{start}, #{end}
 	</select>
 
 	<insert id="setArticle" parameterType="com.example.project.model.ArticleVO">

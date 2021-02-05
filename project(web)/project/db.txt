@@ -9,44 +9,10 @@ emp_enter date,
 emp_regdate date,
 emp_confirm char(1) default 'N',
 emp_auth int default 1,
-emp_company varchar(20) default '그린컴퓨터',
-emp_gender char(2),
-emp_birth char(8),
-emp_bth char(2),
-emp_phone char(8),
-emp_tel char(7),
-emp_recruit char(4),
-emp_hope_job varchar(20),
-emp_email varchar(50),
-emp_military char(4),
-emp_religion char(3),
-emp_hobby varchar(20),
-emp_specialty varchar(20),
-emp_disability char(3),
-emp_veteran char(3),
-emp_marriage char(2),
-emp_qualification1 varchar(20),
-emp_qualification2 varchar(20),
-emp_qualification3 varchar(20),
-emp_qualification4 varchar(20),
-emp_qualification5 varchar(20),
-emp_language1 varchar(20),
-emp_language_level1 char(2),
-emp_language2 varchar(20),
-emp_language_level2 char(2),
-emp_language3 varchar(20),
-emp_language_level3 char(2),
-emp_language4 varchar(20),
-emp_language_level4 char(2),
-emp_language5 varchar(20),
-emp_language_level5 char(2),
-emp_reward_punish1 varchar(20),
-emp_reward_punish2 varchar(20),
-emp_reward_punish3 varchar(20),
-emp_reward_punish4 varchar(20),
-emp_reward_punish5 varchar(20),
-emp_detail text
+emp_company varchar(20) default '그린컴퓨터'
 );
+
+insert into employee set emp_name='관리자', emp_num='admin', emp_pwd='admin', emp_buseo=0, emp_grade=0, emp_confirm='Y', emp_auth=10;
 
 ------------------------------------------------------
 
@@ -58,7 +24,7 @@ buseo_name varchar(20)
 +----------+------------+
 | buseo_id | buseo_name |
 +----------+------------+
-| 0        | -      	|
+| 0        | admin      |
 | 100      | 관리부     	|
 | 200      | 기획부     	|
 | 300      | 인사부     	|
@@ -76,7 +42,7 @@ grade_name varchar(20)
 +----------+------------+
 | grade_id | grade_name |
 +----------+------------+
-| 0        | -      	|
+| 0        | admin      |
 | 1        | 부장       		|
 | 2        | 과장       		|
 | 3        | 대리       		|

@@ -13,7 +13,10 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.example.project.model.EmployeeVO;
 import com.example.project.pager.Pager;
+import com.example.project.repository.LoginDao;
+import com.example.project.repository.RegisterDao;
 import com.example.project.service.EmployeeSrv;
+import com.example.project.service.LoginSrv;
 import com.example.project.service.RegisterSrv;
 
 @Controller
@@ -25,6 +28,9 @@ public class EmployeeCtr {
 
 	@Autowired
 	EmployeeSrv employeeSrv;
+
+	@Autowired
+	LoginSrv loginSrv;
 
 	@RequestMapping("")
 	public String getEmployeeMain() {

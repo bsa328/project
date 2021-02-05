@@ -13,8 +13,10 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.example.project.model.ArticleVO;
 import com.example.project.model.BoardVO;
+import com.example.project.model.CommentVO;
 import com.example.project.pager.Pager;
 import com.example.project.service.articleSrv.ArticleSrv;
+import com.example.project.service.commentSrv.CommentSrv;
 
 @Controller
 @RequestMapping("/article")

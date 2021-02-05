@@ -4,7 +4,7 @@
 
 	<insert id="setEmpRegister" parameterType="com.example.project.model.EmployeeVO">
 		<selectKey resultType="int" keyProperty="ref" order="BEFORE">
-			SELECT IFNULL(MAX(emp_id), 1) FROM employee
+			SELECT IFNULL(MAX(emp_id), 0) FROM employee
 		</selectKey>
 		
 		INSERT INTO employee SET
@@ -15,43 +15,7 @@
 			emp_pwd				= #{empPwd},
 			emp_regdate			= now(),
 			emp_num 			= CONCAT(#{empNum}, #{ref}),
-			emp_company			= #{empCompany},
-			emp_gender			= #{empGender},
-			emp_birth			= #{empBirth},
-			emp_bth				= #{empBth},
-			emp_phone			= #{empPhone},
-			emp_tel				= #{empTel},
-			emp_recruit			= #{empRecruit},
-			emp_hope_job		= #{empHopeJob},
-			emp_email			= #{empEmail},
-			emp_military		= #{empMilitary},
-			emp_religion		= #{empReligion},
-			emp_hobby			= #{empHobby},
-			emp_specialty		= #{empSpecialty},
-			emp_disability		= #{empDisability},
-			emp_veteran			= #{empVeteran},
-			emp_marriage		= #{empMarriage},
-			emp_qualification1	= #{empQualification1},
-			emp_qualification2	= #{empQualification2},
-			emp_qualification3	= #{empQualification3},
-			emp_qualification4	= #{empQualification4},
-			emp_qualification5	= #{empQualification5},
-			emp_language1		= #{empLanguage1},
-			emp_language_level1	= #{empLanguageLevel1},
-			emp_language2		= #{empLanguage2},
-			emp_language_level2	= #{empLanguageLevel2},
-			emp_language3		= #{empLanguage3},
-			emp_language_level3	= #{empLanguageLevel3},
-			emp_language4		= #{empLanguage4},
-			emp_language_level4	= #{empLanguageLevel4},
-			emp_language5		= #{empLanguage5},
-			emp_language_level5	= #{empLanguageLevel5},
-			emp_reward_punish1	= #{empRewardPunish1},
-			emp_reward_punish2	= #{empRewardPunish2},
-			emp_reward_punish3	= #{empRewardPunish3},
-			emp_reward_punish4	= #{empRewardPunish4},
-			emp_reward_punish5	= #{empRewardPunish5},
-			emp_detail			= #{empDetail}
+			emp_company			= #{empCompany}
 	</insert>
 	
 	<update id="setEmpConfirmChange" parameterType="hashmap">
