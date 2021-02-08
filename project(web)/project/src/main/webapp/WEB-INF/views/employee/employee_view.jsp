@@ -151,11 +151,20 @@
                         <c:if test="${sessionScope.empNum eq 'admin' || sessionScope.empNum eq view.empNum}">
                         	<button class="btn-red">사원수정</button>
                         </c:if>
-                        <button class="btn-blue">인쇄하기</button>
+                        <button type="button" class="btn-blue" id="" onClick="empPrint();">인쇄하기</button>
                     </div>
                 </div>
             </div>
 		</div>
 	</div>
 	<%@ include file="/WEB-INF/views/include/FOOTER.jsp"%>
+	
+<script>
+function empPrint() {
+	var url 	= "${pageContext.request.contextPath}/employee/employee_print";
+	var nick 	= "print";
+	var opt 	= "width=1000, height=600";
+	window.open(url, nick, opt);
+}
+</script>
 </html>

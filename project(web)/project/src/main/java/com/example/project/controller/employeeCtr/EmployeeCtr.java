@@ -111,4 +111,14 @@ public class EmployeeCtr {
 		return "success";
 	}
 
+	@RequestMapping(value = "/employee_print", method = RequestMethod.GET)
+	public ModelAndView getEmployeePrint() {
+
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("employee/employee_print");
+
+		return mav;
+
+	}
+
 }
