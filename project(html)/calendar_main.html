@@ -22,18 +22,6 @@
     <script src="http://code.jquery.com/ui/1.8.18/jquery-ui.min.js"></script>
 </head>
 
-<script>
-    $(document).ready(function () {
-        $("#startDate").datepicker({
-            dateFormat: 'yy-mm-dd'
-        });
-
-        $("#endDate").datepicker({
-            dateFormat: 'yy-mm-dd'
-        });
-    });
-</script>
-
 <body>
     <div class="html">
         <div class="header">
@@ -83,12 +71,12 @@
                             <tr class="center tr">
                                 <td class="bg-eee td-8">시작일</td>
                                 <td class="p-3 td-12">
-                                    <input type="text" id="startDate" class="td-80" />
+                                    <input type="text" id="calStartDate" class="td-80" readonly />
                                     <span class="i"><i class="far fa-calendar-alt"></i></span>
                                 </td>
                                 <td class="bg-eee td-8">종료일</td>
                                 <td class="p-3 td-12">
-                                    <input type="text" id="endDate" class="td-80" />
+                                    <input type="text" id="calEndDate" class="td-80" readonly />
                                     <span class="i"><i class="far fa-calendar-alt"></i></span>
                                 </td>
                                 <td class="bg-eee td-8">내용</td>
@@ -129,6 +117,20 @@
     });
 </script>
 
+<script>
+    $(document).ready(function () {
+        $("#calStartDate").datepicker({
+            dateFormat: 'yy-mm-dd',
+            minDate : 0
+        });
+
+        $("#calEndDate").datepicker({
+            dateFormat: 'yy-mm-dd',
+            minDate: new Date(calStartDate)
+        });
+    });
+</script>
+
 <script src="calendar/core/main.js"></script>
 <script src="calendar/core/locales/ko.js"></script>
 <script src="calendar/interaction/main.js"></script>
@@ -150,9 +152,9 @@
             eventLimit: true,
             locales: "ko",
             events: [{
-                title: '일정내용\n등록자',
-                start: '2021-01-07',
-                end: '2021-01-12',
+                title: '영업부 - 제작발표회',
+                start: '2021-02-07',
+                end: '2021-02-14',
                 color: '#61b3d2'
             }
             ]

@@ -112,13 +112,13 @@ public class EmployeeCtr {
 	}
 
 	@RequestMapping(value = "/employee_print", method = RequestMethod.GET)
-	public ModelAndView getEmployeePrint() {
+	public ModelAndView getEmployeePrint(@RequestParam int empNum) {
 
 		ModelAndView mav = new ModelAndView();
-		mav.setViewName("employee/employee_print");
+		mav.addObject("view", employeeSrv.getEmployeeOne(empNum));
+		mav.setViewName("/employee/employee_print");
 
 		return mav;
-
 	}
 
 }

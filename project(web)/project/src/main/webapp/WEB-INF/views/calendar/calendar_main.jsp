@@ -8,18 +8,6 @@
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 <script src="http://code.jquery.com/ui/1.8.18/jquery-ui.min.js"></script>
 
-<script>
-	$(document).ready(function() {
-		$("#startDate").datepicker({
-			dateFormat : 'yy-mm-dd'
-		});
-
-		$("#endDate").datepicker({
-			dateFormat : 'yy-mm-dd'
-		});
-	});
-</script>
-
 <body>
 	<div class="html">
 		<%@ include file="/WEB-INF/views/include/AUTH.jsp"%>
@@ -31,25 +19,39 @@
 						<span class="">일정관리 > 일정등록</span>
 					</div>
 					<form id="frm" method="post">
-						<input type="hidden" name="" value="" />
+						<c:choose>
+							<c:when test="${sessionScope.empNum eq 'admin'}">
+								<input type="hidden" name="calWriter" value="${sessionScope.empName}" />
+							</c:when>
+							<c:otherwise>
+								<input type="hidden" name="calWriter" value="${sessionScope.empBuseoName} - ${sessionScope.empName}" />
+							</c:otherwise>
+						</c:choose>
 						<div class="board-list">
 							<table border="1" class="cal">
 								<tr class="center tr">
 									<td class="bg-eee td-8">시작일</td>
 									<td class="p-3 td-12">
-										<input type="text" id="startDate" name="startDate" class="td-80" readonly /> <span class="i"><i class="far fa-calendar-alt"></i></span>
+										<input type="text" id="calStartDate" name="calStartDate" class="td-80" readonly /> <span class="i"><i class="far fa-calendar-alt"></i></span>
 									</td>
 									<td class="bg-eee td-8">종료일</td>
 									<td class="p-3 td-12">
-										<input type="text" id="endDate" name="endDate" class="td-80" readonly /> <span class="i"><i class="far fa-calendar-alt"></i></span>
+										<input type="text" id="calEndDate" name="calEndDate" class="td-80" readonly /> <span class="i"><i class="far fa-calendar-alt"></i></span>
 									</td>
 									<td class="bg-eee td-8">내용</td>
 									<td class="p-3">
-										<input type="text" name="plan" id="plan" placeholder="일정 내용을 입력하세요." />
+										<input type="text" name="calContent" id="calContent" placeholder="일정 내용을 입력하세요." />
 									</td>
 									<td class="bg-eee td-8">등록자</td>
 									<td class="p-3 td-15">
-										<input type="text" readonly name="planWriter" value="${sessionScope.empName}" />
+										<c:choose>
+											<c:when test="${sessionScope.empNum eq 'admin'}">
+												<input type="text" readonly name="calWriter" value="${sessionScope.empName}" />
+											</c:when>
+											<c:otherwise>
+												<input type="text" readonly name="calWriter" value="${sessionScope.empBuseoName} - ${sessionScope.empName}" />
+											</c:otherwise>
+										</c:choose>
 									</td>
 								</tr>
 							</table>
@@ -91,12 +93,12 @@
 				editable : true,
 				eventLimit : true,
 				locales : "ko",
-				events : [ {
-					title : '일정내용\n등록자',
-					start : '2021-01-07',
-					end : '2021-01-12',
-					color : '#61b3d2'
-				} ]
+				events : [{
+					title: '영업부 - 제작발표회',
+					start: '2021-02-07',
+					end: '2021-02-14',
+					color: '#61b3d2'
+				}]
 			});
 
 			calendar.render();
@@ -104,25 +106,31 @@
 	</script>
 
 	<script>
-		$(function() {
-			$("#startDate, #endDate").datepicker({
-				dataFormat : 'yy-mm-dd'
-			});
-		});
+	   $(document).ready(function () {
+	        $("#calStartDate").datepicker({
+	            dateFormat: 'yy-mm-dd',
+	            minDate : 0
+	        });
+
+	        $("#calEndDate").datepicker({
+	            dateFormat: 'yy-mm-dd'
+	        });
+	    });
 
 		$("#btn").click(function() {
 			
-			if($("#startDate").val() == '') {
+			if($("#calStartDate").val() == '') {
 				alert("시작일을 선택하세요.");
 				return false;
 			}
 
-			if($("#endDate").val() == '') {
+			if($("#calEndDate").val() == '') {
 				alert("종료일을 선택하세요.");
 				return false;
 			}
 
-			if($.trim($("#plan").val()) == '') {
+			if($.trim($("#calContent").val()) == '') {
+				$("#calContent").focus();
 				alert("일정 내용을 입력하세요.");
 				return false;
 			}

@@ -161,7 +161,7 @@
 	
 <script>
 function empPrint() {
-	var url 	= "${pageContext.request.contextPath}/employee/employee_print";
+	var url 	= "${pageContext.request.contextPath}/employee/employee_print?empNum="+${view.empNum};
 	var nick 	= "print";
 	var opt 	= "width=1000, height=600";
 	window.open(url, nick, opt);
