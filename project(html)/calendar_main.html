@@ -120,13 +120,16 @@
 <script>
     $(document).ready(function () {
         $("#calStartDate").datepicker({
-            dateFormat: 'yy-mm-dd',
+            onSelect: function (selected) {
+                $("#calEndDate").datepicker("option", "minDate", selected)
+            },
             minDate : 0
         });
 
         $("#calEndDate").datepicker({
-            dateFormat: 'yy-mm-dd',
-            minDate: new Date(calStartDate)
+            onSelect: function (selected) {
+                $("#calStartDate").datepicker("option", "maxDate", selected)
+            }
         });
     });
 </script>

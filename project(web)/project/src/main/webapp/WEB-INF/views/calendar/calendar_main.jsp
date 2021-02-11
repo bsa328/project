@@ -93,12 +93,7 @@
 				editable : true,
 				eventLimit : true,
 				locales : "ko",
-				events : [{
-					title: '영업부 - 제작발표회',
-					start: '2021-02-07',
-					end: '2021-02-14',
-					color: '#61b3d2'
-				}]
+				events : resData
 			});
 
 			calendar.render();
@@ -106,14 +101,18 @@
 	</script>
 
 	<script>
-	   $(document).ready(function () {
+	    $(document).ready(function () {
 	        $("#calStartDate").datepicker({
-	            dateFormat: 'yy-mm-dd',
+	            onSelect: function (selected) {
+	                $("#calEndDate").datepicker("option", "minDate", selected)
+	            },
 	            minDate : 0
 	        });
-
+	
 	        $("#calEndDate").datepicker({
-	            dateFormat: 'yy-mm-dd'
+	            onSelect: function (selected) {
+	                $("#calStartDate").datepicker("option", "maxDate", selected)
+	            }
 	        });
 	    });
 
