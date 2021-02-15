@@ -65,8 +65,8 @@
 						<span class="">일정관리 > 일정목록</span>
 					</div>
 					<div class="board-list">
-						<div id="calendar" class="calendar"></div>
-					</div>
+                        <div id="calendar" class="calendar"></div>
+                    </div>
 				</div>
 			</div>
 		</div>
