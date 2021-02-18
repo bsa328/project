@@ -1,12 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ include file="/WEB-INF/views/include/HEADER.jsp"%>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/calendar.css">
-<link rel="stylesheet" href="${pageContext.request.contextPath}/calendar/core/main.css">
-<link rel="stylesheet" href="${pageContext.request.contextPath}/calendar/daygrid/main.css">
-
 <link rel="stylesheet" href="http://code.jquery.com/ui/1.8.18/themes/base/jquery-ui.css" type="text/css" />
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-<script src="http://code.jquery.com/ui/1.8.18/jquery-ui.min.js"></script>
+<link href='${pageContext.request.contextPath}/calendar/core/main.css' rel='stylesheet' />
+<link href='${pageContext.request.contextPath}/calendar/daygrid/main.css' rel='stylesheet' />
 
 <body>
 	<div class="html">
@@ -65,7 +62,7 @@
 						<span class="">일정관리 > 일정목록</span>
 					</div>
 					<div class="board-list">
-                        <div id="calendar" class="calendar"></div>
+                        <div id='calendar' class="calendar"></div>
                     </div>
 				</div>
 			</div>
