@@ -70,10 +70,10 @@
 	</div>
 	<%@ include file="/WEB-INF/views/include/FOOTER.jsp"%>
 
-	<script src="${pageContext.request.contextPath}/calendar/core/main.js"></script>
-	<script src="${pageContext.request.contextPath}/calendar/core/locales/ko.js"></script>
-	<script src="${pageContext.request.contextPath}/calendar/interaction/main.js"></script>
-	<script src="${pageContext.request.contextPath}/calendar/daygrid/main.js"></script>
+	<script src='${pageContext.request.contextPath}/calendar/core/main.js'></script>
+	<script src='${pageContext.request.contextPath}/calendar/core/locales/ko.js'></script>
+	<script src='${pageContext.request.contextPath}/calendar/interaction/main.js'></script>
+	<script src='${pageContext.request.contextPath}/calendar/daygrid/main.js'></script>
 
 	<script>
 		document.addEventListener('DOMContentLoaded', function() {
